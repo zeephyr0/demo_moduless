@@ -83,3 +83,8 @@ class HelpMod(loader.Module):
                         # TODO: FIX THAT SHIT
                         pass
         await utils.answer(message, reply)
+
+   async def client_ready(self, client, db):
+        self.client = client
+        self.is_bot = await client.is_bot()
+        self.db = db
