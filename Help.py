@@ -67,7 +67,7 @@ class HelpMod(loader.Module):
                     "Raphielgang Configuration Placeholder",
                     "Uniborg configuration placeholder",
                 ]:
-                    reply += self.strings("mod_tmpl", message).format(name)
+                    reply += self.strings("mod_tmpl", message).format(id, name)
                     first = True
                     try:
                         commands = [name for name, func in mod.commands.items()
