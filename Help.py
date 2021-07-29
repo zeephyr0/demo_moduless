@@ -20,6 +20,8 @@ class HelpMod(loader.Module):
                "mod_tmpl": "\n• <b>{}</b>",
                "first_cmd_tmpl": ": <code>{}",
                "cmd_tmpl": ", {}",
+               "joined": "<b>Joined to</b> <a href='https://t.me/chat_ftg'>support chat</a>",
+               "join": "<b>Join the</b> <a href='https://t.me/chat_ftg'>support chat</a>"}
 
     @loader.unrestricted
     async def helpcmd(self, message):
@@ -81,6 +83,15 @@ class HelpMod(loader.Module):
                         # TODO: FIX THAT SHIT
                         pass
         await utils.answer(message, reply)
+
+    @loader.unrestricted
+    async def supportcmd(self, message):
+        """Joins the support FTG chat"""
+        if not self.is_bot and await self.allmodules.check_security(message, security.OWNER | security.SUDO):
+            await self.client(JoinChannelRequest("https://t.me/chat_ftg"))
+            await utils.answer(message, self.strings("joined", message))
+        else:
+            await utils.answer(message, self.strings("join", message))
 
     async def client_ready(self, client, db):
         self.client = client
