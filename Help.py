@@ -10,18 +10,16 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class HelpMod(loader.Module):
-    """Provides this help message"""
+    """Модуль для получения полного списка загруженных ранее модулей"""
     strings = {"name": "Help",
-               "bad_module": "<b>Invalid module name specified</b>",
-               "single_mod_header": "<b>Help for</b> <u>{}</u>:",
+               "bad_module": "<b>Модуль не найден;\</b>",
+               "single_mod_header": "<b>Помощь для</b> <code>{}</code>:",
                "single_cmd": "\n• <code><u>{}</u></code>\n",
-               "undoc_cmd": "No docs",
-               "all_header": "<b>Available FTG Modules:</b>",
+               "undoc_cmd": "Нет документаций",
+               "all_header": "<b>Список загруженных модулей:\n\n</b>",
                "mod_tmpl": "\n• <b>{}</b>",
-               "first_cmd_tmpl": ": <code>{}",
+               "first_cmd_tmpl": ": {}",
                "cmd_tmpl": ", {}",
-               "joined": "<b>Joined to</b> <a href='https://t.me/chat_ftg'>support chat</a>",
-               "join": "<b>Join the</b> <a href='https://t.me/chat_ftg'>support chat</a>"}
 
     @loader.unrestricted
     async def helpcmd(self, message):
@@ -67,7 +65,7 @@ class HelpMod(loader.Module):
                     "Raphielgang Configuration Placeholder",
                     "Uniborg configuration placeholder",
                 ]:
-                    reply += self.strings("mod_tmpl", message).format(id, name)
+                    reply += self.strings("mod_tmpl", message).format(name)
                     first = True
                     try:
                         commands = [name for name, func in mod.commands.items()
@@ -78,13 +76,14 @@ class HelpMod(loader.Module):
                                 first = False
                             else:
                                 reply += self.strings("cmd_tmpl", message).format(cmd)
-                        reply += "</code>"
                     except:
-                        # TODO: FIX THAT SHIT
                         pass
         await utils.answer(message, reply)
 
-   async def client_ready(self, client, db):
+    @loader.unrestricted
+    async def supportcmd(self, message):
+
+    async def client_ready(self, client, db):
         self.client = client
         self.is_bot = await client.is_bot()
         self.db = db
