@@ -10,15 +10,15 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class HelpMod(loader.Module):
-    """Модуль для получения полного списка загруженных ранее модулей"""
+    """Provides this help message"""
     strings = {"name": "Help",
-               "bad_module": "<b>Модуль не найден;\</b>",
+               "bad_module": "<b>Модуль</b> <code>{}</code> <code>не найден;\</code>",
                "single_mod_header": "<b>Помощь для</b> <code>{}</code>:",
-               "single_cmd": "\n• <code><u>{}</u></code>\n",
+               "single_cmd": "\n• <code>{}</code>\n",
                "undoc_cmd": "Нет документаций",
-               "all_header": "<b>Список загруженных модулей:\n\n</b>",
+               "all_header": "<b>Список всех загруженных модулей: \n\n</b>",
                "mod_tmpl": "\n• <b>{}</b>",
-               "first_cmd_tmpl": ": {}",
+               "first_cmd_tmpl": ": <code>{}",
                "cmd_tmpl": ", {}",
 
     @loader.unrestricted
@@ -76,12 +76,11 @@ class HelpMod(loader.Module):
                                 first = False
                             else:
                                 reply += self.strings("cmd_tmpl", message).format(cmd)
+                        reply += "</code>"
                     except:
+                        # TODO: FIX THAT SHIT
                         pass
         await utils.answer(message, reply)
-
-    @loader.unrestricted
-    async def supportcmd(self, message):
 
     async def client_ready(self, client, db):
         self.client = client
