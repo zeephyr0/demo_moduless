@@ -33,9 +33,9 @@ class RPMod(loader.Module):
                     if message.text.lower() == "Поцеловать":
                         await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
                     if message.text.lower() == "Поцеловать в щечку":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a>  <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(а) в щёчку <a href=tg://user?id={user.id}>{user.first_name}</a>")
                     if message.text.lower() == "Поцеловать в губы":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a>  <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(а) в губы <a href=tg://user?id={user.id}>{user.first_name}</a>")
                     if message.text.lower() == "Поцеловать в носик":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a>  <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(а) в носик <a href=tg://user?id={user.id}>{user.first_name}</a>")
         except: pass
