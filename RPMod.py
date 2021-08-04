@@ -31,6 +31,10 @@ class RPMod(loader.Module):
             me = (await message.client.get_me())
             if status is not False:
                 if message.sender_id == me.id:
-                    if message.text.lower() == "чмок":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> чмокнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "Поцеловать":
+                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцелвал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "Поцеловать в щечку":
+                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(-а) в щёчку <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "Поцеловать в носик":
+                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(-а) в носик <a href=tg://user?id={user.id}>{user.first_name}</a>")
         except: pass
