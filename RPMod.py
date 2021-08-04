@@ -38,3 +38,4 @@ class RPMod(loader.Module):
                         await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a>  <a href=tg://user?id={user.id}>{user.first_name}</a>")
                     if message.text.lower() == "Поцеловать в носик":
                         await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a>  <a href=tg://user?id={user.id}>{user.first_name}</a>")
+        except: pass
