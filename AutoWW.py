@@ -25,10 +25,10 @@ class AutoWWMod(loader.Module):
             elif "Сражение с 🐲Алдуин (🔥Пожиратель Мира)" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
-            if "Ты очень голоден." in message.raw_text:
+            elif "Ты очень голоден." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101 ');
-            if "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." in message.raw_text:
+            elif "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⚔️Дать отпор');
             elif "Ты можешь купить у него редкие вещи." in message.raw_text:
