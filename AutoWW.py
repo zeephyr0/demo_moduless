@@ -29,10 +29,10 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101 ');
             if "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." in message.raw_text:
-                await sleep(20);
+                await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⚔️Дать отпор');
             elif "Ты можешь купить у него редкие вещи." in message.raw_text:
-                await sleep(4);
+                await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/buy_5i')
             elif "👣22км" in message.raw_text:
                 await sleep(2);
@@ -41,7 +41,7 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🌁Высокий Хротгар');
             elif "👣46км" in message.raw_text:
-                await sleep(5);
+                await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');
@@ -50,10 +50,10 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
             elif "👁Осмотреться" in message.raw_text:
-                await sleep(20);
+                await sleep(7);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты одержал победу!" in message.raw_text:
-                await sleep(20);
+                await sleep(7);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             if "Использован 💉++ Суперстим." in message.raw_text:
                 await sleep(2);
