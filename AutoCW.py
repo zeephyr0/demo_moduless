@@ -16,16 +16,14 @@ class AutoCWMod(loader.Module):
                 await message.client.send_message('@citywars2_bot', '/daily');
             elif "Атакуем" in message.raw_text:
                 await sleep(300);
-                await message.click();
                 await message.client.send_message('@citywars2_bot', '/buy_set_1');
             elif "Встаём в" in message.raw_text:
                 await sleep(300);
-                await message.click();
                 await message.client.send_message('@citywars2_bot', '/buy_set_1');
-            elif "👾 Прожался(-ась) в пин?" in message.raw_text:
-                await sleep(600)
+            if "✅ На битве" in message.raw_text:
+                await sleep(300)
                 await message.client.send_message('@citywars2_bot', '/war');
-                await sleep(25);
+                await sleep(5);
                 await message.click();
             elif "🎖MVP битвы:" in message.raw_text:
                 await sleep(300);
@@ -35,7 +33,7 @@ class AutoCWMod(loader.Module):
         if message.sender_id == 1399565278:
             if "@CityWars2Reports" in message.raw_text:
                 await sleep(20);
-                await message.forward_to(-1001222463353)
+                await message.forward_to(701686415);
             if "👮 Ты отдохнул" in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
