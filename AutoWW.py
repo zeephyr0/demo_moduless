@@ -45,16 +45,26 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');
-                await sleep(200);
-                await message.client.send_message('@WastelandWarsBot', '⬅️Назад');
+                await sleep(300);
+                await message.client.send_message('@WastelandWarsBot', '🛠Верстак');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🏘В Нью-Рино');
+                await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
             elif "👁Осмотреться" in message.raw_text:
                 await sleep(20);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты одержал победу!" in message.raw_text:
                 await sleep(20);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            if "Использован 💉++ Суперстим." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '⛺️Лагерь');
+                await sleep(5);
+                await message.client.send_message('@WastelandWarsBot', '⬅️Назад');
+                await sleep(3);
+                await message.client.send_message('@WastelandWarsBot', '🏘В Нью-Рино');
+            elif "Эти предметы помогут тебе продержаться еще один день в Пустоши." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '💉++ Суперстим');
             if "Около бара лежит мертвый бомж." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🍺Бар');
