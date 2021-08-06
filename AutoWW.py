@@ -34,6 +34,8 @@ class AutoWWMod(loader.Module):
             elif "Ты можешь купить у него редкие вещи." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/buy_5i')
+                await sleep(7);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "👣22км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚷В Темную зону');
