@@ -10,10 +10,7 @@ class AutoWWMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 430930191:
-            if "🚽 Сточная труба" in message.raw_text:
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
-            elif "Сражение с 🐲Трог (💙Леонардо)" in message.raw_text:
+            if "Сражение с 🐲Трог (💙Леонардо)" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             elif "Сражение с 🐲Трог (💛Микеланджело)" in message.raw_text:
@@ -60,6 +57,8 @@ class AutoWWMod(loader.Module):
             elif "👣23км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚽 Сточная труба');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             elif "👣45км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🌁Высокий Хротгар');
