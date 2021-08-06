@@ -72,10 +72,10 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
             elif "👁Осмотреться" in message.raw_text:
-                await sleep(10);
+                await sleep(15);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты одержал победу!" in message.raw_text:
-                await sleep(10);
+                await sleep(15);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             if "Использован 💉++ Суперстим." in message.raw_text:
                 await sleep(2);
