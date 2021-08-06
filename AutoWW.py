@@ -10,7 +10,25 @@ class AutoWWMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 430930191:
-            if "⚠️ACHTUNG!⚠️" in message.raw_text:
+            if "🚽 Сточная труба" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (💙Леонардо)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (💛Микеланджело)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (💜Донателло)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (❤️Рафаэль)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "💙Леонардо 💛Микеланджело 🐁Крыса 💜Донателло ❤️Рафаэль" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "⚠️ACHTUNG!⚠️" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             elif "Сражение с 🦀Краб (Грязевой)" in message.raw_text:
@@ -39,6 +57,9 @@ class AutoWWMod(loader.Module):
             elif "👣22км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚷В Темную зону');
+            elif "🚷23км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🚽 Сточная труба');
             elif "👣45км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🌁Высокий Хротгар');
