@@ -98,6 +98,9 @@ class AutoWWMod(loader.Module):
             elif "Мудрый старец готов обучить тебя необходимым навыкам. Не бесплатно, разумеется. Крышечки тут всегда в ходу." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '❤️Живучесть');
+            elif "Теперь ты стал немного опытнее." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '❤️Живучесть');
             if "🥖Взять булочку: 🕳80" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@WastelandWarsBot', '/eat2');
