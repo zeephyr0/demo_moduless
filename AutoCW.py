@@ -34,12 +34,7 @@ class AutoCWMod(loader.Module):
             if "@CityWars2Reports" in message.raw_text:
                 await sleep(20);
                 await message.forward_to(701686415);
-            if "👮 Ты отдохнул" in message.raw_text:
-                await sleep(10);
-                await message.client.send_message('@citywars2_bot', '🕹 Действия');
-                await sleep(2);
-                await message.client.send_message('@citywars2_bot', '👮 Патрулируем');
-            elif "👮 На улицах" in message.raw_text:
+            if "👮 На улицах" in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(2);
@@ -47,6 +42,10 @@ class AutoCWMod(loader.Module):
             if "#патруль" in message.raw_text:
                 await sleep(40);
                 await message.forward_to(-1001222463353);
+                await sleep(570);
+                await message.client.send_message('@citywars2_bot', '🕹 Действия');
+                await sleep(2);
+                await message.client.send_message('@citywars2_bot', '👮 Патрулируем');
             if "🚑 Cостоянию здоровья" in message.raw_text:
                 await sleep(15);                
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
