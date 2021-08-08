@@ -50,11 +50,13 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
             elif "Ты услышал неподалеку какой-то шум. Ты можешь отправиться дальше, либо не обращать внимания на подозрительные звуки." in message.raw_text:
-                await sleep(2);
+                await sleep(15);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Противник выглядит устрашающе, победить будет нелегко. Лучше отступи." in message.raw_text:
-                await sleep(2);
+                await sleep(15);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            elif "🐐TestGoat 🤘TеstBand1" in message.raw_text:
+                await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
             elif "Ты можешь попытаться воспользоваться элементом неожиданности и напасть на него, или же аккуратно идти дальше." in message.raw_text:
                 await sleep(20);
                 await message.client.send_message('@WastelandWarsBot', '🔪Напасть');
