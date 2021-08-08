@@ -9,6 +9,8 @@ class AutoSWMod(loader.Module):
     strings = {"name": "AutoSW"}
 
     async def watcher(self, message):
+        if message.chat_id == 1573616342 and message.sender_id == 376592453 and message.sender_id == 1806724130:
+
         if message.sender_id == 227859379:
             if "Продолжить 💻Работать" in message.raw_text:
                 await sleep(2);
@@ -16,6 +18,7 @@ class AutoSWMod(loader.Module):
             if "Тебе не хватает Мотивации." in message.raw_text:
                 await sleep(3601);
                 await message.client.send_message('@StartupWarsBot', '/job');
+            if "Поздравляю! Твоя 🔥Мотивация полностью восстановлена" in message.raw_text:
             if "Ты достиг нового уровня." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@StartupWarsBot', '/levelup');
