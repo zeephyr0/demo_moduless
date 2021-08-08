@@ -10,7 +10,15 @@ class AutoSWMod(loader.Module):
 
     async def watcher(self, message):
         if message.chat_id == 1573616342 and message.sender_id == 376592453 and message.sender_id == 1806724130:
-
+            if "⚔В атаку на" in message.raw_text:
+                await sleep(300);
+                await message.click();
+            if "🛡Все в защиту" in message.raw_text:
+                await sleep(300);
+                await message.click();
+            if "⚔️Готовы к битве:⚔️" in message.raw_text:
+                await sleep(300);
+                await message.click();
         if message.sender_id == 227859379:
             if "Продолжить 💻Работать" in message.raw_text:
                 await sleep(2);
