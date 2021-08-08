@@ -27,6 +27,8 @@ class AutoSWMod(loader.Module):
                 await sleep(3601);
                 await message.client.send_message('@StartupWarsBot', '/job');
             if "Поздравляю! Твоя 🔥Мотивация полностью восстановлена" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@StartupWarsBot', '/job');
             if "Ты достиг нового уровня." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@StartupWarsBot', '/levelup');
