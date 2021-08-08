@@ -10,6 +10,13 @@ class AutoSWMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 227859379:
-            if "Ты очень голоден." in message.raw_text:
+            if "Продолжить 💻Работать" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@StartupWarsBot', '/use_101');
+                await message.client.send_message('@StartupWarsBot', '/job');
+            if "Ты достиг нового уровня." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@StartupWarsBot', '/levelup');
+                await sleep(2);
+                await message.client.send_message('@StartupWarsBot', '+1 🔨Практика')
+                await sleep(2);
+                await message.client.send_message('@StartupWarsBot', '+1 🐿Хитрость')            
