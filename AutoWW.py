@@ -16,7 +16,7 @@ class AutoWWMod(loader.Module):
             if "⚠️ACHTUNG!⚠️" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
-            if "Спустя какое-то время ты пришел в себя в своем лагере."
+            if "Спустя какое-то время ты пришел в себя в своем лагере." in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Лагерь');
                 await sleep(2);
