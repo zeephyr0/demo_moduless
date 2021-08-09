@@ -33,6 +33,6 @@ class AutoSWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@StartupWarsBot', '/levelup');
                 await sleep(2);
-                await message.client.send_message('@StartupWarsBot', '+1 🔨Практика')
+                await message.client.send_message('@StartupWarsBot', '+1 🎓Теория')
                 await sleep(2);
-                await message.client.send_message('@StartupWarsBot', '+1 🐿Хитрость')            
+                await message.client.send_message('@StartupWarsBot', '+1 🐢Мудрость')            
