@@ -18,6 +18,8 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             elif "🐐TestGoat 🤘TеstBand1" in message.raw_text:
                 await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
+            elif "🐐TestGoat 🤘TestBand1" in message.raw_text:
+                await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
             elif "Эта вылазка могла бы стать последней для тебя. Ты лежал на земле, жадно глотая воздух..." in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Лагерь');
@@ -36,13 +38,13 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '/buy_5i')
                 await sleep(10);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
-            elif "👣22км" in message.raw_text:
+            elif "18 👣22км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚷В Темную зону');
-            elif "👣45км" in message.raw_text:
+            elif "18 👣45км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🌁Высокий Хротгар');
-            elif "👣46км" in message.raw_text:
+            elif "18 👣50км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
                 await sleep(2);
