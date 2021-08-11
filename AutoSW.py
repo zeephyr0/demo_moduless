@@ -9,7 +9,7 @@ class AutoSWMod(loader.Module):
     strings = {"name": "AutoSW"}
 
     async def watcher(self, message):
-        if message.chat_id == 1573616342 and message.sender_id == 376592453:
+        if message.chat_id == -1573616342 and message.sender_id == 376592453:
             if "⚔В атаку на" in message.raw_text:
                 await sleep(300);
                 await message.click();
