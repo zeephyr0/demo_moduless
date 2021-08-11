@@ -9,16 +9,6 @@ class AutoSWMod(loader.Module):
     strings = {"name": "AutoSW"}
 
     async def watcher(self, message):
-        if message.chat_id == -1573616342 and message.sender_id == 376592453:
-            if "⚔В атаку на" in message.raw_text:
-                await sleep(300);
-                await message.click();
-            if "🛡Все в защиту" in message.raw_text:
-                await sleep(300);
-                await message.click();
-        if message.sender_id == 1806724130:         if "⚔️Готовы к битве:⚔️" in message.raw_text:
-                await sleep(300);
-                await message.click();
         if message.sender_id == 227859379:
             if "Продолжить 💻Работать" in message.raw_text:
                 await sleep(2);
@@ -36,3 +26,13 @@ class AutoSWMod(loader.Module):
                 await message.client.send_message('@StartupWarsBot', '+1 🎓Теория')
                 await sleep(2);
                 await message.client.send_message('@StartupWarsBot', '+1 🐢Мудрость')            
+        if message.chat_id == -1573616342 and message.sender_id == 376592453:
+            if "⚔В атаку на" in message.raw_text:
+                await sleep(300);
+                await message.click();
+            if "🛡Все в защиту" in message.raw_text:
+                await sleep(300);
+                await message.click();
+        if message.sender_id == 1806724130:         if "⚔️Готовы к битве:⚔️" in message.raw_text:
+                await sleep(300);
+                await message.click()
