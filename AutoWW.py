@@ -10,6 +10,9 @@ class AutoWWMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 430930191:
+            if "Сражение с" in message.raw_text:
+                await sleep(2);
+                await message.forward_to(1073120406);
             if "Ты очень голоден." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101');
@@ -128,7 +131,3 @@ class AutoWWMod(loader.Module):
             elif "Ты съел Булочка." in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@WastelandWarsBot', '/eat2');
-            if "Сражение с" in message.raw_text:
-                await sleep(2);
-                await message.forward_to(1073120406);
-
