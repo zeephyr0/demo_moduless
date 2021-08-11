@@ -33,6 +33,16 @@ class AutoSWMod(loader.Module):
             if "🛡Все в защиту" in message.raw_text:
                 await sleep(300);
                 await message.click();
-        if message.sender_id == 1806724130:         if "⚔️Готовы к битве:⚔️" in message.raw_text:
+        if message.sender_id == 1806724130:
+            if "⚔️Готовы к битве:⚔️" in message.raw_text:
                 await sleep(300);
                 await message.click()
+        if message.chat_id == -1001222463353 and message.sender_id == 701686415:
+            if "🎖MVP битвы:" in message.raw_text:
+                await sleep(180);
+                await message.client.send_message('@StartupWarsBot', '/battle');
+                await sleep(18);
+                await message.client.send_message('@StartupWarsBot', '/to_eat');
+                await sleep(2);
+                await message.client.send_message('@StartupWarsBot', '🍴Есть');
+
