@@ -21,12 +21,12 @@ class AutoCWMod(loader.Module):
                 await sleep(300);
                 await message.client.send_message('@citywars2_bot', '/buy_set_1');
             if "✅ На битве" in message.raw_text:
-                await sleep(300)
-                await message.client.send_message('@citywars2_bot', '/war');
-                await sleep(5);
+                await sleep(300);
                 await message.click();
             elif "🎖MVP битвы:" in message.raw_text:
-                await sleep(450);
+                await sleep(180);
+                await message.client.send_message('@citywars2_bot', '/war');
+                await sleep(280);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(2);
                 await message.client.send_message('@citywars2_bot', '🚑 Лечим');
