@@ -20,7 +20,7 @@ class AutoCWMod(loader.Module):
             if "нанес удар 💔" in message.raw_text:
                 await sleep (2);
                 await message.client.send_message('@rf_telegram_bot', '🏛 В ген. штаб');
-                await sleep (6);
+                await sleep (125);
                 await message.client.send_message('@rf_telegram_bot', '💖 Пополнить здоровье');
                 await sleep (3);
                 await message.client.send_message('@rf_telegram_bot', '☠ Локации');
