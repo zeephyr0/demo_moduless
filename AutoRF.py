@@ -29,3 +29,6 @@ class AutoCWMod(loader.Module):
             elif "Ты нанес удар 💥" in message.raw_text:
                 await sleep (2);
                 await message.client.send_message('@rf_telegram_bot', '🐺 Любой');
+            if "[недостаточно энергии]" in message.raw_text:
+                await sleep(725);
+                await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
