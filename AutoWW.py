@@ -47,9 +47,13 @@ class AutoWWMod(loader.Module):
             elif "18 👣24км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/goboss');
+                await sleep(10);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣28км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/goboss');
+                await sleep(10);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣45км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🌁Высокий Хротгар');
