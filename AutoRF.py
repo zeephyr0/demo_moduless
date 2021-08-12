@@ -35,4 +35,8 @@ class AutoRFMod(loader.Module):
             if "Пора в бой!" in message.raw_text:
                 await sleep (3);
                 await message.client.send_message('@rf_telegram_bot', '🐥 11-20 Аванпост');
+            if "Ты снова жив👼" in message.raw_text:
+                await sleep (3);
+                await message.client.send_message('@rf_telegram_bot', '☠ Локации');
+          
 
