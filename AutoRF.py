@@ -5,9 +5,9 @@ from .. import loader
 from asyncio import sleep
 
 @loader.tds 
-class AutoCWMod(loader.Module): 
+class AutoRFMod(loader.Module): 
     """Нахуя тебе это?""" 
-    strings = {"name": "AutoCW"}
+    strings = {"name": "AutoRF"}
 
     async def watcher(self, message):
         if message.sender_id == 577009581:
