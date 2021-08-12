@@ -34,7 +34,7 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
             elif "Уйти отсюда без боя он тебе точно не даст." in message.raw_text:
-                await sleep(2);
+                await sleep(22);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             elif "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." in message.raw_text:
                 await sleep(2);
@@ -44,6 +44,9 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '/buy_5i')
                 await sleep(10);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            elif "18 👣11км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Старая шахта');
             elif "18 👣22км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚷В Темную зону');
