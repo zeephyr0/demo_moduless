@@ -134,7 +134,7 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🏘Нью-Рино');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🎓Обучение');
+                await message.client.send_message('@WastelandWarsBot', '🍺Бар');
             if "🚫 Недостаточно ресурсов!" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🏘Нью-Рино');
@@ -142,10 +142,10 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '🍺Бар');
             elif "Мудрый старец готов обучить тебя необходимым навыкам. Не бесплатно, разумеется. Крышечки тут всегда в ходу." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '❤️Живучесть');
+                await message.client.send_message('@WastelandWarsBot', '💪Сила');
             elif "Теперь ты стал немного опытнее." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '❤️Живучесть');
+                await message.client.send_message('@WastelandWarsBot', '💪Сила');
             if "🥖Взять булочку: 🕳80" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@WastelandWarsBot', '/eat2');
@@ -157,5 +157,5 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '👣Пустошь');
             elif "Ты съел Булочка." in message.raw_text:
-                await sleep(10);
+                await sleep(3);
                 await message.client.send_message('@WastelandWarsBot', '/eat2');
