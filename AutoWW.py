@@ -10,19 +10,31 @@ class AutoWWMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 430930191:
+            if "Казалось, что этой шахте нет конца." in message.raw_text:
+                await sleep(2);
+                await message.forward_to(1073120406);
+            elif "Как оказалось, даже в канализации ты умудрился найти что-то полезное." in message.raw_text:
+                await sleep(2);
+                await message.forward_to(1073120406);
+            elif "Стоп... Это что, конец? Всё? Вот она, ебучая вершина горы?" in message.raw_text:
+                await sleep(2);
+                await message.forward_to(1073120406);
             if "Сражение с" in message.raw_text:
                 await sleep(2);
                 await message.forward_to(1073120406);
+            if "Раньше эту шахту активно бурили. Кажется, из глубины доносятся какие-то звуки." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Враги в канализации? Сомнительно, братан. Но воняет неприятно." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "⚠️ACHTUNG!⚠️" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             if "Ты очень голоден." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101');
-            if "⚠️ACHTUNG!⚠️" in message.raw_text:
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
-            if "Враги в канализации? Сомнительно, братан. Но воняет неприятно." in message.raw_text:
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
-            elif "🐐TestGoat 🤘TеstBand1" in message.raw_text:
+            if "🐐TestGoat 🤘TеstBand1" in message.raw_text:
                 await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
             elif "🐐TestGoat 🤘TestBand1" in message.raw_text:
                 await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
@@ -69,7 +81,7 @@ class AutoWWMod(loader.Module):
             elif "18 👣52км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚷В Темную зону');
-            elif "18 👣55км" in message.raw_text:
+            elif "18 👣58км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
                 await sleep(2);
@@ -91,17 +103,17 @@ class AutoWWMod(loader.Module):
                 await sleep(15);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты можешь попытаться воспользоваться элементом неожиданности и напасть на него, или же аккуратно идти дальше." in message.raw_text:
-                await sleep(20);
+                await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🔪Напасть');
-                await sleep(25);
+                await sleep();
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
                 await sleep(20);
                 await message.client.send_message('@WastelandWarsBot', '/medpack');
             elif "👁Осмотреться" in message.raw_text:
-                await sleep(20);
+                await sleep(18);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты одержал победу!" in message.raw_text:
-                await sleep(20);
+                await sleep(18);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             if "Использован 💉++ Суперстим." in message.raw_text:
                 await sleep(2);
