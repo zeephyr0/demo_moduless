@@ -14,9 +14,6 @@ class AutoRFMod(loader.Module):
             if "[недостаточно энергии]" in message.raw_text:
                 await sleep(725);
                 await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
-            if "+1 к энергии" in message.raw_text:
-                await sleep(5);
-                await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
             if "На пути у вас встретился" in message.raw_text:
                 await sleep (2);
                 await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
@@ -28,10 +25,13 @@ class AutoRFMod(loader.Module):
                 await message.client.send_message('@rf_telegram_bot', '🏛 В ген. штаб');
                 await sleep (125);
                 await message.client.send_message('@rf_telegram_bot', '💖 Пополнить здоровье');
-                await sleep (3);
-                await message.client.send_message('@rf_telegram_bot', '☠ Локации');
-                await sleep (3);
-                await message.client.send_message('@rf_telegram_bot', '🐣1-10 Окрестности Ген. штаба');
             elif "Ты нанес удар 💥" in message.raw_text:
                 await sleep (2);
                 await message.client.send_message('@rf_telegram_bot', '🐺 Любой');
+            if "Здоровье пополнено" in message.raw_text:
+                await sleep (3);
+                await message.client.send_message('@rf_telegram_bot', '☠ Локации');
+            if "Пора в бой!" jn message.raw_text:
+                await sleep (3);
+                await message.client.send_message('@rf_telegram_bot', '🐥 11-20 Аванпост');
+
