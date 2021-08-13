@@ -58,7 +58,7 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "❤️-" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше')
+                await message.client.send_message('@WastelandWarsBot', '⚔️Атаковать')
             elif "Твое местоположение: Возле гиганта" in message.raw_text:
                 await sleep(150);
                 await message.client.send_message('@WastelandWarsBot', '📟Пип-бой');
