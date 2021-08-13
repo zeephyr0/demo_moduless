@@ -154,7 +154,7 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '💰Ломбард');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Обменять все');
-            elif "Инженер тебе собрал немалых размеров коробку, которую можно использовать один раз." in message.raw_text:
+            elif "Получено:💌Медпак" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '💌 Медпак');
             if "Ты продал" in message.raw_text:
