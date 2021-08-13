@@ -13,7 +13,10 @@ class AutoWODMod(loader.Module):
         if message.sender_id == 913530224:
             if "В этой битве тебе не было равных, это безупречная победа!" in message.raw_text:
                 await sleep(3);
-                await message.client.send_message('@WorldDogs_bot', '⛩ Городские ворота');
+                await message.client.send_message('@WorldDogs_bot', '⚔️ Авто-Арена');
+            if "Ты проиграл эту битву, но достойно сражался!" in message.raw_text:
+                await sleep(3);
+                await message.client.send_message('@WorldDogs_bot', '⚔️ Авто-Арена');
             if "Ты у городских ворот. Приключения ждут!" in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@WorldDogs_bot', '⚔️ PvP Арены');
