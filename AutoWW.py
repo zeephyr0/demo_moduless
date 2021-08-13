@@ -34,9 +34,9 @@ class AutoWWMod(loader.Module):
             if "Ты очень голоден." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101');
-            if "🐐TestGoat 🤘TеstBand1" in message.raw_text:
+            if "🐐TestGoat 🤘TestBand1" in message.raw_text:
                 await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
-            elif "🐐TestGoat 🤘TestBand1" in message.raw_text:
+            elif "🐐TestGoat 🤘TеstBand1" in message.raw_text:
                 await message.client.send_message('@WasterlandWarsBot', '👣Идти дaльше');
             elif "Эта вылазка могла бы стать последней для тебя. Ты лежал на земле, жадно глотая воздух..." in message.raw_text:
                 await sleep(3);
@@ -45,8 +45,41 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '🛠Верстак');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
-            elif "Уйти отсюда без боя он тебе точно не даст." in message.raw_text:
-                await sleep(22);
+            elif "Сражение с 👁Мутант (Голодный)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 👁Мутант (❗️Огромный)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (❗️Огромный)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (💙Леонардо)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (💛Микеланджело)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (💜Донателло)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Трог (❤️Рафаэль)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Они все мертвы." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🦀Краб (Грязевой)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🌞Атронах (🔥Огненный)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с ㊙️Дремора (🔥Даэдра)" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
+            elif "Сражение с 🐲Алдуин (🔥Пожиратель Мира)" in message.raw_text:
+                await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             elif "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." in message.raw_text:
                 await sleep(2);
