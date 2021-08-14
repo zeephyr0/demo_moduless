@@ -2,6 +2,7 @@
 
 from .. import loader
 from asyncio import sleep
+import random
 
 @loader.tds 
 class AutoWWMod(loader.Module): 
@@ -10,6 +11,7 @@ class AutoWWMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 430930191:
+            food = ['/use101', '/use102', '/use103', '/use104', '/use105', '/use106', '/use107', '/use108', '/use109', '/use110', '/use111', '/use112', '/use113', '/use114']
             if "Казалось, что этой шахте нет конца." in message.raw_text:
                 await sleep(2);
                 await message.forward_to(963853904);
@@ -33,7 +35,7 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             if "Ты очень голоден." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '/use_101');
+                await message.client.send_message('@WastelandWarsBot', (random.choise(food)));
             if "Эта вылазка могла бы стать последней для тебя. Ты лежал на земле, жадно глотая воздух..." in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Лагерь');
