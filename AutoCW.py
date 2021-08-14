@@ -14,13 +14,9 @@ class AutoCWMod(loader.Module):
             if "Забирайте свой бонус🧚‍♀💛" in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@citywars2_bot', '/daily');
-            elif "Атакуем" in message.raw_text:
-                await sleep(300);
+            if "✅ На битве -" in message.raw_text:
+                await sleep(2)
                 await message.client.send_message('@citywars2_bot', '/buy_set_1');
-            elif "Встаём в" in message.raw_text:
-                await sleep(300);
-                await message.client.send_message('@citywars2_bot', '/buy_set_1');
-            if "✅ На битве" in message.raw_text:
                 await sleep(300);
                 await message.click();
             elif "🎖MVP битвы:" in message.raw_text:
@@ -32,7 +28,7 @@ class AutoCWMod(loader.Module):
                 await message.client.send_message('@citywars2_bot', '🚑 Лечим');
         if message.sender_id == 1399565278:
             if "@CityWars2Reports" in message.raw_text:
-                await sleep(10);
+                await sleep(2);
                 await message.forward_to(-1222463353);
             if "👮 На улицах" in message.raw_text:
                 await sleep(10);
