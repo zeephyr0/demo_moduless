@@ -26,8 +26,8 @@ class AutoSWMod(loader.Module):
                 await message.client.send_message('@StartupWarsBot', '+1 🔨Практика');
                 await sleep(2);
                 await message.client.send_message('@StartupWarsBot', '+1 🐿Хитрость');  
-            if "@startupwarsreport" in message.raw_tex
-                await message.forward_to(1573616342)
+            if "@startupwarsreport" in message.raw_text:
+                await message.forward_to(1573616342);
         if message.chat_id == 1573616342 and message.sender_id == 376592453:
             if "⚔В атаку на" in message.raw_text:
                 await sleep(300);
