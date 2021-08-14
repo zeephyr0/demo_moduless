@@ -23,10 +23,12 @@ class AutoSWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@StartupWarsBot', '/levelup');
                 await sleep(2);
-                await message.client.send_message('@StartupWarsBot', '+1 🎓Теория')
+                await message.client.send_message('@StartupWarsBot', '+1 🔨Практика');
                 await sleep(2);
-                await message.client.send_message('@StartupWarsBot', '+1 🐢Мудрость')            
-        if message.chat_id == -1573616342 and message.sender_id == 376592453:
+                await message.client.send_message('@StartupWarsBot', '+1 🐿Хитрость');  
+            if "@startupwarsreport" in message.raw_tex
+                await message.forward_to(1573616342)
+        if message.chat_id == 1573616342 and message.sender_id == 376592453:
             if "⚔В атаку на" in message.raw_text:
                 await sleep(300);
                 await message.click();
@@ -37,7 +39,7 @@ class AutoSWMod(loader.Module):
             if "⚔️Готовы к битве:⚔️" in message.raw_text:
                 await sleep(300);
                 await message.click()
-        if message.chat_id == -1001222463353 and message.sender_id == 701686415:
+        if message.chat_id == 1222463353 and message.sender_id == 701686415:
             if "🎖MVP битвы:" in message.raw_text:
                 await sleep(180);
                 await message.client.send_message('@StartupWarsBot', '/battle');
