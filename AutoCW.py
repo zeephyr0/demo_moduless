@@ -29,7 +29,7 @@ class AutoCWMod(loader.Module):
         if message.sender_id == 1399565278:
             if "@CityWars2Reports" in message.raw_text:
                 await sleep(2);
-                await message.forward_to(-1222463353);
+                await message.forward_to(1222463353);
             if "👮 На улицах" in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
