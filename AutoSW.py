@@ -28,18 +28,17 @@ class AutoSWMod(loader.Module):
                 await message.client.send_message('@StartupWarsBot', '+1 🐿Хитрость');  
             if "@startupwarsreport" in message.raw_text:
                 await message.forward_to(1573616342);
-        if message.chat_id == 1573616342 and message.sender_id == 376592453:
+        if message.chat_id == -1001573616342 and message.sender_id == 376592453 and message.sender_id == 1806724130::
             if "⚔В атаку на" in message.raw_text:
                 await sleep(5);
                 await message.click();
-            if "🛡Все в защиту" in message.raw_text:
+            elif "🛡Все в защиту" in message.raw_text:
                 await sleep(5);
                 await message.click();
-        if message.sender_id == 1806724130:
             if "⚔️Готовы к битве:⚔️" in message.raw_text:
                 await sleep(6);
                 await message.click()
-        if message.chat_id == 1222463353 and message.sender_id == 701686415:
+        if message.chat_id == -1001222463353 and message.sender_id == 701686415:
             if "🎖MVP битвы:" in message.raw_text:
                 await sleep(180);
                 await message.client.send_message('@StartupWarsBot', '/battle');
