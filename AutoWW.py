@@ -34,7 +34,7 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
             if "🍗97%" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '/use101');
+                await message.client.send_message('@WastelandWarsBot', '/use_101');
             if "Эта вылазка могла бы стать последней для тебя. Ты лежал на земле, жадно глотая воздух..." in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Лагерь');
@@ -131,11 +131,12 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');
+                await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');  
+            elif "Ты отправился в лагерь. Как ни странно, время летит гораздо быстрее, когда ты идешь в обратную сторону." in message.raw_text:
                 await sleep(300);
                 await message.client.send_message('@WastelandWarsBot', '🛠Верстак');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');                
+                await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');          
             elif "👁Осмотреться" in message.raw_text:
                 await sleep(18);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
@@ -191,19 +192,7 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⬅️Назад');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🎓Обучение');
+                await message.client.send_message('@WastelandWarsBot', '👣Пустошь');
             elif "Ты съел Булочка." in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@WastelandWarsBot', '/eat2');
-            if "🚫 Недостаточно ресурсов!" in message.raw_text:
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🏘Нью-Рино');
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '👣Пустошь');
-            elif "Мудрый старец готов обучить тебя необходимым навыкам. Не бесплатно, разумеется. Крышечки тут всегда в ходу." in message.raw_text:
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '💪Сила');
-            elif "Теперь ты стал немного опытнее." in message.raw_text:
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '💪Сила');
-
