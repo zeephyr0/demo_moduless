@@ -105,7 +105,7 @@ class AutoWWMod(loader.Module):
             elif "🐐TestGoat 🤘" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
-            elif "🐐 FǁȺǁggǁØǁA 🤘T" in message.raw_text:
+            elif "🐐 FǁȺǁggǁØǁAT 🤘" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты можешь попытаться воспользоваться элементом неожиданности и напасть на него, или же аккуратно идти дальше." in message.raw_text:
