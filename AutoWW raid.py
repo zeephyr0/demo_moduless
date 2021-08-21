@@ -5,7 +5,7 @@ from asyncio import sleep
 import random
 
 @loader.tds 
-class AutoWW raidMod(loader.Module): 
+class AutoWWraidMod(loader.Module): 
     """Кто прочитал тот лох""" 
     strings = {"name": "AutoWW Raid"}
 
