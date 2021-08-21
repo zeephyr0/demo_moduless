@@ -18,7 +18,7 @@ class AutoWWraidMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '🛠Верстак');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛑Аптечка');
-            elif "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." inessage.raw_text:
+            elif "Ты можешь попробовать вступить с ним в битву, или же попытаться убежать." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⚔️Дать отпор');
             elif "Ты можешь купить у него редкие вещи." in message.raw_text:
