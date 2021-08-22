@@ -113,6 +113,9 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '🔪Напасть');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/eq_1002');
+            elif "Мерзавец успел скрыться, пока ты добирался до места." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Получено: Человечина" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
@@ -127,7 +130,6 @@ class AutoWWMod(loader.Module):
             elif "18 👣23км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🚽Сточная труба');
-                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣31км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/goboss');
@@ -137,9 +139,12 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/goboss');
                 await sleep(10);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣37км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣45км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🌁Высокий Хротгар');
