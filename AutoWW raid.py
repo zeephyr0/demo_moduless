@@ -46,7 +46,7 @@ class AutoWWraidMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/voevat_suda');    
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '/eq_480');
+                await message.client.send_message('@WastelandWarsBot', '/eq_1002');
             elif "Ты занял позицию для 👊Рейда и приготовился к групповому сражению козлов." in message.raw_text:
                 await sleep(2);
                 await message.forward_to(963853904);
