@@ -140,7 +140,27 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '/goboss');
                 await sleep(10);
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            elif "18 👣33км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '/goboss');
+                await sleep(10);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            elif "18 👣34км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '/goboss');
+                await sleep(10);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            elif "18 👣35км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '/goboss');
+                await sleep(10);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣37км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '/use_101');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+            elif "🍗100% 👣39км " in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/use_101');
                 await sleep(2);
@@ -237,9 +257,9 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '👣Пустошь');
             elif "Теперь ты стал немного опытнее." in message.raw_text:
                 await sleep(3);
-                await message.client.send_message('@WastelandWarsBot', '💪Сила');
+                await message.client.send_message('@WastelandWarsBot', '🗣Харизма');
             elif "Мудрый старец готов обучить тебя необходимым навыкам. Не бесплатно, разумеется. Крышечки тут всегда в ходу." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '💪Сила');
+                await message.client.send_message('@WastelandWarsBot', '🗣Харизма');
 
 
