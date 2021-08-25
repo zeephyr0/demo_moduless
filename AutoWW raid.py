@@ -173,7 +173,7 @@ class AutoWWraidMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '🛏Безопасный привал');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/deeprest');
-            elif "18 👣54км" in message.raw_text:
+            elif "18 👣20км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/voevat_suda');
                 await sleep(2);
