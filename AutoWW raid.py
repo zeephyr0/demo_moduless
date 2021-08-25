@@ -175,7 +175,12 @@ class AutoWWraidMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '/deeprest');
             elif "18 👣54км" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot',');
+                await message.client.send_message('@WastelandWarsBot', '/voevat_suda');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '/eq_1002');
+            elif "Ты занял позицию для 👊Рейда и приготовился к групповому сражению козлов." in message.raw_text:
+                await sleep(2);
+                await message.forward_to(963853904);
             elif "18 👣57км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
