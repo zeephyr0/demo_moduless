@@ -10,6 +10,10 @@ class AutoWWMod(loader.Module):
     strings = {"name": "AutoWW"}
 
     async def watcher(self, message):
+        if message.chat_id == 1122184106:
+            if "Чтобы его открыть, получатель должен ввести в игре уникальный код подарка:" in message.raw_text:
+                await sleep(2);
+                await message.forward_to(430930191);
         if message.sender_id == 430930191:
             if "Казалось, что этой шахте нет конца." in message.raw_text:
                 await sleep(2);
@@ -20,9 +24,6 @@ class AutoWWMod(loader.Module):
             elif "Стоп... Это что, конец? Всё? Вот она, ебучая вершина горы?" in message.raw_text:
                 await sleep(2);
                 await message.forward_to(963853904);
-            if "Сражение с" in message.raw_text:
-                await sleep(2);
-                await message.forward_to(1073120406);
             if "Раньше эту шахту активно бурили. Кажется, из глубины доносятся какие-то звуки." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
