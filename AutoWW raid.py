@@ -137,9 +137,9 @@ class AutoWWraidMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "18 👣32км" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '/goboss');
+                await message.client.send_message('@WastelandWarsBot', 'voevat_suda');
                 await sleep(10);
-                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
+                await message.client.send_message('@WastelandWarsBot', '/eq_1002');
             elif "18 👣33км" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/goboss');
