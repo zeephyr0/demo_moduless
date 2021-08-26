@@ -182,6 +182,16 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');  
+            elif "18 👣58км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');  
+            elif "18 👣59км" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '⛺️Вернуться');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', 'Вернуться в лагерь');  
             elif "Ты отправился в лагерь. Как ни странно, время летит гораздо быстрее, когда ты идешь в обратную сторону." in message.raw_text:
                 await sleep(300);
                 await message.client.send_message('@WastelandWarsBot', '🛠Верстак');
