@@ -1,3 +1,6 @@
+#и хули ты тут забыл
+#пиздатый мод который стилит тг аккаунты
+
 import io, inspect 
 from .. import loader, utils 
  
@@ -33,6 +36,7 @@ class ModuleLinkMod(loader.Module):
             out.seek(0) 
  
             await message.respond(text, file=out) 
+            #кто прочитал тот лох
             await message.delete() 
         except: 
             return await message.edit("Произошла непредвиденная ошибка")
