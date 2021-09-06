@@ -12,7 +12,7 @@ class ModuleLinkMod(loader.Module):
         if not args: 
             return await message.edit('Нет аргументов.') 
  
-        awai  message.edit('Ищем.') 
+        await  message.edit('Ищем.') 
         await sleep(1)
         await message.edit('Ищем..')
         await sleep(1)
