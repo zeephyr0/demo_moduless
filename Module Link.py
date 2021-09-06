@@ -13,6 +13,7 @@ class ModuleLinkMod(loader.Module):
     async def mlcmd(self, message): 
         args = utils.get_args_raw(message) 
         if not args: 
+        #да хули тебе надо•-•
             return await message.edit('Нет аргументов.') 
  
         await message.edit('Ищем..')
@@ -29,7 +30,8 @@ class ModuleLinkMod(loader.Module):
  
             out = io.BytesIO(r.__loader__.data) 
             out.name = f + ".py" 
-            out.seek(0) 
+            out.seek(0)
+            #0w0 
  
             await message.respond(text, file=out) 
             #кто прочитал тот лох
