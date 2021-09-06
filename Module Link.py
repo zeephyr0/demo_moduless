@@ -15,11 +15,7 @@ class ModuleLinkMod(loader.Module):
         if not args: 
             return await message.edit('Нет аргументов.') 
  
-        await message.edit('Ищем.') 
-        await sleep(1)
         await message.edit('Ищем..')
-        await sleep(1)
-        await message.edit('Ищем...')
 
         try: 
             f = ' '.join([x.strings["name"] for x in self.allmodules.modules if args.lower() == x.strings["name"].lower()]) 
