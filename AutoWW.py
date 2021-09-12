@@ -20,6 +20,9 @@ class AutoWWMod(loader.Module):
             elif "Стоп... Это что, конец? Всё? Вот она, ебучая вершина горы?" in message.raw_text:
                 await sleep(2);
                 await message.forward_to(963853904);
+            elif "Получено: Эфедрин" in message.raw_text:
+                await sleep(2);
+                await message.forward_to(963853904);
             if "Враги в канализации? Сомнительно, братан. Но воняет неприятно." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
