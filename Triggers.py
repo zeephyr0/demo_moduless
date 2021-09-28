@@ -2,16 +2,16 @@ from .. import loader, utils
  
  
 @loader.tds 
-class FiltersMod(loader.Module): 
+class TriggersMod(loader.Module): 
     """Триггеры""" 
-    strings = {"name": "Filters"} 
+    strings = {"name": "Triggers"} 
  
     async def client_ready(self, client, db): 
         self.db = db 
  
-    async def filtercmd(self, message): 
+    async def triggercmd(self, message): 
         """Добавить триггер в список.""" 
-        filters = self.db.get("Filters", "filters", {}) 
+        filters = self.db.get("Triggers", "triggers", {}) 
         key = utils.get_args_raw(message) # .lower() 
         reply = await message.get_reply_message()  
         chatid = str(message.chat_id) 
@@ -19,10 +19,10 @@ class FiltersMod(loader.Module):
         if not key and not reply: 
             return await message.edit("<code>Нет аргументов и реплая.</code>") 
  
-        if chatid not in filters: 
+        if chatid not in triggers: 
             filters.setdefault(chatid, {}) 
  
-        if key in filters[chatid]: 
+        if key in triggers[chatid]: 
             return await message.edit("<code>Такой триггер уже есть.</code>") 
  
         if reply: 
@@ -37,18 +37,18 @@ class FiltersMod(loader.Module):
             except IndexError: 
                 return await message.edit("<code>Нужен второй аргумент (через / )или реплай.</code>") 
  
-        filters[chatid].setdefault(key, msgid) 
-        self.db.set("Filters", "filters", filters) 
+        triggers[chatid].setdefault(key, msgid) 
+        self.db.set("Triggers", "triggers", triggers) 
         await message.edit(f"<code>Триггер \"{key}\" сохранён!</code>")  
  
  
     async def stopcmd(self, message): 
         """Удаляет триггер из списка.""" 
-        filters = self.db.get("Filters", "filters", {}) 
+        filters = self.db.get("Triggers", "triggers", {}) 
         args = utils.get_args_raw(message) 
         chatid = str(message.chat_id) 
  
-        if chatid not in filters: 
+        if chatid not in triggers: 
             return await message.edit("<code>В этом чате нет триггеров.</code>") 
  
         if not args: 
@@ -57,7 +57,7 @@ class FiltersMod(loader.Module):
         if args: 
             try: 
                 filters[chatid].pop(args) 
-                self.db.set("Filters", "filters", filters) 
+                self.db.set("Triggers", "triggers", triggers) 
                 await message.edit(f"<code>Триггер \"{args}\" удалён из чата!</code>") 
             except KeyError: 
                 return await message.edit(f"<code>Триггера \"{args}\" нет.</code>") 
@@ -67,23 +67,23 @@ class FiltersMod(loader.Module):
  
     async def stopallcmd(self, message): 
         """Удаляет все фильтры из списка чата.""" 
-        filters = self.db.get("Filters", "filters", {}) 
+        filters = self.db.get("Triggers", "triggers", {}) 
         chatid = str(message.chat_id) 
   
         if chatid not in filters: 
             return await message.edit("<code>В этом чате нет триггеров.</code>") 
  
-        filters.pop(chatid) 
-        self.db.set("Filters", "filters", filters) 
+        triggers.pop(chatid) 
+        self.db.set("Triggers", "triggers", triggers) 
         await message.edit("<code>Всётриггеры были удалены из списка чата!</code>") 
  
  
-    async def filterscmd(self, message): 
+    async def triggerscmd(self, message): 
         """Показывает список триггеров чата.""" 
-        filters = self.db.get("Filters", "filters", {}) 
+        filters = self.db.get("Triggers", "triggers", {}) 
         chatid = str(message.chat_id) 
  
-        if chatid not in filters: 
+        if chatid not in triggers: 
             return await message.edit("<code>В этом чате нет триггеров.</code>") 
  
         msg = "" 
@@ -94,13 +94,13 @@ class FiltersMod(loader.Module):
  
     async def watcher(self, message): 
         try: 
-            filters = self.db.get("Filters", "filters", {}) 
+            triggers = self.db.get("Triggers", "triggers", {}) 
             chatid = str(message.chat_id) 
             m = message.text.lower() 
-            if chatid not in filters: return 
+            if chatid not in triggers: return 
  
-            for _ in filters[chatid]: 
-                msg = await self.db.fetch_asset(filters[chatid][_]) 
+            for _ in triggers[chatid]: 
+                msg = await self.db.fetch_asset(triggers[chatid][_]) 
                 def_pref = self.db.get("friendly-telegram.main", "command_prefix") 
                 pref = '.' if not def_pref else def_pref[0] 
  
