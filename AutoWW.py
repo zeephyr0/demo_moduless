@@ -249,9 +249,9 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '👣Пустошь');
             elif "Теперь ты стал немного опытнее." in message.raw_text:
                 await sleep(3);
-                await message.client.send_message('@WastelandWarsBot', '🗣Харизма');
+                await message.client.send_message('@WastelandWarsBot', '❤️Живучесть');
             elif "Мудрый старец готов обучить тебя необходимым навыкам. Не бесплатно, разумеется. Крышечки тут всегда в ходу." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🗣Харизма');
+                await message.client.send_message('@WastelandWarsBot', '❤️Живучесть');
 
 
