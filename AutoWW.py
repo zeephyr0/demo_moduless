@@ -220,7 +220,7 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🏘Нью-Рино');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '💰Ломбард');
+                await message.client.send_message('@WastelandWarsBot', '🍺Бар');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Обменять все');
             elif "Получено:💌Медпак" in message.raw_text:
@@ -228,7 +228,6 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '💌 Медпак');
             if "Ты продал" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🍺Бар');
             if "🥖Взять булочку: 🕳80" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@WastelandWarsBot', '/eat2');
