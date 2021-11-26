@@ -222,7 +222,6 @@ class AutoWWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '🍺Бар');
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', 'Обменять все');
             elif "Получено:💌Медпак" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '💌 Медпак');
