@@ -1,5 +1,4 @@
 
- 
 from .. import loader, utils 
  
 import logging 
@@ -17,8 +16,8 @@ class AFKMod(loader.Module):
     strings = {"name": "AFK", 
                "gone": "<b>Я ушёл в AFK</b>", 
                "back": "<b>Я больше не в AFK</b>", 
-               "afk": "<b>Я в AFK уже {} </b>  \n<code>Отвечу сразу, как появится возможность. Не беси</code>", 
-               "afk_reason": "<b>Я в AFK уже {}  \nПричина:</b> <i>{}</i> \n<code>Отвечу сразу, как появится возможность. Не беси</code>"} 
+               "afk": "<b>Я в AFK уже {} </b>  \n<code>Отвечу сразу, как появится возможность.</code>", 
+               "afk_reason": "<b>Я в AFK уже {}  \nПричина:</b> <i>{}</i> \n<code>Отвечу сразу, как появится возможность.</code>"} 
  
     async def client_ready(self, client, db): 
         self._db = db 
