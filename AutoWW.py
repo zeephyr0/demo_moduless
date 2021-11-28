@@ -8,7 +8,7 @@ import random
 
 @loader.tds 
 class AutoWWMod(loader.Module): 
-    """Модуль со всей нужной автоматизацией. Особенности модуля:\n\n• Прохождение данджей на 🚷23км, 📯45км\n• Поедание сырого мяса(так как его много) на 🚷37м. В случае если на 37км это не произошло, мясо съедается на 👣39км\n• Запись на битву с боссами на 31-35км\n• Отдых в уютном подвальчике на 👣51км\•n Проход через все тз\n• Круг заканчивается на 🚷57км\n• Вкачка навыков, и покупка Хилок в Нью Рино\n• Убиство всех, кто слабее тебя в тз, кроме тех, кто состоит в фаготах и тестготах\n\nv 1.0.0""" 
+    """Модуль со всей нужной автоматизацией.""" 
     strings = {"name": "AutoWW"}
 
     async def watcher(self, message):
@@ -218,13 +218,24 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '💉 Мед-Х');
             if "👝Сумка под медпаки вмещает максимум 3 шт." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🏘Нью-Рино');
-                await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🍺Бар');
-                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🧪Стимбласт');
             elif "Получено:💌Медпак" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '💌 Медпак');
+            if "Ты можешь носить максимум 2 🧪Стимбласта с собой." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🧪Стимбласт+');
+            elif "Получено: 🧪Стимбласт" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🧪Стимбласт');
+            if "Ты можешь носить только 1 🧪Стимбласт+ с собой." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🏘Нью-Рино');
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🍺Бар');
+            elif "Получено: 🧪Стимбласт+" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@WastelandWarsBot', '🧪Стимбласт+');
             if "Ты продал" in message.raw_text:
                 await sleep(2);
             if "🥖Взять булочку: 🕳80" in message.raw_text:
