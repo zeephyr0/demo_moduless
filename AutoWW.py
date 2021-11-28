@@ -169,7 +169,7 @@ class AutoWWMod(loader.Module):
                 await message.client.send_message('@WastelandWarsBot', '👣Идти дaльше');
             elif "Ты можешь попытаться воспользоваться элементом неожиданности и напасть на него, или же аккуратно идти дальше." in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@WastelandWarsBot', '🔪Напасть');
+                await message.client.send_message('@WastelandWarsBot', '👣Идти дaльш');
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', '/eq_1002');
             elif "Мерзавец успел скрыться, пока ты добирался до места." in message.raw_text:
