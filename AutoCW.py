@@ -3,7 +3,6 @@
 
 from .. import loader
 from asyncio import sleep
-
 @loader.tds 
 class AutoCWMod(loader.Module): 
     """Нахуя тебе это?""" 
@@ -17,6 +16,7 @@ class AutoCWMod(loader.Module):
             if "✅ На битве -" in message.raw_text:
                 await sleep(2)
                 await message.client.send_message('@citywars2_bot', '/buy_set_1');
+                await message.client.send_message('@citywars2_bot', '/war');
                 await sleep(300);
                 await message.click();
         if message.sender_id == 1399565278:
