@@ -26,3 +26,8 @@ class EpsillionWarsMod(loader.Module):
             if "📍 Ты победил своего врага" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', '✅ Забрать нaграду');
+            if "Ты был отправлен восстанавливаться в город" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarBot', '🏞 Устье реки');
