@@ -35,3 +35,6 @@ class EpsillionWarsMod(loader.Module):
             if "Что будешь блокировать?" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', 'Ноги, голова');
+            if "💖 Ваше здоровье полностью восстановлено" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarBot', '⚔️ Найти врагов');
