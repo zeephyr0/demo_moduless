@@ -23,3 +23,6 @@ class EpsillionWarsMod(loader.Module):
             if "💖 Ваше здоровье полностью восстановлено" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', '⚔️ Найти врагов');
+            if "📍 Ты победил своего врага" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarBot', '✅ Забрать нaграду');
