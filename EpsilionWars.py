@@ -11,7 +11,25 @@ class EpsillionWarsMod(loader.Module):
 
     async def watcher(self, message):
         if message.sender_id == 776510403:
-            if "Вот ты и встретил своего врага" in message.raw_text:
+            if "Куда будешь бить?" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarsBot', 'В ноги');
+            if "Ход 1" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarsBot', 'В ноги');
+            if "Ход 2" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarsBot', 'В ноги');
+            if "Ход 3" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarsBot', 'В ноги');
+            if "Ход 4" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarsBot', 'В ноги');
+            if "Ход 5" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarsBot', 'В ноги');
+            if "Ход 6" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarsBot', 'В ноги');
             if "Что будешь блокировать?" in message.raw_text:
