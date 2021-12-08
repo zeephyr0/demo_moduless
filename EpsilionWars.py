@@ -26,6 +26,9 @@ class EpsillionWarsMod(loader.Module):
             if "📍 Ты победил своего врага" in message.raw_text:
                 await sleep(random.choice(time))
                 await message.client.send_message('@EpsilionWarBot', '✅ Забрать нaграду');
+            if "🔸 уровень, твое ❤️ здоровье полностью восстановлено" in message.raw_text:
+                await sleep(random.choice(time))
+                await message.client.send_message('@EpsilionWarBot', '⚔️ Найти врагов');
             if "💖 Ваше здоровье полностью восстановлено" in message.raw_text:
                 await sleep(random.choice(time))
                 await message.client.send_message('@EpsilionWarBot', '⚔️ Найти врагов');
