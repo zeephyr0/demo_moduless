@@ -14,7 +14,10 @@ class EpsillionWarsMod(loader.Module):
             if "Куда будешь бить?" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', 'В ноги');
-            if "Ход" in message.raw_text:
+            if "📍 Ты победил своего врага" in message.raw_text:
+                await sleep(3)
+                await message.client.send_message('@EpsilionWarBot', '✅ Забрать нaграду');
+            elif "Ход" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', 'В ноги');
             if "Что будешь блокировать?" in message.raw_text:
@@ -23,9 +26,6 @@ class EpsillionWarsMod(loader.Module):
             if "💖 Ваше здоровье полностью восстановлено" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', '⚔️ Найти врагов');
-            if "📍 Ты победил своего врага" in message.raw_text:
-                await sleep(3)
-                await message.client.send_message('@EpsilionWarBot', '✅ Забрать нaграду');
             if "Ты был отправлен восстанавливаться в город" in message.raw_text:
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
