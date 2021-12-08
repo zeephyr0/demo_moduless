@@ -30,4 +30,4 @@ class EpsillionWarsMod(loader.Module):
                 await sleep(3)
                 await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
                 await sleep(3)
-                await message.client.send_message('@EpsilionWarBot', '🏞 Устье реки');
+                await message.client.send_message('@EpsilionWarBot', '🏕 Дом в лесу');
