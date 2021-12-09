@@ -36,4 +36,4 @@ class EpsillionWarsMod(loader.Module):
                 await sleep(random.choice(time))
                 await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
                 await sleep(random.choice(time))
-                await message.client.send_message('@EpsilionWarBot', '🏕 Дом в лесу');
+                await message.client.send_message('@EpsilionWarBot', '🏜 Пустошь');
