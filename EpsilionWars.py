@@ -10,7 +10,7 @@ class EpsillionWarsMod(loader.Module):
     strings = {"name": "EpsillionWars"}
 
     async def watcher(self, message):
-        time = [2, 5, 8]
+        time = [2, 4, 6]
         attack = ['В ноги', 'В пояс', 'В живот', 'В грудь', 'В голову']
         defense = ['Ноги, голова, грудь', 'Пояс, ноги, голова', 'Живот, пояс, ноги', 'Голову, грудь, живот', 'Грудь, живот, пояс']
         if message.sender_id == 776510403:
