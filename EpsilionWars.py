@@ -37,3 +37,9 @@ class EpsillionWarsMod(loader.Module):
                 await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
                 await sleep(random.choice(time))
                 await message.client.send_message('@EpsilionWarBot', '🏜 Пустошь');
+            if " Ты отправляешься в ближайший город на восстановление" in message.raw_text:
+                await sleep(random.choice(time))
+                await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
+                await sleep(random.choice(time))
+                await message.client.send_message('@EpsilionWarBot', '🏜 Пустошь');
+
