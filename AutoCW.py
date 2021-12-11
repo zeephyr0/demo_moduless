@@ -10,22 +10,19 @@ class AutoCWMod(loader.Module):
     strings = {"name": "AutoCW"}
 
     async def watcher(self, message):
-        time = [1, 2, 4, 6]
-        buttons = [0, 1, 2]
-        change = [9, 120]
         if message.chat_id == -1001222463353 and message.sender_id == 701686415:
             if "Забирайте свой бонус🧚‍♀💛" in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@citywars2_bot', '/daily');
             if "✅ На битве -" in message.raw_text:
-                await sleep(random.choice(time))
+                await sleep(2)
                 await message.client.send_message('@citywars2_bot', '/buy_set_1');
                 await message.client.send_message('@citywars2_bot', '/war');
                 await sleep(300);
                 await message.click();
         if message.sender_id == 1399565278:
             if "@CityWars2Reports" in message.raw_text:
-                await sleep(random.choice(time);
+                await sleep(2);
                 await message.forward_to(1222463353);
             if "👮 На улицах" in message.raw_text:
                 await sleep(10);
