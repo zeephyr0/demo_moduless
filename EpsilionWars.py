@@ -12,7 +12,7 @@ class EpsillionWarsMod(loader.Module):
     async def watcher(self, message):
         time = [2, 4, 6]
         attack = ['В ноги', 'В пояс', 'В живот', 'В грудь', 'В голову']
-        defense = ['Ноги, голова, грудь', 'Пояс, ноги, голова', 'Живот, пояс, ноги', 'Голову, грудь, живот', 'Грудь, живот, пояс']
+        defense = ['Ноги, голова', 'Пояс, ноги', 'Живот, пояс', 'Грудь, живот', 'Голова, грудь']
         if message.sender_id == 776510403:
             if "Куда будешь бить?" in message.raw_text:
                 await sleep(random.choice(time))
