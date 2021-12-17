@@ -10,8 +10,9 @@ class AutoCWMod(loader.Module):
     strings = {"name": "AutoCW"}
 
     async def watcher(self, message):
-        time = [5, 10, 15]
+        sleep = [4, 120]
         buttons = [0, 1, 2]
+        time = [2, 4, 6]
         if message.sender_id == 1399565278:
             if "👮 Ты отдохнул" in message.raw_text:
                 await sleep(10);
