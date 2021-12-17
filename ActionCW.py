@@ -34,6 +34,9 @@ class ActionsCWMod(loader.Module):
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(1);
                 await message.client.send_message('@citywars2_bot', '🚑 Лечим');
+            if "🚑 Ты отдохнул" in message.raw_text:
+                await sleep(5);
+                await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(1);
                 await message.client.send_message('@citywars2_bot', '🚑 Лечим');
             if "#лечка" in message.raw_text:
