@@ -54,3 +54,6 @@ class AutoCWMod(loader.Module):
             if "Глава твоей банды запускает атаку на" in message.raw_text:
                 await sleep(random.choice(time));
                 await message.click();
+            if "Готов ли ты отбиваться? У тебя есть минута на ответ..." in message.raw_text:
+                await sleep(random.choise(sleep))
+                await message.click()
