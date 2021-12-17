@@ -5,9 +5,9 @@ from asyncio import sleep
 import random
 
 @loader.tds 
-class AutoCWMod(loader.Module): 
+class ActionsCWMod(loader.Module): 
     """Нахуя тебе это?""" 
-    strings = {"name": "AutoCW"}
+    strings = {"name": "ActionsCW"}
 
     async def watcher(self, message):
         sleep = [4, 120]
