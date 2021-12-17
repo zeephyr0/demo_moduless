@@ -10,9 +10,9 @@ class ActionsCWMod(loader.Module):
     strings = {"name": "ActionsCW"}
 
     async def watcher(self, message):
-        sleep = [4, 120]
+        time1 = [4, 120]
         buttons = [0, 1, 2]
-        time = [2, 4, 6]
+        time2 = [2, 4, 6]
         if message.sender_id == 1399565278:
             if "👮 Ты отдохнул" in message.raw_text:
                 await sleep(10);
@@ -55,10 +55,10 @@ class ActionsCWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@citywars2_bot', '🏪 Грабим');
             if "Глава твоей банды запускает атаку на" in message.raw_text:
-                await sleep(random.choice(time));
+                await sleep(random.choice(time2));
                 await message.click();
             if "Готов ли ты отбиваться? У тебя есть минута на ответ..." in message.raw_text:
-                await sleep(random.choise(sleep))
+                await sleep(random.choise(time1))
                 await message.click()
             if "Куда будешь стрелять?" in message.raw_text:
                 await message.click(random.choice(buttons));
