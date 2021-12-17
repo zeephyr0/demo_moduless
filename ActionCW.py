@@ -10,7 +10,9 @@ class AutoCWMod(loader.Module):
     strings = {"name": "AutoCW"}
 
     async def watcher(self, message):
-        if message.sender_id ==:
+        time = [5, 10, 15]
+        buttons = [0, 1, 2]
+        if message.sender_id == 1399565278:
             if "👮 Ты отдохнул" in message.raw_text:
                 await sleep(10);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
@@ -48,3 +50,6 @@ class AutoCWMod(loader.Module):
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(2);
                 await message.client.send_message('@citywars2_bot', '🏪 Грабим');
+            if "Глава твоей банды запускает атаку на" in message.raw_text:
+                await sleep(random.choice(time));
+                await message.click();
