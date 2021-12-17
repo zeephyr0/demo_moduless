@@ -12,7 +12,7 @@ class EpsillionWarsMod(loader.Module):
     async def watcher(self, message):
         time = [2, 4, 6]
         attack = ['В ноги', 'В пояс', 'В живот', 'В грудь', 'В голову']
-        defense = ['Ноги, голова', 'Пояс, ноги', 'Живот, пояс', 'Грудь, живот', 'Голова, грудь']
+        defense = ['Ноги, голова, грудь', 'Пояс, ноги, голова', 'Живот, пояс, ноги', 'Голову, грудь, живот', 'Грудь, живот, пояс']
         if message.sender_id == 776510403:
             if "Куда будешь бить?" in message.raw_text:
                 await sleep(random.choice(time))
@@ -36,10 +36,10 @@ class EpsillionWarsMod(loader.Module):
                 await sleep(random.choice(time))
                 await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
                 await sleep(random.choice(time))
-                await message.client.send_message('@EpsilionWarBot', '🏜 Пустошь');
+                await message.client.send_message('@EpsilionWarBot', '🏯 Забытый Дворец');
             if " Ты отправляешься в ближайший город на восстановление" in message.raw_text:
                 await sleep(random.choice(time))
                 await message.client.send_message('@EpsilionWarBot', '🗺 Карта');
                 await sleep(random.choice(time))
-                await message.client.send_message('@EpsilionWarBot', '🏜 Пустошь');
+                await message.client.send_message('@EpsilionWarBot', '🏯 Забытый Дворец');
 
