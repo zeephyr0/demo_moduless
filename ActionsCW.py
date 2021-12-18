@@ -24,23 +24,21 @@ class ActionsCWMod(loader.Module):
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(2);
                 await message.client.send_message('@citywars2_bot', '👮 Патрулируем');
+            if "#патруль" in message.raw_text:
+                await sleep(40);
+                await message.forward_to(-1001222463353);
             if "🚑 Cостоянию здоровья" in message.raw_text:
-                await sleep(15);                
+                await sleep(15);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
-                await sleep(1);
-                await message.client.send_message('@citywars2_bot', '🚑 Лечим');
             if "🚑 К сожалению, тебе не хватило умения, чтобы вылечить" in message.raw_text:
                 await sleep(245);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(1);
                 await message.client.send_message('@citywars2_bot', '🚑 Лечим');
-            if "🚑 Ты отдохнул" in message.raw_text:
-                await sleep(5);
-                await message.client.send_message('@citywars2_bot', '🕹 Действия');
-                await sleep(1);
-                await message.client.send_message('@citywars2_bot', '🚑 Лечим');
             if "#лечка" in message.raw_text:
-                await sleep(245);
+                await sleep(40);
+                await message.forward_to(701686415);
+                await sleep(205);
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(1);
                 await message.client.send_message('@citywars2_bot', '🚑 Лечим');
@@ -54,6 +52,7 @@ class ActionsCWMod(loader.Module):
                 await message.client.send_message('@citywars2_bot', '🕹 Действия');
                 await sleep(2);
                 await message.client.send_message('@citywars2_bot', '🏪 Грабим');
+                await message.forward_to(701686415);
             if "Глава твоей банды запускает атаку на" in message.raw_text:
                 await sleep(random.choice(time2));
                 await message.click();
