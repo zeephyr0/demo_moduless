@@ -30,6 +30,8 @@ class ActionsCWMod(loader.Module):
             if "🚑 Cостоянию здоровья" in message.raw_text:
                 await sleep(15);
                 await message.client.send_message('@CityWars2_bot', '🕹 Действия');
+                await sleep(1);
+                await message.client.send_message('@CityWars2_bot', '🚑 Лечим');
             if "🚑 Ты отдохнул" in message.raw_text:
                 await sleep(5);
                 await message.client.send_message('@CityWars2_bot', '🕹 Действия');
