@@ -80,4 +80,4 @@ class AutoCWMod(loader.Module):
                 await message.click();
         if message.sender_id == 1159155249:
             if "У меня для вас есть несколько 🎁 Подарков!" in message.raw_text:
-                await message.respond(766724219, '<a href="tg://user?id=2124660993">писька</a> @demoniss_li @Demon_sIayer @qqwiizxx @axaxaxasa'
+                await message.respond(766724219, '<a href="tg://user?id=2124660993">писька</a> @demoniss_li @Demon_sIayer @qqwiizxx @axaxaxasa')
