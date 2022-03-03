@@ -11,12 +11,12 @@ class AutoClWMod(loader.Module):
     strings = {"name": "AutoClW"}
 
     async def adv(self, message):
-        """Отправить игрока в путешествие "Кража люков""""
+    """Отправить игрока в путешествие "Кража люков""""
         await sleep(2);
         await message.client.send_message('@clan_warsbot', '🗺Приключения');
 
     async def stopadv(self, message):
-        """Отменить путешествие"""
+    """Отменить путешествие"""
         await sleep(2);
         await message.client.send_message('@clan_warsbot', 'Отменить приключение❌');
 
