@@ -11,7 +11,7 @@ class AutoClWMod(loader.Module):
     strings = {"name": "AutoClW"}
 
     async def watcher(self, message):
-        if message.chat_id == -1001222463353 and message.sender_id == 701686415:
+        if message.sender_id == 2063668248:
             if "🎊Приключение «Кража люков» успешно завершено!" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '🗺Приключения');
