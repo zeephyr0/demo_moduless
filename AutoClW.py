@@ -1,7 +1,7 @@
 #и хули ты тут забыл?
 #создано в развлекательных и ознакомительных целях
 #by ZEPHYR0
-#v1.4.1
+#v1.5.1
 
 from .. import loader
 from asyncio import sleep
@@ -37,3 +37,9 @@ class AutoClWMod(loader.Module):
             if "Отправиться в приключение💎" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
+        if message.chat_id == -1001649471126 and message.sender_id == 2063668248:
+            if "🎭Результаты войны кланов за предприятия" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@clan_warsbot', '🗺Приключения');
+
+
