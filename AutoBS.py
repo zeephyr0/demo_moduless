@@ -28,6 +28,8 @@ class AutoBSMod(loader.Module):
             elif "🗺 Разведка" in message.raw_text:
                 await sleep(2);
                 await message.click();
+                await sleep(2);
+                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             if "⚔️ Битва с" in message.raw_text:
                 await sleep();
                 await message.forward_to(666473433);
