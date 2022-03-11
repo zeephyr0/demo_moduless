@@ -22,12 +22,12 @@ class AutoBSMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
         if message.sender_id == 764095451:
-            if "🗺 Разведка" in message.raw_text:
-                for i in range(1):
-                    await sleep(2);
-                    await message.click();
-                    await sleep(2);
-                    await message.click(1);
+            if "Цель:" in message.raw_text:
+                await sleep(2);
+                await message.click(1);
+            elif "🗺 Разведка" in message.raw_text:
+                await sleep(2);
+                await message.click();
             if "⚔️ Битва с" in message.raw_text:
                 await sleep();
                 await message.forward_to(666473433);
