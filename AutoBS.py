@@ -87,21 +87,6 @@ class AutoBSMod(loader.Module):
                 await message.click();
                 await sleep(4);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
-            elif "Территория: 13," in message.raw_text:
-                await sleep(2);
-                await message.click();
-                await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
-            elif "Территория: 14," in message.raw_text:
-                await sleep(2);
-                await message.click();
-                await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
-            elif "Территория: 15," in message.raw_text:
-                await sleep(2);
-                await message.click();
-                await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             elif "Цель:" in message.raw_text:
                 await sleep(2);
                 await message.click(1);
