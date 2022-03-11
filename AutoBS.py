@@ -22,7 +22,10 @@ class AutoBSMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
         if message.sender_id == 764095451:
-            if "Территория: 1," in message.raw_text:
+            if "[🐉🤺]ZEPHYR" in message.raw_text:
+                await sleep(2);
+                await message.forward_to(666473433);
+            elif "Территория: 1," in message.raw_text:
                 await sleep(2);
                 await message.click();
                 await sleep(4);
@@ -103,3 +106,11 @@ class AutoBSMod(loader.Module):
             if "Копать еще:" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '/dig');
+            if "🕑 Дозор окончен." in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@BSv2Bot', '⬆️ Наверх');
+                await sleep(2);
+                await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
+                await sleep(2);
+                await message.client.send_message('@BSv2Bot', '🕑 Дозор');
+
