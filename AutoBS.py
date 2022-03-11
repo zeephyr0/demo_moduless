@@ -27,6 +27,9 @@ class AutoBSMod(loader.Module):
                 await message.click();
                 await sleep(2);
                 await message.click(1);
-            if "🏦🔥Банк ограблен!" in message.raw_text:
+            if "⚔️ Битва с" in message.raw_text:
+                await sleep();
+                await message.forward_to(666473433);
+            if "Копать еще:" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@clan_warsbot', '🏦 Ограбление банка (1 час)');
+                await message.client.send_message('@BSv2Bot', '/dig');
