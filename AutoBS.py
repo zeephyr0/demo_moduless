@@ -110,8 +110,8 @@ class AutoBSMod(loader.Module):
                 await message.click();
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
-            if "⚔️ Битва с" in message.raw_text:
-                await sleep();
+            if "Всего раундов:" in message.raw_text:
+                await sleep(2);
                 await message.forward_to(666473433);
             if "Копать еще:" in message.raw_text:
                 await sleep(2);
