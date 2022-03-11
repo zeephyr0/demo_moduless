@@ -9,10 +9,14 @@ class AutoBSMod(loader.Module):
         if message.sender_id == 2063668248:
             if "🎊Приключение «Кража люков» успешно завершено!" in message.raw_text:
                 await sleep(2);
+                await message.client.send_message('@BSv2Bot', '⬆️ Наверх');
+                await sleep(2);
                 await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             elif "🚓Приключение провалено!" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@BSv2Bot', '⬆️ Наверх');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
                 await sleep(2);
