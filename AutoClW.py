@@ -41,5 +41,10 @@ class AutoClWMod(loader.Module):
             if "🎭Результаты войны кланов за предприятия" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '🗺Приключения');
+        if message.sender_id == 764095451:
+            if "Всего раундов:" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
+
 
 
