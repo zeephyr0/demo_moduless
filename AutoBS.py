@@ -101,6 +101,8 @@ class AutoBSMod(loader.Module):
             if "Всего раундов:" in message.raw_text:
                 await sleep(2);
                 await message.forward_to(666473433);
+                await sleep(130);
+                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             if "Копать еще:" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '/dig');
@@ -111,4 +113,6 @@ class AutoBSMod(loader.Module):
                 await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🕑 Дозор');
-
+            if "🕑 Чтобы отправить дозорных необходимо" in message.raw_text:
+                await sleep(2);
+                await message.click();
