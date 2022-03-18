@@ -26,7 +26,7 @@ class AutoBSClWMod(loader.Module):
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             if "🏦🔥Банк ограблен!" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@clan_warsbot', '🏦 Ограбление банка (1 час)');
+                await message.client.send_message('@clan_warsbot', '🗺Приключения');
             if "🚓Кто-то из вас оказался крысой и слил ваши планы полиции!" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '🗺Приключения');
@@ -111,6 +111,26 @@ class AutoBSClWMod(loader.Module):
                 await sleep(4);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             elif "Территория: 12," in message.raw_text:
+                await sleep(2);
+                await message.click();
+                await sleep(4);
+                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+            elif "Территория: 13," in message.raw_text:
+                await sleep(2);
+                await message.click();
+                await sleep(4);
+                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+            elif "Территория: 14," in message.raw_text:
+                await sleep(2);
+                await message.click();
+                await sleep(4);
+                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+            elif "Территория: 15," in message.raw_text:
+                await sleep(2);
+                await message.click();
+                await sleep(4);
+                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+            elif "Территория: 16," in message.raw_text:
                 await sleep(2);
                 await message.click();
                 await sleep(4);
