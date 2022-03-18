@@ -11,14 +11,14 @@ class AutoBSClWMod(loader.Module):
         time2 = [30, 50, 70] 
         if message.sender_id == 2063668248:
             if "🎊Приключение «Кража люков» успешно завершено!" in message.raw_text:
-                await sleep(random.randint(time1));
+                await sleep(random.choice(time1));
                 await message.client.send_message('@BSv2Bot', '⬆️ Наверх');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🗺 Разведка');
             elif "🚓Приключение провалено!" in message.raw_text:
-                await sleep(random.randint(time1));
+                await sleep(random.choice(time1));
                 await message.client.send_message('@BSv2Bot', '⬆️ Наверх');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
@@ -126,13 +126,13 @@ class AutoBSClWMod(loader.Module):
             if "Всего раундов:" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
-                await sleep(random.randint(time1));
+                await sleep(random.choice(time1));
                 await message.forward_to(666473433);
             if "Копать еще:" in message.raw_text:
-                await sleep(random.randint(time2));
+                await sleep(random.choice(time2));
                 await message.client.send_message('@BSv2Bot', '/dig');
             if "🕑 Дозор окончен." in message.raw_text:
-                await sleep(random.randint(time2));
+                await sleep(random.choice(time2));
                 await message.client.send_message('@BSv2Bot', '⬆️ Наверх');
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '⚔️ Гарнизон');
