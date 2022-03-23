@@ -14,6 +14,9 @@ class AutoClWMod(loader.Module):
             if "🎊Приключение «Кража люков» успешно завершено!" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
+            if "🎊Приключение «Бриллиантовая афера» успешно завершено!" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@clan_warsbot', '💎 Бриллиантовая афера (3 часа)');
             elif "🚓Приключение провалено!" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
