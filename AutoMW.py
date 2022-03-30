@@ -36,6 +36,10 @@ class AutoMWMod(loader.Module):
                 await message.client.send_message('@metro_wars_bot', '↕️ По направлению');
                 await sleep(4);
                 await message.client.send_message('@metro_wars_bot', '↖');
+                await sleep(4);
+                await message.client.send_message('@metro_wars_bot', '✅ Подтвердить');
+                await sleep(8);
+                await message.client.send_message('@metro_wars_bot', '📜 Карта боя');
             if "Шаг: 2" in message.raw_text:
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
