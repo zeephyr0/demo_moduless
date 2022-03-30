@@ -51,90 +51,56 @@ class AutoBSClWMod(loader.Module):
                 await sleep(2);
                 await message.forward_to(-1001494500538);
             elif "Территория: 1," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 2," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 3," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 4," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 5," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 6," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 6," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 7," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 8," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 9," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 10," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 11," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 12," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 13," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 14," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 15," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Территория: 16," in message.raw_text:
-                await sleep(2);
-                await message.click();
                 await sleep(4);
-                await message.client.send_message('@BSv2Bot', '🗺 Разведка');
+                await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Цель:" in message.raw_text:
                 await sleep(2);
                 await message.click(1);
