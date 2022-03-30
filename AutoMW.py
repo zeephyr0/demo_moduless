@@ -14,8 +14,10 @@ class AutoMWMod(loader.Module):
             if "Ты полноценно отдохнул!" in message.raw_text:
                 await sleep(30);
                 await message.client.send_message('@metro_wars_bot', '/g');
-                await sleep(5)
+                await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '🏜 Зоопарк [👾1-6🔮31-32]🔋25');
+                await sleep(10);
+                await message.client.send_message('@metro_wars_bot', '➡️ Вперёд на Зоопарк');
             if "Активирован" in message.raw_text:
                 await sleep(2);
                 await message.click();
