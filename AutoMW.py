@@ -28,7 +28,7 @@ class AutoMWMod(loader.Module):
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '⚔️ Драться');
             if "Шаг: 1" in message.raw_text:
-                await sleep(random.choose(time));
+                await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
             if "Бой выигран" in message.raw_text:
                 await sleep(7);
