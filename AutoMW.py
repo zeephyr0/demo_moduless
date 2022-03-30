@@ -29,6 +29,15 @@ class AutoMWMod(loader.Module):
                 await message.client.send_message('@metro_wars_bot', '⚔️ Драться');
             if "Шаг: 1" in message.raw_text:
                 await sleep(5);
+                await message.client.send_message('@metro_wars_bot', '🌀 Умения');
+                await sleep(7);
+                await message.client.send_message('@metro_wars_bot', '🖲 Ловушка');
+                await sleep(6);
+                await message.client.send_message('@metro_wars_bot', '↕️ По направлению');
+                await sleep(4);
+                await message.client.send_message('@metro_wars_bot', '↖');
+            if "Шаг: 2" in message.raw_text:
+                await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
             if "Бой выигран" in message.raw_text:
                 await sleep(7);
