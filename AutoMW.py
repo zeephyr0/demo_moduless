@@ -15,7 +15,7 @@ class AutoMWMod(loader.Module):
                 await sleep(30);
                 await message.client.send_message('@metro_wars_bot', '/g');
                 await sleep(5);
-                await message.client.send_message('@metro_wars_bot', '🏜 Тверская [👾1-4🔮35-36]🔋25');
+                await message.client.send_message('@metro_wars_bot', '🏜 Тверская [👾1-4🔮35-36]🔋30');
                 await sleep(10);
                 await message.client.send_message('@metro_wars_bot', '➡️ Вперёд на Тверская');
             if "Активирован" in message.raw_text:
