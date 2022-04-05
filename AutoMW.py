@@ -16,8 +16,6 @@ class AutoMWMod(loader.Module):
                 await message.client.send_message('@metro_wars_bot', '/g');
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '🏜 Маяковская [👾1-4🔮35-36]🔋30');
-                await sleep(10);
-                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Тверская');
             if "Активирован" in message.raw_text:
                 await sleep(2);
                 await message.click();
@@ -51,7 +49,7 @@ class AutoMWMod(loader.Module):
                 await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
             if "Бой выигран" in message.raw_text:
                 await sleep(7);
-                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Маяковская');
+                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Тверская');
             if "Вы подошли к выходу на поверхность Тверская." in message.raw_text:
                 await sleep(4);
                 await message.client.send_message('@metro_wars_bot', '/g');
