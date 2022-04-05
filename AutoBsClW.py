@@ -103,7 +103,7 @@ class AutoBSClWMod(loader.Module):
                 await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
             elif "Цель:" in message.raw_text:
                 await sleep(2);
-                await message.click(1);
+                await message.client.send_message('@BSv2Bot', '⚔️ Атаковать');
             elif "🗺 Разведка" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@BSv2Bot', '🔍 Иcкaть');
