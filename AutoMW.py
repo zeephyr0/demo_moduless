@@ -15,7 +15,7 @@ class AutoMWMod(loader.Module):
                 await sleep(30);
                 await message.client.send_message('@metro_wars_bot', '/g');
                 await sleep(5);
-                await message.client.send_message('@metro_wars_bot', '🏜 Маяковская [👾1-4🔮35-36]🔋30');
+                await message.client.send_message('@metro_wars_bot', '🏜 Тверская [👾1-4🔮35-36]🔋30');
             if "Активирован" in message.raw_text:
                 await sleep(2);
                 await message.click();
@@ -27,7 +27,7 @@ class AutoMWMod(loader.Module):
                 await message.client.send_message('@metro_wars_bot', '👾 Поиск монстров');
             if "Монстров нет" in message.raw_text:
                 await sleep(5);
-                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Тверская');
+                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Маяковская');
             if "На вас нападают:" in message.raw_text:
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '⚔️ Драться');
