@@ -47,9 +47,6 @@ class AutoMWMod(loader.Module):
             if "Шаг: 2" in message.raw_text:
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
-            if "Вы подошли к выходу на поверхность Маяковская. Убедитесь в исправности" in message.raw_text:
-                await sleep(4);
-                await message.client.send_message('@metro_wars_bot', '/g');
 
 
 
