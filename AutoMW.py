@@ -13,9 +13,9 @@ class AutoMWMod(loader.Module):
         if message.sender_id == 1745526034:
             if "Ты полноценно отдохнул!" in message.raw_text:
                 await sleep(30);
-                await message.client.send_message('@metro_wars_bot', '/g');
-                await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '🏜 Тверская [👾1-4🔮35-36]🔋30');
+                await sleep(5);
+                await message.client.send_message('@metro_wars_bot', '/g');
             if "Активирован" in message.raw_text:
                 await sleep(2);
                 await message.click();
@@ -39,7 +39,7 @@ class AutoMWMod(loader.Module):
                 await sleep(6);
                 await message.client.send_message('@metro_wars_bot', '↕️ По направлению');
                 await sleep(4);
-                await message.client.send_message('@metro_wars_bot', '↖');
+                await message.client.send_message('@metro_wars_bot', '↘');
                 await sleep(4);
                 await message.client.send_message('@metro_wars_bot', '✅ Подтвердить');
                 await sleep(8);
