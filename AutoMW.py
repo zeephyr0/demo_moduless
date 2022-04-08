@@ -26,7 +26,7 @@ class AutoMWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@metro_wars_bot', '➡️ Вперёд на Маяковская');
             elif "Станция отправления" in message.raw_text:
-                await sleep(4);
+                await sleep(1);
                 await message.client.send_message('@metro_wars_bot', '👾 Поиск монстров');
             if "Монстров нет" in message.raw_text:
                 await sleep(5);
