@@ -13,7 +13,7 @@ class AutoMWMod(loader.Module):
         if message.sender_id == 1745526034:
             if "Ты полноценно отдохнул!" in message.raw_text:
                 await sleep(30);
-                await message.client.send_message('@metro_wars_bot', '🏜 Тверская [👾1-4🔮35-36]🔋30');
+                await message.client.send_message('@metro_wars_bot', '🏜 Маяковская [👾1-4🔮35-36]🔋30');
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '/g');
             if "Активирован" in message.raw_text:
@@ -24,13 +24,13 @@ class AutoMWMod(loader.Module):
                 await message.click();
             if "🔋145/150" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@metro_wars_bot', '➡️ Вперёд на Тверская');
+                await message.client.send_message('@metro_wars_bot', '➡️ Вперёд на Маяковская');
             elif "Станция отправления" in message.raw_text:
                 await sleep(4);
                 await message.client.send_message('@metro_wars_bot', '👾 Поиск монстров');
             if "Монстров нет" in message.raw_text:
                 await sleep(5);
-                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Маяковская');
+                await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Тверская');
             if "На вас нападают:" in message.raw_text:
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '⚔️ Драться');
