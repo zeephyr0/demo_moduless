@@ -32,9 +32,21 @@ class AutoMWMod(loader.Module):
                 await sleep(5);
                 await message.client.send_message('@metro_wars_bot', '⬅️ Назад на Тверская');
             if "На вас нападают:" in message.raw_text:
-                await sleep(5);
+                await sleep(2);
                 await message.client.send_message('@metro_wars_bot', '⚔️ Драться');
-            if "Шаг: 1" in message.raw_text:
+                await sleep(7);
+                await message.client.send_message('@metro_wars_bot', '🌀 Умения');
+                await sleep(4);
+                await message.client.send_message('@metro_wars_bot', '🖲 Ловушка');
+                await sleep(4);
+                await message.client.send_message('@metro_wars_bot', '↕️ По направлению');
+                await sleep(4);
+                await message.client.send_message('@metro_wars_bot', '↖');
+                await sleep(4);
+                await message.client.send_message('@metro_wars_bot', '✅ Подтвердить');
+                await sleep(6);
+                await message.client.send_message('@metro_wars_bot', '📜 Карта боя');
+            if "Вы нападаете на" in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@metro_wars_bot', '🌀 Умения');
                 await sleep(4);
