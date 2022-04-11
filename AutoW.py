@@ -16,7 +16,7 @@ class VikingsMod(loader.Module):
         if message.sender_id == 960603914:
             if "Выбери, куда отправишься" in message.raw_text:
                 await sleep(1);
-                await message.click(1);
+                await message.click();
             if "Ты вернулся из леса:" in message.raw_text:
                await sleep(1);
                await message.client.send_message('@vikinggame_bot', '💠Режимы');
