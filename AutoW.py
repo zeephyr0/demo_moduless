@@ -20,7 +20,7 @@ class VikingsMod(loader.Module):
             if "Готов поучавствовать на арене? " in message.raw_text:
                 await sleep(1);
                 await message.click();
-                await sleep();
+                await sleep(5);
                 await message.client.send_message('@vikinggame_bot', '🏟Арена');
             if "Ты вернулся из леса:" in message.raw_text:
                 await sleep(1);
