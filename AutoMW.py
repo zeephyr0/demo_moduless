@@ -12,7 +12,7 @@ class AutoMWMod(loader.Module):
         time = [5, 10, 15]
         if message.sender_id == 1745526034:
             if "Ты полноценно отдохнул!" in message.raw_text:
-                await sleep(random.coise(time));
+                await sleep(random.choise(time));
                 await message.client.send_message('@metro_wars_bot', '/g');
                 await sleep(7);
                 await message.client.send_message('@metro_wars_bot', '🏜 Трубная [👾1-4🔮37-38]🔋30');
