@@ -74,6 +74,8 @@ class AutoMWMod(loader.Module):
             if "Шаг: 3" in message.raw_text:
                 await sleep(3);
                 await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
-
+            if "ничего не сделал" in message.raw_text:
+                await sleep(3);
+                await message.client.send_message('@metro_wars_bot', '♻️ Автобой');
 
 
