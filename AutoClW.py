@@ -39,7 +39,6 @@ class AutoClWMod(loader.Module):
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
             if "Сразитесь против других игроков из враждующих кланов!" in message.raw_text:
-                await sleep(1);
                 await message.click();
         if message.chat_id == -1001649471126 and message.sender_id == 2063668248:
             if "🎭Результаты войны кланов за предприятия" in message.raw_text:
