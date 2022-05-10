@@ -38,12 +38,6 @@ class AutoClWMod(loader.Module):
             if "Отправиться в приключение💎" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@clan_warsbot', '👻 Кража люков (15 минут)');
-            if "Вы победили!" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@clan_warsbot', '⚔️Арена');
-            if "Вы проиграли!" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@clan_warsbot', '⚔️Арена');
             if "Сразитесь против других игроков из враждующих кланов!" in message.raw_text:
                 await sleep(1);
                 await message.click();
