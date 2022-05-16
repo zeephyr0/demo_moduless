@@ -1,5 +1,7 @@
-.. import loader
+from .. import loader
 from asyncio import sleep
+import random
+
 
 @loader.tds 
 class AutoRFMod(loader.Module): 
