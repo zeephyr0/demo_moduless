@@ -1,4 +1,4 @@
- .. import loader
+.. import loader
 from asyncio import sleep
 
 @loader.tds 
