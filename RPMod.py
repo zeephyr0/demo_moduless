@@ -1,5 +1,6 @@
 from .. import loader, utils
 
+
 @loader.tds
 class RPMod(loader.Module):
     """Модуль RPMod"""
@@ -14,14 +15,69 @@ class RPMod(loader.Module):
         status = self.db.get("RPMod", "status")
         if status is not False:
             self.db.set("RPMod", "status", False)
-            await message.edit("<b>RP Режим <b>выключен</b></b>")
+            await message.edit("<b>RP Режим <code>выключен</code></b>")
         else:
             self.db.set("RPMod", "status", True)
-            await message.edit("<b>RP Режим <b>включен</b></b>")
+            await message.edit("<b>RP Режим <code>включен</code></b>")
 
     async def rplistcmd(self, message):
         """Используй: .rplist чтобы посмотреть список рп команд."""
-        await message.edit("<b>Список доступных РП команд:</b>\n\n• <code>Поцеловать</code>\n• <code>Поцеловать в щёчку</code>\n• <code>Поцеловать в губы</code>\n• <code>Поцеловать в носик</code>\n• <code>Поцеловать в лобик</code>\n• <code>Поцеловать в лоб\n</code\n• <code>Поцеловать в шею</code>\n• <code>Чмокнуть</code>\n• <code>Чмок</code>\n• <code>Притянуть</code>\n• <code>Обнять</code>\n• <code>Обнять за талию</code>\n• <code>Взять за руку</code>\n• <code>Взять за талию</code>\n• <code>Взять за шею</code>\n• <code>Взять за горло</code>\n• <code>Взять за попу</code>\n• <code>Схватить</code>\n• <code>Поймать</code>\n• <code>Прижать</code>\n• <code>Погладить</code>\n• <code>Погладить по голове</code>\n• <code>Укусить</code>\n• <code>Укусить за руку</code>\n• <code>Укусить в шею</code>\n• <code>Укусить за губу</code>\n• <code>Оставить засос на шее</code>\n• <code>Оставить засос на ключице</code>\n• <code>Шлепнуть</code>\n• <code>Залапать</code>\n• <code>Отдаться</code>\n• <code>Выебать</code>\n• <code>Чпокнуть</code>\n• <code>Трахнуть</code>\n• <code>Изнасиловать</code>\n• <code>Связать</code>\n• <code>Связать руки</code>\n• <code>Связь ноги</code>\n• <code>Ударить</code>\n• <code>Уебать</code>\n• <code>Убить</code>\n• <code>Утопить</code>\n• <code>Сбить на камазе</code>\n• <code>Сбить на автобусе</code>\n• <code>Отсосать</code>\n• <code>Отлизать</code>\n• <code>Лизнуть</code>\n• <code>Придушить</code>\n• <code>Задушить</code>\n• <code>Украсть</code>\n• <code>Отпороть</code>\n• <code>Наебать</code>\n• <code>Обмануть</code>\n• <code>Накурить</code>\n• <code>Набухать</code>\n• <code>Расстрелять</code>\n• <code>Понюхат</code>ь\n• <code>Накормить</code>\n• <code>Напоить</code>\n• <code>Кастрировать</code>\n• <code>Стерилизовать</code>\n• <code>Пнуть</code>\n• <code>Пожелать спокойной ночи</code>\n• <code>Пожелать доброго утра</code>\n• <code>Послать нахуй</code>\n• <code>Ущипнуть</code>\n• <code>Дать пощечину</code>\n• <code>Дать подзатыльник</code>\n• <code>Полюбить</code>\n• <code>Признаться в любви</code>")
+        await message.edit("<b>• чмок\n"
+                           "• чпок\n"
+                           "• кусь\n"
+                           "• обнять\n"
+                           "• шлеп\n"
+                           "• убить\n"
+                           "• выебать\n"
+                           "• связать\n"
+                           "• ударить\n"
+                           "• уебать\n"
+                           "• отсосать\n"
+                           "• отлизать\n"
+                           "• задушить\n"
+                           "• украсть\n"
+                           "• погладить\n"
+                           "• притянуть\n"
+                           "• изнасиловать\n"
+                           "• отпороть\n"
+                           "• наебать\n"
+                           "• поцеловать\n"
+                           "• накурить\n"
+                           "• набухать\n"
+                           "• засосать\n"
+                           "• утопить\n"
+                           "• расстрелять\n"
+                           "• прижать\n"
+                           "• понюхать\n"
+                           "• отдаться\n"
+                           "• покормить\n"
+                           "• кастрировать\n"
+                           "• пнуть\n"
+                           "• пожелать спокойной ночи\n"
+                           "• лизнуть\n"
+                           "• послать нахуй\n"
+                           "• ущипнуть\n"
+                           "• дать чапалаха\n"
+                           "• полюбить\n"
+                           "• признаться в любви\n"
+                           "• трахнуть\n"
+                           "• заебать\n"
+                           "• доебаться\n"
+                           "• дать бан\n"
+                           "• принудить\n"
+                           "• дать котика\n"
+                           "• дать банан\n"
+                           "• сделать хохлом\n"
+                           "• подарить жёлтые тюльпаны\n"
+                           "• укусить\n"
+                           "• дать по жопе\n"
+                           "• скинуть нюдсы\n"
+                           "• дать конфету\n"
+                           "• уложить спать\n"
+                           "• разбудить\n"
+                           "• поворчать как бабка на\n"
+                           "• забрать в село на лето\n"
+                           "• купить мороженное\n</b>")
 
     async def watcher(self, message):
         try:
@@ -31,10 +87,173 @@ class RPMod(loader.Module):
             me = (await message.client.get_me())
             if status is not False:
                 if message.sender_id == me.id:
-                    if message.text.lower() == "Поцеловать":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцелвал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
-                    if message.text.lower() == "Поцеловать в щечку":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(-а) в щёчку <a href=tg://user?id={user.id}>{user.first_name}</a>")
-                    if message.text.lower() == "Поцеловать в носик":
-                        await message.edit(f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(-а) в носик <a href=tg://user?id={user.id}>{user.first_name}</a>")
-        except: pass
+                    if message.text.lower() == "чмок":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> чмокнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "чпок":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> чпокнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "кусь":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> кусьнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "обнять":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> обнял(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "шлеп":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> шлепнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "убить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> убил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "выебать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> выебал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "связать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> связал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "ударить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> ударил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "уебать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> уебал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "отсосать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> отсосал(-а) у <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "отлизать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> отлизал(-а) у <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "задушить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> задушил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "украсть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> украл(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "погладить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> погладил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "притянуть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> притянул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "изнасиловать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> изнасиловал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "отпороть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> отпорол(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "наебать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> наебал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "поцеловать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> поцеловал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "накурить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> накурил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "набухать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> набухал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "засосать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> засосал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "утопить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> утопил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "расстрелять":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> расстрелял(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "прижать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> прижал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "понюхать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> понюхал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "отдаться":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> отдался(-ась) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "покормить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> покормил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "кастрировать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> кастрировал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "пнуть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> пнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "пожелать спокойной ночи":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> пожелал(-а) спокойной ночи <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "лизнуть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> лизнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "послать нахуй":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> послал(-а) нахуй <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "ущипнуть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> ущипнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "дать чапалаха":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> дал(-а) чапалаха <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "полюбить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> полюбил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "признаться в любви":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> признался(-ась) в любви <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "трахнуть":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> трахнул(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "заебать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> заебал(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "доебаться":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> доебался(-ась) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "дать бан":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> дал(-а) бан <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "принудить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> принудил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "дать котика":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> дал(-а) котика <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "дать банан":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> дал(-а) банан <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "сделать хохлом":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> сделал(-а) хохлом <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "подарить жёлтые тюльпаны":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> подарил(-а) желтые тюльпаны <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "укусить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> укусил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "дать по жопе":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> дал(-а) по жопе <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "скинуть нюдсы":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> скинул(-а) нюдсы <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "дать конфету":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> дал(-а) конфету <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "уложить спать":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> уложил(-а) спать <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "разбудить":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> разбудил(-а) <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "поворчать как бабка на":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> поворчал(-а) как бабка на <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "забрать в село на лето":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> забрал(-а) в село на лето <a href=tg://user?id={user.id}>{user.first_name}</a>")
+                    if message.text.lower() == "купить мороженное":
+                        await message.edit(
+                            f"<a href=tg://user?id={me.id}>{me.first_name}</a> купил(-а) мороженное <a href=tg://user?id={user.id}>{user.first_name}</a>")
+        except:
+            pass
