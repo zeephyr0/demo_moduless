@@ -36,5 +36,5 @@ class ActionsCWMod(loader.Module):
                 await message.client.send_message('@CityWars2_bot', '🚑 Лечим');
         if message.sender_id == 1159155249:
             if "У меня для вас есть несколько 🎁 Подарков!" in message.raw_text:
-                await sleep(
+                await sleep(random.choise(time2)
                 await message.click(random.choise(time2));
