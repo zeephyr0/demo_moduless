@@ -29,6 +29,6 @@ class AutoRFMod(loader.Module):
                 await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
             elif "Ты наткнулся" in message.raw_text:
                 await sleep(2);
-                await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
+                await message.client.send_message('@rf_telegram_bot', '🐺 Любой');
 
            
