@@ -15,8 +15,6 @@ class AutoRFMod(loader.Module):
             if "Ты дошел до локации." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@rf_telegram_bot', '💖 Пополнить здоровье');
-                await sleep(2);
-                await message.client.send_message('@rf_telegram_bot', '☠ Локации');
             if "Ты снова жив👼" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@rf_telegram_bot', '☠ Локации');
@@ -25,4 +23,12 @@ class AutoRFMod(loader.Module):
                 await message.client.send_message('@rf_telegram_bot', '🐣1-10 Окрестности Ген. штаба');
             if "+1 к энергии 🔋5/5" in message.raw_text:
                 await sleep(2);
+                await message.client.send_message('@rf_telegram_bot', '☠ Локации');
+            if "Ты наткнулся на Молотоглав" in message.raw_text:
+                await sleep(2);
                 await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
+            elif "Ты наткнулся" in message.raw_text:
+                await sleep(2);
+                await message.client.send_message('@rf_telegram_bot', '🔪 Атаковать');
+
+           
