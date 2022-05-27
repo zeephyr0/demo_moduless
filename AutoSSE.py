@@ -17,7 +17,7 @@ class AutoSEMod(loader.Module):
             if "📡Ты вернулся с поиска обломков. " in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
-            if "👁‍🗨Ты в космосе" and "🔋30" in message.raw_text:
+            if "👁‍🗨Ты в космосе" and "🔋13" in message.raw_text:
                 await sleep(1);
                 await message.click();
             elif "👁‍🗨Ты в космосе" in message.raw_text:
@@ -26,3 +26,16 @@ class AutoSEMod(loader.Module):
             if "📡Ты можешь отправиться на поиски обломков, в которых иногда можно найти ценные ресурсы." in message.raw_text:
                 await sleep(1);
                 await message.click();
+            if "Недостаточно 🔋топлива" in message.raw_text:
+                await sleep(1);
+                await message.client.send_message('@SpaceExplorerBot', '⌨️');
+            if "👁‍🗨Ты на корабле." and "🔋13" in message.raw_text:
+                await sleep(1);
+                await message.client.send_message('@SpaceExplorerBot', '/buy_max_fuel');
+            if "👁‍🗨Ты на корабле." and "🔋415" in message.raw_text:
+                await sleep(1);
+                await message.click(3);
+
+
+
+
