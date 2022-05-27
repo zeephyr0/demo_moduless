@@ -20,7 +20,7 @@ class AutoSEMod(loader.Module):
             if "👁‍🗨Ты в космосе" and "🔋30" in message.raw_text:
                 await sleep(1);
                 await message.click();
-            elif "👁‍🗨Ты в космосе" and in message.raw_text:
+            elif "👁‍🗨Ты в космосе" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
             if "📡Ты можешь отправиться на поиски обломков, в которых иногда можно найти ценные ресурсы." in message.raw_text:
