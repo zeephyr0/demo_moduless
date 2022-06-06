@@ -28,8 +28,7 @@ class AutoCWMod(loader.Module):
   """""" 
   status = self.db.get(self.name, "status", False) 
   if status: return await message.edit(self.strings['cwon_already']) 
-  self.db.set(self.name, "status", True) 
-  await self.client.send_message(self.iris, "Фарма", schedule=timedelta(seconds=20)) 
+  self.db.set(self.name, "status", True)
   await message.edit(self.strings['cwon'])
 
  async def cwoffcmd(self, message): 
@@ -44,7 +43,7 @@ class AutoCWMod(loader.Module):
   money = self.db.get(self.name, "money", 0) 
   await message.edit(self.strings['balance'].replace("%money%", str(money))) 
 
- async def watcher(self, event): 
+ async def watcher(self, event, message): 
   if not isinstance(event, Message): return 
   chat = utils.get_chat_id(event) 
   if chat != self.city: return 
@@ -55,3 +54,24 @@ class AutoCWMod(loader.Module):
    for x in args: 
     if x[0] == '+':  
      return self.db.set(self.name, 'money', self.db.get(self.name, 'money', 0) + int(x[1:]))
+  if message.sender_id == 5505560402:
+   if "👮 Ты отдохнул" in message.raw_text:
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '👮 Патрулируем');
+   elif "👮 На улицах" in message.raw_text:
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '👮 Патрулируем');
+   if "🚑 Ты отдохнул" in message.raw_text:
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '🚑 Лечим');
+   elif "🚑 Cостоянию здоровья" in message.raw_text:
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await sleep(1);
+    await message.client.send_message('@CityRestored_Bot', '🚑 Лечим');
