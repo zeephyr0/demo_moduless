@@ -56,7 +56,6 @@ class AutoCWMod(loader.Module):
     await message.edit(self.strings['sended']);
 
  async def watcher(self, message): 
-  #автоматизация патруля/лечки
   if message.sender_id == 5505560402:
    if "👮 Ты отдохнул" in message.raw_text:
     await sleep(1);
@@ -78,19 +77,15 @@ class AutoCWMod(loader.Module):
     await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
     await self.client.send_message(self.city, self.strings['heal']);
-   #отчет
    if "@RestoredReports" in message.raw_text:
     await sleep(1);
     await message.forward_to(-1001710320396);
-  #прожатие в рудольфа(битвы)
   if message.chat_id == -1001710320396 and message.sender_id == 1660857021:
    if "⚔️В атаку на" in message.raw_text:
     await message.click();
-  #ловля подарков
   if message.chat_id == -1001528018515 and message.sender_id == 5553546657:
    if "У меня для вас есть несколько 🎁 Подарков!" in message.raw_text:
     await message.click()
-  #отчет и лечка
   if message.channel_id == 1647392957:
    if "Кварталам было начислено:" in message.raw_text:
     await self.client.send_message(self.city, self.strings['report']);
