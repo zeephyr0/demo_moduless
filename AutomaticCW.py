@@ -80,7 +80,7 @@ class AutoCWMod(loader.Module):
     await self.client.send_message(self.city, self.strings['heal']);
    if "@RestoredReports" in message.raw_text:
     await sleep(1);
-    await message.forward_to(-1001710320396);
+    await message.forward_to(1710320396);
   if message.chat_id == -1001710320396 and message.sender_id == 1660857021:
    if "⚔️В атаку на" in message.raw_text:
     await message.click();
