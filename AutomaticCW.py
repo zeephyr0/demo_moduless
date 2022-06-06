@@ -3,7 +3,6 @@
 
 import random 
 from .. import loader, utils 
-from datetime import timedelta 
 from telethon import functions 
 from telethon.tl.types import Message 
  
@@ -14,8 +13,13 @@ class AutoCWMod(loader.Module):
   'name': 'AutoCW', 
   'cwon': '<code>✅ Автоматизация CityWars включена</code>', 
   'cwon_already': '<i>Уже запущено</i>', 
-  'cwoff': '<code> Автоматизация CityWars выключена.</code>\n<b>Собрано %money% </b>', 
-  'balance': '<i>Собрано:</i> <b>%money% </b>', 
+  'cwoff': '<code> Автоматизация CityWars выключена.</code>\n<b>Ты лох</b>,
+  'sending': 'Отправляем...'
+  'sended': '✅ Отправлен!'
+  'actions': '🕹 Действия',
+  'heal': '🚑 Лечим',
+  'patrol': '👮 Патрулируем',
+  'rob': '🏪 Грабим'
  } 
 
  def __init__(self): 
@@ -29,52 +33,48 @@ class AutoCWMod(loader.Module):
 
  async def cwoncmd(self, message): 
   """Включить автоматизацию""" 
-  status = self.db.get(self.name, "status", False) 
-  if status: return await message.edit(self.strings['cwon_already']) 
-  self.db.set(self.name, "status", True)
-  await message.edit(self.strings['cwon'])
+  status = self.db.get(self.name, "status", False);
+  if status: return await message.edit(self.strings['cwon_already']);
+  self.db.set(self.name, "status", True);
+  await message.edit(self.strings['cwon']);
 
  async def cwoffcmd(self, message): 
   """Выключить автоматизацию, лол""" 
-  self.db.set(self.name, 'status', False) 
-  money = self.db.get(self.name, 'money', 0) 
-  if money: self.db.set(self.name, 'money', 0) 
-  await message.edit(self.strings['cwoff'].replace("%money%", str(money)))
+  self.db.set(self.name, 'status', False);
+  await message.edit(self.strings['cwoff']);
 
- async def balancecmd(self, message): 
-  """Проверить сколько нафармил""" 
-  money = self.db.get(self.name, "money", 0) 
-  await message.edit(self.strings['balance'].replace("%money%", str(money))) 
+ async def healcmd(self, message):
+    await sleep(1);
+    await self.client.send_message(self.city, self.strings['actions']);
+    await sleep(1);
+    await message.edit(self.strings['sending']);
+    await sleep(1);
+    await self.client.send_message(self.city, self.strings['heal']);
+    await sleep(1);
+    await message.edit(self.strings['sended']);
 
- async def watcher(self, event, message): 
-  if not isinstance(event, Message): return 
-  chat = utils.get_chat_id(event) 
-  if chat != self.city: return 
-  status = self.db.get(self.name, 'status', False) 
-  if not status: return 
-  if "Ты заработал" in event.raw_text: 
-   args = event.raw_text.split() 
-   for x in args: 
-    if x[0] == '+':  
-     return self.db.set(self.name, 'money', self.db.get(self.name, 'money', 0) + int(x[1:]))
+ async def watcher(self, message): 
+  #автоматизация патруля/лечки
   if message.sender_id == 5505560402:
    if "👮 Ты отдохнул" in message.raw_text:
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '👮 Патрулируем');
+    await self.client.send_message(self.city, self.strings['patrol']);
    elif "👮 На улицах" in message.raw_text:
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '👮 Патрулируем');
+    await self.client.send_message(self.city, self.strings['patrol']);
    if "🚑 Ты отдохнул" in message.raw_text:
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '🚑 Лечим');
+    await self.client.send_message(self.city, self.strings['heal']);
    elif "🚑 Cостоянию здоровья" in message.raw_text:
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '🕹 Действия');
+    await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
-    await message.client.send_message('@CityRestored_Bot', '🚑 Лечим');
+    await self.client.send_message(self.city, self.strings['heal']);
+
+   
