@@ -45,6 +45,7 @@ class AutoCWMod(loader.Module):
   await message.edit(self.strings['cwoff']);
 
  async def healcmd(self, message):
+    """"""
     await sleep(1);
     await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
