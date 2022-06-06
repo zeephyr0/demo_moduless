@@ -2,6 +2,7 @@
 #спиздил во благо
 
 import random 
+from asyncio import sleep
 from .. import loader, utils 
 from telethon import functions 
 from telethon.tl.types import Message 
