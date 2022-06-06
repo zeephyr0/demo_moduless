@@ -12,7 +12,7 @@ class AutoCWMod(loader.Module):
  """ты лох""" 
  strings = { 
   'name': 'AutoCW', 
-  'cwmon': '<code>✅ Автоматизация CityWars включена</code>', 
+  'cwon': '<code>✅ Автоматизация CityWars включена</code>', 
   'cwon_already': '<i>Уже запущено</i>', 
   'cwoff': '<code> Автоматизация CityWars выключена.</code>\n<b>Собрано %money% </b>', 
   'balance': '<i>Собрано:</i> <b>%money% </b>', 
