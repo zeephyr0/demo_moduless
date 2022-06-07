@@ -15,7 +15,7 @@ class AutoCWMod(loader.Module):
   'cwon': '<code>✅ Автоматизация CityWars включена</code>', 
   'cwon_already': '<i>Уже запущено</i>', 
   'cwoff': '<code> Автоматизация CityWars выключена.</code>\n<b>Ты лох</b>',
-  'cwoff_already': '<i>Модуль выключен</i>
+  'cwoff_already': '<i>Модуль выключен</i>,
   'sending': 'Отправляем...',
   'sended': '✅ Отправлен!',
   'actions': '🕹 Действия',
@@ -50,14 +50,14 @@ class AutoCWMod(loader.Module):
     """Отправить лечить лол"""
   status = self.db.get(self.name, "status", True);
   if status: return await message.edit(self.strings['cwoff_already']);
-   await sleep(1);
-   await self.client.send_message(self.city, self.strings['actions']);
-   await sleep(1);
-   await message.edit(self.strings['sending']);
-   await sleep(1);
-   await self.client.send_message(self.city, self.strings['heal']);
-   await sleep(1);
-   await message.edit(self.strings['sended']);
+  await sleep(1);
+  await self.client.send_message(self.city, self.strings['actions']);
+  await sleep(1);
+  await message.edit(self.strings['sending']);
+  await sleep(1);
+  await self.client.send_message(self.city, self.strings['heal']);
+  await sleep(1);
+  await message.edit(self.strings['sended']);
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
