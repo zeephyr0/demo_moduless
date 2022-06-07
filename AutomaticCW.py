@@ -88,10 +88,3 @@ class AutoCWMod(loader.Module):
   if message.chat_id == -1001528018515 and message.sender_id == 5553546657:
    if "У меня для вас есть несколько 🎁 Подарков!" in message.raw_text:
     await message.click()
-  if message.channel_id == 1647392957:
-   if "Кварталам было начислено:" in message.raw_text:
-    await self.client.send_message(self.city, self.strings['report']);
-    await sleep(360);
-    await self.client.send_message(self.city, self.strings['actions']);
-    await sleep(1);
-    await self.client.send_message(self.city, self.strings['heal']);
