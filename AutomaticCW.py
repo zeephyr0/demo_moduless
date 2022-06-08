@@ -23,7 +23,10 @@ class AutoCWMod(loader.Module):
   'patrol': '👮 Патрулируем',
   'rob': '🏪 Грабим',
   'report': 'war',
-  'stats': 'Статистика выполненных действий:\n\nУспешных лечек: %heal_s%\nНеудачных лечек: %heal_f%\nТишина: %heal_h%'
+  'stats': 'Статистика выполненных действий:',
+  'stat_heal_s': 'Успешных лечек: %heal_s%',
+  'stat_heal_f': 'Неудачных лечек: %heal_f%',
+  'stat_heal_h': 'Тишина: %heal_h%'
  } 
 
  def __init__(self): 
@@ -72,7 +75,7 @@ class AutoCWMod(loader.Module):
   heal_s = self.db.get(self.name, "heal_s", 0) 
   heal_f = self.db.get(self.name, "heal_f", 0) 
   heal_h = self.db.get(self.name, "heal_h", 0) 
-  await message.edit(self.strings['stats'].replace("%heal_s%": str(heal_s), "%heal_f%": str(heal_f), "%heal_h%": str(heal_h))) 
+  await message.edit(self.strings['stats'], self.strings[stat_heal_s].replace("%heal_s%", str(heal_s)), self.strings[stat_heal_f].replace("%heal_f%", str(heal_f)), self.strings[stat_heal_h].replace("%heal_h%", str(heal_h))) 
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
