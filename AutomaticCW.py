@@ -23,10 +23,11 @@ class AutoCWMod(loader.Module):
   'patrol': '👮 Патрулируем',
   'rob': '🏪 Грабим',
   'report': 'war',
-  'stats': 'Статистика выполненных действий:',
-  'stat_heal_s': 'Успешных лечек: %heal_s%',
-  'stat_heal_f': 'Неудачных лечек: %heal_f%',
-  'stat_heal_h': 'Тишина: %heal_h%'
+  'stats': 'Статистика выполненных действий:\n\n',
+  'stat_heal_s': '✅Успешных лечек: %heal_s%\n',
+  'stat_heal_f': '❌Неудачных лечек: %heal_f%\n',
+  'stat_heal_h': '💤Тишина: %heal_h%\n\n',
+  'stat_heal_t': 'Всего лечек: %heal_t%'
  } 
 
  def __init__(self): 
@@ -53,6 +54,8 @@ class AutoCWMod(loader.Module):
   if heal_h: self.db.set(self.name, 'heal_h', 0) 
   heal_f = self.db.get(self.name, 'heal_f', 0) 
   if heal_f: self.db.set(self.name, 'heal_f', 0) 
+  heal_t = self.db.get(self.name, 'heal_t', 0) 
+  if heal_t: self.db.set(self.name, 'heal_t', 0) 
   self.db.set(self.name, 'status', False);
   await message.edit(self.strings['cwoff']);
 
@@ -70,7 +73,7 @@ class AutoCWMod(loader.Module):
    await sleep(1);
    await message.edit(self.strings['sended']);
 
- async def stats(self, message):
+ async def statscmd(self, message):
   """Выводит статистику"""
   heal_s = self.db.get(self.name, "heal_s", 0) 
   heal_f = self.db.get(self.name, "heal_f", 0) 
@@ -96,14 +99,17 @@ class AutoCWMod(loader.Module):
     await self.client.send_message(self.city, self.strings['heal']);
    elif "🚑 Ура! Тебе удалось вылечить" in message.raw_text:
     return self.db.set(self.name, 'heal_s', self.db.get(self.name, 'heal_s', 0) + int(1))
+    return self.db.set(self.name, 'heal_t', self.db.get(self.name, 'heal_t', 0) + int(1))
    elif "🚑 К сожалению, тебе не хватило умения, чтобы вылечить" in message.raw_text:
     return self.db.set(self.name, 'heal_f', self.db.get(self.name, 'heal_f', 0) + int(1))
+    return self.db.set(self.name, 'heal_t', self.db.get(self.name, 'heal_t', 0) + int(1))
    elif "🚑 Cостоянию здоровья" in message.raw_text:
     await sleep(1);
     await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
     await self.client.send_message(self.city, self.strings['heal']);
     return self.db.set(self.name, 'heal_h', self.db.get(self.name, 'heal_h', 0) + int(1))
+    return self.db.set(self.name, 'heal_t', self.db.get(self.name, 'heal_t', 0) + int(1))
    if "@RestoredReports" in message.raw_text:
     await sleep(1);
     await message.forward_to(1710320396);
