@@ -47,15 +47,15 @@ class AutoCWMod(loader.Module):
   await message.edit(self.strings['cwoff']);
 
  async def healcmd(self, message):
-    """Отправить лечить лол"""
-    await sleep(1);
-    await self.client.send_message(self.city, self.strings['actions']);
-    await sleep(1);
-    await message.edit(self.strings['sending']);
-    await sleep(1);
-    await self.client.send_message(self.city, self.strings['heal']);
-    await sleep(1);
-    await message.edit(self.strings['sended']);
+  """Отправить лечить лол"""
+  await sleep(1);
+  await self.client.send_message(self.city, self.strings['actions']);
+  await sleep(1);
+  await message.edit(self.strings['sending']);
+  await sleep(1);
+  await self.client.send_message(self.city, self.strings['heal']);
+  await sleep(1);
+  await message.edit(self.strings['sended']);
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
