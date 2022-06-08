@@ -85,6 +85,12 @@ class AutoCWMod(loader.Module):
   if message.chat_id == -1001710320396 and message.sender_id == 1660857021:
    if "⚔️В атаку на" in message.raw_text:
     await message.click();
+    await sleep(1);
+    await self.client.send_message(self.city, self.strings['actions']);
+    await sleep(1);
+    await self.client.send_message(self.city, self.strings['heal']);
+    await sleep(3);
+    await self.client.send_message(self.city, self.strings['report']);  
   if message.chat_id == -1001528018515 and message.sender_id == 5553546657:
    if "У меня для вас есть несколько 🎁 Подарков!" in message.raw_text:
     await message.click()
