@@ -56,8 +56,6 @@ class AutoCWMod(loader.Module):
   """Отправить лечить лол"""
   status1 = self.db.get(self.name, "status", False);
   status2 = self.db.get(self.name, "status", True);
-  if status2:
-   await message.edit(self.strings['cwoff_already']);
   if status1:
    await sleep(1);
    await self.client.send_message(self.city, self.strings['actions']);
@@ -67,6 +65,8 @@ class AutoCWMod(loader.Module):
    await self.client.send_message(self.city, self.strings['heal']);
    await sleep(1);
    await message.edit(self.strings['sended']);
+  if status2:
+   await message.edit(self.strings['cwoff_already'])
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
