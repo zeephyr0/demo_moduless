@@ -72,7 +72,7 @@ class AutoCWMod(loader.Module):
   heal_s = self.db.get(self.name, "heal_s", 0) 
   heal_f = self.db.get(self.name, "heal_f", 0) 
   heal_h = self.db.get(self.name, "heal_h", 0) 
-  await message.edit(self.strings['stats'].replace("%heal_s%", str(heal_s), ("%heal_f%", str(heal_f), ("%heal_h%", str(heal_h))) 
+  await message.edit(self.strings['stats'].replace("%heal_s%": str(heal_s), "%heal_f%": str(heal_f), "%heal_h%": str(heal_h))) 
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
