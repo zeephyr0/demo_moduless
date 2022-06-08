@@ -79,8 +79,12 @@ class AutoCWMod(loader.Module):
   heal_f = self.db.get(self.name, "heal_f", 0) 
   heal_h = self.db.get(self.name, "heal_h", 0) 
   heal_t = self.db.get(self.name, "heal_t", 0) 
-  await message.edit(self.strings['stats'], self.strings['stat_heal_s'].replace("%heal_s%", str(heal_s)), self.strings['stat_heal_f'].replace("%heal_f%", str(heal_f)), self.strings['stat_heal_h'].replace("%heal_h%", str(heal_h)), self.strings['stat_heal_t'].replace("%heal_t%", str(heal_t))) 
-
+  await message.delete()
+  await self.client.send_message(self.strings['stats']) 
+  await self.client.send_message(self.strings['stat_heal_s'].replace("%heal_s%", str(heal_s))
+  await self.client.send_message(self.strings['stat_heal_f'].replace("%heal_f%", str(heal_f))
+  await self.client.send_message(self.strings['stat_heal_h'].replace("%heal_h%", str(heal_h))
+  await self.client.send_message(self.strings['stat_heal_t'].replace("%heal_t%", str(heal_t))
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
    if "👮 Ты отдохнул" in message.raw_text:
