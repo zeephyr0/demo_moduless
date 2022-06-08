@@ -43,11 +43,18 @@ class AutoCWMod(loader.Module):
 
  async def cwoffcmd(self, message): 
   """Выключить автоматизацию, лол"""
+  heal_s = self.db.get(self.name, 'heal_s', 0) 
+  if heal_s: self.db.set(self.name, 'heal_s', 0)
+  heal_h = self.db.get(self.name, 'heal_h', 0) 
+  if heal_h: self.db.set(self.name, 'heal_h', 0) 
+  heal_f = self.db.get(self.name, 'heal_f', 0) 
+  if heal_f: self.db.set(self.name, 'heal_f', 0) 
   self.db.set(self.name, 'status', False);
   await message.edit(self.strings['cwoff']);
 
  async def healcmd(self, message):
   """Отправить лечить лол"""
+  status1 = self.db.get(self.name, "status", False);
   status2 = self.db.get(self.name, "status", True);
   if status2:
    await message.edit(self.strings['cwoff_already']);
