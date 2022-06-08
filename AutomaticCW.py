@@ -1,5 +1,5 @@
-#by @ZEPHYR0 (просто спиздил модуль)
-#спиздил во благо
+#by @ZEPHYR0 
+#www
 
 import random 
 from asyncio import sleep
@@ -36,26 +36,30 @@ class AutoCWMod(loader.Module):
 
  async def cwoncmd(self, message): 
   """Включить автоматизацию""" 
-  status = self.db.get(self.name, "status", False);
-  if status: return await message.edit(self.strings['cwon_already']);
+  status1 = self.db.get(self.name, "status", False);
+  if status1: return await message.edit(self.strings['cwon_already']);
   self.db.set(self.name, "status", True);
   await message.edit(self.strings['cwon']);
 
  async def cwoffcmd(self, message): 
-  """Выключить автоматизацию, лол""" 
+  """Выключить автоматизацию, лол"""
   self.db.set(self.name, 'status', False);
   await message.edit(self.strings['cwoff']);
 
  async def healcmd(self, message):
   """Отправить лечить лол"""
-  await sleep(1);
-  await self.client.send_message(self.city, self.strings['actions']);
-  await sleep(1);
-  await message.edit(self.strings['sending']);
-  await sleep(1);
-  await self.client.send_message(self.city, self.strings['heal']);
-  await sleep(1);
-  await message.edit(self.strings['sended']);
+  status2 = self.db.get(self.name, "status", True);
+  if status2:
+   await message.edit(self.strings['cwoff_already']);
+  if status1:
+   await sleep(1);
+   await self.client.send_message(self.city, self.strings['actions']);
+   await sleep(1);
+   await message.edit(self.strings['sending']);
+   await sleep(1);
+   await self.client.send_message(self.city, self.strings['heal']);
+   await sleep(1);
+   await message.edit(self.strings['sended']);
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
