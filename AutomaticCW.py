@@ -38,6 +38,7 @@ class AutoCWMod(loader.Module):
   self.db = db 
   self.myid = (await client.get_me()).id 
   self.city = 5505560402
+  self.test_group = -1001578033582
 
  async def cwoncmd(self, message): 
   """Включить автоматизацию""" 
@@ -80,11 +81,17 @@ class AutoCWMod(loader.Module):
   heal_h = self.db.get(self.name, "heal_h", 0) 
   heal_t = self.db.get(self.name, "heal_t", 0) 
   await message.delete()
+  await sleep(1);
   await self.client.send_message(self.strings['stats']) 
+  await sleep(1);
   await self.client.send_message(self.strings['stat_heal_s'].replace("%heal_s%", str(heal_s)));
+  await sleep(1);
   await self.client.send_message(self.strings['stat_heal_f'].replace("%heal_f%", str(heal_f)));
+  await sleep(1);
   await self.client.send_message(self.strings['stat_heal_h'].replace("%heal_h%", str(heal_h)));
+  await sleep(1);
   await self.client.send_message(self.strings['stat_heal_t'].replace("%heal_t%", str(heal_t)));
+
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
    if "👮 Ты отдохнул" in message.raw_text:
@@ -103,9 +110,11 @@ class AutoCWMod(loader.Module):
     await sleep(1);
     await self.client.send_message(self.city, self.strings['heal']);
    elif "🚑 Ура! Тебе удалось вылечить" in message.raw_text:
+    await self.client.send_message(self.test_group, "Фарма", schedule=timedelta(minutes=random.randint(5, 20)))
     return self.db.set(self.name, 'heal_s', self.db.get(self.name, 'heal_s', 0) + int(1))
     return self.db.set(self.name, 'heal_t', self.db.get(self.name, 'heal_t', 0) + int(1))
    elif "🚑 К сожалению, тебе не хватило умения, чтобы вылечить" in message.raw_text:
+    await self.client.send_message(self.city, "/heal", schedule=timedelta(minutes=random.randint(6, 7)))
     return self.db.set(self.name, 'heal_f', self.db.get(self.name, 'heal_f', 0) + int(1))
     return self.db.set(self.name, 'heal_t', self.db.get(self.name, 'heal_t', 0) + int(1))
    elif "🚑 Cостоянию здоровья" in message.raw_text:
