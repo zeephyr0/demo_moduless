@@ -92,7 +92,7 @@ class ByOwlMod(loader.Module):
    elif "HDR ставка 2892800 выиграл 5785600 на красное" in message.raw_text:
     await sleep(1);
     await message.client.send_message(self.owl_group, self.strings['red']);
-   elif "Рулетка" in message.raw_text:
+   elif "Рулетка" and "⚫️" in message.raw_text:
     await sleep(1);
     await message.client.send_message(self.owl_group, self.strings['repeat']);
     await sleep(1);
