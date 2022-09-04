@@ -56,7 +56,7 @@ class ByOwlMod(loader.Module):
     await message.client.send_message(self.owl_group, self.strings['red']);
    if "HDR ставка 12800 выиграл 23600 на красное" in message.raw_text:
     await sleep(1);
-    await message.client.send_message(self.owl_group, self.strings['red:]);
+    await message.client.send_message(self.owl_group, self.strings['red']);
    if "HDR ставка 23600 выиграл 45200 на красное" in message.raw_text:
     await sleep(1);
     await message.client.send_message(self.owl_group, self.strings['red']);
@@ -82,3 +82,11 @@ class ByOwlMod(loader.Module):
     await sleep(1);
     await message.client.send_message(self.owl_group, self.strings['red']);
 
+
+
+
+
+
+#ты лох, ахахахах
+
+#хуита
