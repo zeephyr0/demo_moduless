@@ -15,7 +15,11 @@ class ByOwlMod(loader.Module):
   'red': '100 к',
   'black': '100 ч',
   'repeat': 'повторить', 
-  'double': 'удвоить'
+  'double': 'удвоить',
+  'owlon': 'Авторулетка включена',
+  'owlon_already': 'Авторулетка уже включена',
+  'owloff': 'Авторулетка выключена'
+
  }
 
  def __init__(self): 
@@ -27,6 +31,18 @@ class ByOwlMod(loader.Module):
   self.myid = (await client.get_me()).id 
   self.owl = 5143234239
   self.owl_group = -1001163341690
+
+ async def cwoncmd(self, message): 
+  """Включить автоматизацию""" 
+  status1 = self.db.get(self.name, "status", False);
+  if status1: return await message.edit(self.strings['owlon_already']);
+  self.db.set(self.name, "status", True);
+  await message.edit(self.strings['owlon']);
+
+ async def cwoffcmd(self, message): 
+  """Выключить автоматизацию, лол"""
+  self.db.set(self.name, 'status', False);
+  await message.edit(self.strings['owloff']);
 
 
  async def watcher(self, message): 
