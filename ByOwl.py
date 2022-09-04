@@ -31,12 +31,7 @@ class ByOwlMod(loader.Module):
 
  async def watcher(self, message): 
   if message.chat_id == -1001163341690 and message.sender_id == 5143234239:
-   if "Рулетка" in message.raw_text:
-    await sleep(1);
-    await message.client.send_message(self.owl_group, self.strings['repeat']);
-    await sleep(1);
-    await message.client.send_message(self.owl_group, self.strings['double']);
-   elif "HDR ставка 100 выиграл 200 на красное" in message.raw_text:
+   if "HDR ставка 100 выиграл 200 на красное" in message.raw_text:
     await sleep(1);
     await message.client.send_message(self.owl_group, self.strings['red']);
    elif "HDR ставка 200 выиграл 400 на красное" in message.raw_text:
@@ -81,6 +76,11 @@ class ByOwlMod(loader.Module):
    elif "HDR ставка 2892800 выиграл 5785600 на красное" in message.raw_text:
     await sleep(1);
     await message.client.send_message(self.owl_group, self.strings['red']);
+   elif "Рулетка" in message.raw_text:
+    await sleep(1);
+    await message.client.send_message(self.owl_group, self.strings['repeat']);
+    await sleep(1);
+    await message.client.send_message(self.owl_group, self.strings['double']);
 
 
 
