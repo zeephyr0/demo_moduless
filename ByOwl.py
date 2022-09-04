@@ -12,8 +12,8 @@ class ByOwlMod(loader.Module):
  """Кто прочитал тот лох""" 
  strings = {
  'name': 'ByOwl',
- 'red': '10000 к',
- 'black': '10000 ч',
+ 'red': '100 к',
+ 'black': '100 ч',
  'repeat': 'повторить', 
  'double': 'удвоить'}
 
@@ -27,6 +27,6 @@ class ByOwlMod(loader.Module):
 
  async def watcher(self, message): 
   if message.chat_id == -1001163341690 and message.sender_id == 5143234239:
-   if "" in message.raw_text:
-    await sleep(2);
-    await message.client.send_message('@idle_city_bot', 'Построить Электростанцию 🏗⚡️');
+   if "Рулетка" in message.raw_text:
+    await sleep(1);
+    await message.client.send_message(self.owl_group, 'Построить Электростанцию 🏗⚡️');
