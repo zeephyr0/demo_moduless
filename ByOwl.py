@@ -10,17 +10,7 @@ from telethon.tl.types import Message
 @loader.tds 
 class ByOwlMod(loader.Module): 
  """Кто прочитал тот лох""" 
- strings = {
-  'name': 'ByOwl',
-  'red': '100 к',
-  'black': '100 ч',
-  'repeat': 'повторить', 
-  'double': 'удвоить',
-  'owlon': 'Авторулетка включена',
-  'owlon_already': 'Авторулетка уже включена',
-  'owloff': 'Авторулетка выключена'
-
- }
+ strings = {'name': 'ByOwl'}
 
  def __init__(self): 
   self.name = self.strings['name']
@@ -32,32 +22,19 @@ class ByOwlMod(loader.Module):
   self.owl = 5143234239
   self.owl_group = -1001163341690
 
- async def cwoncmd(self, message): 
-  """Включить автоматизацию""" 
-  status1 = self.db.get(self.name, "status", False);
-  if status1: return await message.edit(self.strings['owlon_already']);
-  self.db.set(self.name, "status", True);
-  await message.edit(self.strings['owlon']);
-
- async def cwoffcmd(self, message): 
-  """Выключить автоматизацию, лол"""
-  self.db.set(self.name, 'status', False);
-  await message.edit(self.strings['owloff']);
-
-
  async def watcher(self, message): 
   if message.chat_id == -1001163341690 and message.sender_id == 5143234239:
    if "Рулетка" in message.raw_text:
-    await sleep(1);
-    await message.client.send_message(self.owl_group, 'повторить');
-    await sleep(12);
-    await message.client.send_message(self.owl_group, 'го');
+    await sleep(2);
+    await message.client.send_message(-1001163341690, 'повторить');
+    await sleep(2);
+    await message.client.send_message(-1001163341690, 'удвоить');
+    await sleep(3);
+    await message.client.send_message(-1001163341690, 'го');
+   if "HDR ставка" in message.raw_text:
+    await sleep(2);
+    await message.client.send_message(-1001163341690, '500 1 2 4 5 7 8 10 11');
+    await sleep(2);
+    await message.client.send_message(-1001163341690, 'го');
 
 
-
-
-
-
-#ты лох, ахахахах
-
-#хуита
