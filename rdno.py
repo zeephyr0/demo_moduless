@@ -22,22 +22,22 @@ class RdnoMod(loader.Module):
   self.owl = 1014481227
   self.owl_group = -1001163341690
 
- async def watcher(self, message): 
-  if message.sender_id == 1014481227:
-   if "twist выиграл" in message.raw_text:
-    await sleep(2);
-    await message.client.send_message(1014481227, 'рулетка');
-    await sleep(2);
-    await message.client.send_message(1014481227, '5 к');
-    await sleep(2);
-    await message.client.send_message(1014481227, 'го');
-   elif "Рулетка" in message.raw_text:
-    await sleep(2);
-    await message.client.send_message(1014481227, 'рулетка');
-    await sleep(2);
-    await message.client.send_message(1014481227, 'повторить');
-    await sleep(2);
-    await message.client.send_message(1014481227, 'удвоить');
-    await sleep(2);
-    await message.client.send_message(1014481227, 'го');
+ async def roulettecmd(message):
+ nums = ['20 1', '20 2', '20 3', '20 4', '20 5', '20 6', '20 7', '20 8', '20 9', '20 10', '20 11', '20 12',]
+ await message.delete();
+ for i in range(10000):
+  await message.respond("руелетка")
+  await sleep(5);
+  await message.respond(random.randint(nums))
+  await sleep(2);
+  await message.respond(random.randint(nums))
+  await sleep(2);
+message.respond(random.randint(nums))
+  await sleep(2);
+message.respond(random.randint(nums))
+  await sleep(2);
+message.respond(random.randint(nums))
+  await sleep(2);
+  await message.respond('го')
+
 
