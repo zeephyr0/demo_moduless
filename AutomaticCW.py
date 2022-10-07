@@ -70,9 +70,7 @@ class AutoCWMod(loader.Module):
   """Выводит статистику"""
   await message.delete()
   await sleep(1);
-  await self.client.send_message(self.strings['stats']) 
-  await sleep(1);
-  await self.client.send_message(self.strings['stat_heal_s'].replace("%heal_s%", str(heal_s)), \nself.strings['stat_heal_f'].replace("%heal_f%", str(heal_f)));
+  await self.client.send_message('Не сделал я пока нихуя тут') 
 
  async def watcher(self, message): 
   if message.sender_id == 5505560402:
