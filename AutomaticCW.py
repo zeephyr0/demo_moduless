@@ -38,7 +38,7 @@ class AutoCWMod(loader.Module):
   self.db = db 
   self.myid = (await client.get_me()).id 
   self.city = 5505560402
-  self.test_group = -1001578033582
+  self.test_group = -1001642762193
 
  async def cwoncmd(self, message): 
   """Включить автоматизацию""" 
@@ -105,12 +105,10 @@ class AutoCWMod(loader.Module):
     await message.forward_to(1660857021);
   if message.chat_id == -1001642762193 and message.sender_id == 1660857021:
    if "⚔️В атаку на" in message.raw_text:
-    await sleep(180);
+    await sleep(1);
     await message.click();
     await sleep(1);
     await self.client.send_message(self.city, self.strings['actions']);
-    await sleep(1);
-    await self.client.send_message(self.city, self.strings['heal']);
     await sleep(3);
     await self.client.send_message(self.city, self.strings['report']);  
   if message.chat_id == -1001528018515 and message.sender_id == 5553546657:
