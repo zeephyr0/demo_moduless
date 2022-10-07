@@ -49,14 +49,6 @@ class AutoCWMod(loader.Module):
 
  async def cwoffcmd(self, message): 
   """Выключить автоматизацию, лол"""
-  heal_s = self.db.get(self.name, 'heal_s', 0) 
-  if heal_s: self.db.set(self.name, 'heal_s', 0)
-  heal_h = self.db.get(self.name, 'heal_h', 0) 
-  if heal_h: self.db.set(self.name, 'heal_h', 0) 
-  heal_f = self.db.get(self.name, 'heal_f', 0) 
-  if heal_f: self.db.set(self.name, 'heal_f', 0) 
-  heal_t = self.db.get(self.name, 'heal_t', 0) 
-  if heal_t: self.db.set(self.name, 'heal_t', 0) 
   self.db.set(self.name, 'status', False);
   await message.edit(self.strings['cwoff']);
 
@@ -76,10 +68,6 @@ class AutoCWMod(loader.Module):
 
  async def statscmd(self, message):
   """Выводит статистику"""
-  heal_s = self.db.get(self.name, "heal_s", 0) 
-  heal_f = self.db.get(self.name, "heal_f", 0) 
-  heal_h = self.db.get(self.name, "heal_h", 0) 
-  heal_t = self.db.get(self.name, "heal_t", 0) 
   await message.delete()
   await sleep(1);
   await self.client.send_message(self.strings['stats']) 
@@ -105,22 +93,19 @@ class AutoCWMod(loader.Module):
     await self.client.send_message(self.city, self.strings['heal']);
    elif "🚑 Ура! Тебе удалось вылечить" in message.raw_text:
     await self.client.send_message(self.city, "/heal", schedule=timedelta(minutes=random.randint(6, 7)))
-    return self.db.set(self.name, 'heal_s', self.db.get(self.name, 'heal_s', 0) + int(1))
    elif "🚑 К сожалению, тебе не хватило умения, чтобы вылечить" in message.raw_text:
     await self.client.send_message(self.city, "/heal", schedule=timedelta(minutes=random.randint(6, 7)))
-    return self.db.set(self.name, 'heal_f', self.db.get(self.name, 'heal_f', 0) + int(1))
    elif "🚑 Cостоянию здоровья" in message.raw_text:
-    await self.client.send_message(self.test_group, "Фарма", schedule=timedelta(minutes=random.randint(5, 20)))
     await sleep(1);
     await self.client.send_message(self.city, self.strings['actions']);
     await sleep(1);
     await self.client.send_message(self.city, self.strings['heal']);
-    return self.db.set(self.name, 'heal_h', self.db.get(self.name, 'heal_h', 0) + int(1))
    if "@RestoredReports" in message.raw_text:
     await sleep(1);
-    await message.forward_to(1710320396);
-  if message.chat_id == -1001710320396 and message.sender_id == 1660857021:
+    await message.forward_to(1660857021);
+  if message.chat_id == -1001642762193 and message.sender_id == 1660857021:
    if "⚔️В атаку на" in message.raw_text:
+    await sleep(180);
     await message.click();
     await sleep(1);
     await self.client.send_message(self.city, self.strings['actions']);
