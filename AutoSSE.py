@@ -34,4 +34,4 @@ class AutoSEMod(loader.Module):
                 await message.client.send_message('@SpaceExplorerBot', '/buy_max_fuel');
             if "👁‍🗨Ты на корабле." and "🔋400" in message.raw_text:
                 await sleep(1);
-                await message.click(3);
+                await message.click(2);
