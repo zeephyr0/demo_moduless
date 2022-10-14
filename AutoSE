@@ -21,7 +21,7 @@ class AutoSEMod(loader.Module):
             elif "📡Ты вернулся с поиска обломков." and "Ты нашел 🛢контейнер, нужно будет открыть и посмотреть что там!" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
-            if "📦 Грузовой карго отсек" and "🛢Контейнеры:" in message.raw_text:
+            if "🛢Контейнеры:" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
