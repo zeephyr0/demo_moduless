@@ -48,7 +48,7 @@ class AutoSEMod(loader.Module):
             if "Недостаточно 🔋топлива" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
-            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋400" in message.raw_text:
+            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋405" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
             elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" in message.raw_text:
