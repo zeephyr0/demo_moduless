@@ -15,72 +15,40 @@ class AutoSEMod(loader.Module):
         buttons = [0, 1, 2]
         time2 = [2, 4, 6]
         if message.sender_id == 605298957:
-            if "📡Ты вернулся с поиска обломков. " in message.raw_text:
+            if "📡Ты вернулся с поиска обломков." and "К сожалению ты ничего не нашел, может повезет в следующий раз." in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
-            if "👁‍🗨Ты в космосе" and "🔋13" in message.raw_text:
+            elif "📡Ты вернулся с поиска обломков." and "Ты нашел 🛢контейнер, нужно будет открыть и посмотреть что там!" in message.raw_text:
                 await sleep(1);
-                await message.click();
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🛡0" in message.raw_text:
-                await sleep(1);
-                await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🛡1" in message.raw_text:
-                await sleep(1);
-                await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🛡2" in message.raw_text:
-                await sleep(1);
-                await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🛡3" in message.raw_text:
-                await sleep(1);
-                await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🛡400" in message.raw_text:
-                await sleep(1);
-                await message.click(0);
-            elif "👁‍🗨Ты в космосе" in message.raw_text:
+                await message.client.send_message('@SpaceExplorerBot', '📦');
+            if "📦 Грузовой карго отсек" and "🛢Контейнеры:" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
+                await message.client.send_message('@SpaceExplorerBot', '📦');
+            if "⚠️Бортовой компьютер недоступен." in message.raw_text:
+                await sleep(300);
+                await message.client.send_message('@SpaceExplorerBot', '📦');
+            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋13" in message.raw_text:
+                await sleep(1);
+                await message.click(1);
+            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" in message.raw_text:
+                await sleep(1);
+                await message.click(4);
             if "📡Ты можешь отправиться на поиски обломков, в которых иногда можно найти ценные ресурсы." in message.raw_text:
                 await sleep(1);
                 await message.click();
             if "Недостаточно 🔋топлива" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
-            if "👁‍🗨Ты на корабле." and "🔋1" in message.raw_text:
+            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋357" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '/buy_max_fuel');
-            elif "👁‍🗨Ты на корабле." and "🔋2" in message.raw_text:
+            elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋314" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '/buy_max_fuel');
-            elif "👁‍🗨Ты на корабле." and "🔋3" in message.raw_text:
+            elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋271" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '/buy_max_fuel');
-            elif "👁‍🗨Ты на корабле." and "🔋400" in message.raw_text:
+            elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋400" in message.raw_text:
                 await sleep(1);
-                await message.click(2);
-            if "👁‍🗨Ты на корабле." and "🛡1" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@SpaceExplorerBot', '/buy_max_armor');
-            if "👁‍🗨Ты на корабле." and "🛡2" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@SpaceExplorerBot', '/buy_max_armor');
-            if "👁‍🗨Ты на корабле." and "🛡3" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@SpaceExplorerBot', '/buy_max_armor');
-            if "👁‍🗨Ты на корабле." and "🛡400" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@SpaceExplorerBot', '/buy_max_armor');
-            if "☠️На радаре появились подходящие отметки!" in message.raw_text:
-                await sleep(1);
-                await message.click(0);
-            elif "☠️На радарах ни одного пирата..." in message.raw_text:
-                await sleep(1);
-                await message.click(0);
-            if "🎯Куда прикажешь выстрелить?" in message.raw_text:
-                await sleep(1);
-                await message.click(random.choice(war_buttons));
-            if "🔰Перед чем поднять щиты?" in message.raw_text:
-                await sleep(1);
-                await message.click(random.choice(war_buttons));
-           if "🏁Бой завершен!" in message.raw_text:
-                await sleep(1);
-                await message.client.send_message('@SpaceExplorerBot', '⌨️');
+                await message.click(3);
