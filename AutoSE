@@ -24,7 +24,6 @@ class AutoSEMod(loader.Module):
             if "🛢Контейнеры:" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
-                await message.client.send_message('@SpaceExplorerBot', '📦');
             elif "📦 Грузовой карго отсек" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
