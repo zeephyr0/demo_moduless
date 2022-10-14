@@ -29,7 +29,7 @@ class AutoSEMod(loader.Module):
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
             if "⚠️Бортовой компьютер недоступен." in message.raw_text:
-                await sleep(300);
+                await sleep(20);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
             if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋357" in message.raw_text:
                 await sleep(1);
