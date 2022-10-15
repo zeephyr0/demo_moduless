@@ -30,15 +30,15 @@ class AutoSEMod(loader.Module):
             if "⚠️Бортовой компьютер недоступен." in message.raw_text:
                 await sleep(20);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
-            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋520" in message.raw_text:
-                await sleep(1);
-                await message.click(1);
             if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋575" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
             elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@SpaceExplorerBot', '/selling_concentrate');
+            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋520" in message.raw_text:
+                await sleep(1);
+                await message.click(1);
             elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋575" in message.raw_text:
                 await sleep(3);
                 await message.click(4);
