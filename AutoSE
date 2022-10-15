@@ -33,7 +33,7 @@ class AutoSEMod(loader.Module):
             if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋520" in message.raw_text:
                 await sleep(1);
                 await message.click(1);
-            elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋575" in message.raw_text:
+            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋575" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
             elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" in message.raw_text:
