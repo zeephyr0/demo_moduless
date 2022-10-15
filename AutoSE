@@ -30,13 +30,13 @@ class AutoSEMod(loader.Module):
             if "⚠️Бортовой компьютер недоступен." in message.raw_text:
                 await sleep(20);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
-            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋362" in message.raw_text:
+            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋457" in message.raw_text:
                 await sleep(1);
                 await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋319" in message.raw_text:
+            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋414" in message.raw_text:
                 await sleep(1);
                 await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋276" in message.raw_text:
+            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋371" in message.raw_text:
                 await sleep(1);
                 await message.click(1);
             elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" in message.raw_text:
@@ -48,7 +48,7 @@ class AutoSEMod(loader.Module):
             if "Недостаточно 🔋топлива" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
-            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋405" in message.raw_text:
+            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋500" in message.raw_text:
                 await sleep(1);
                 await message.click(3);
             elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" in message.raw_text:
