@@ -32,10 +32,10 @@ class AutoSEMod(loader.Module):
                 await message.client.send_message('@SpaceExplorerBot', '📦');
             if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋575" in message.raw_text:
                 await sleep(3);
-                await message.click(1);
+                await message.click(4);
             elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" in message.raw_text:
                 await sleep(1);
-                await message.click(4);
+                await message.click(1);
             if "📡Ты можешь отправиться на поиски обломков, в которых иногда можно найти ценные ресурсы." in message.raw_text:
                 await sleep(1);
                 await message.click();
