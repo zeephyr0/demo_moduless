@@ -37,12 +37,12 @@ class AutoSEMod(loader.Module):
             elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@SpaceExplorerBot', '/selling_concentrate');
-            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋520" in message.raw_text:
-                await sleep(1);
-                await message.click(1);
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋575" in message.raw_text:
+            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋575" in message.raw_text:
                 await sleep(3);
                 await message.click(random.choice(random_buttons));
+            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋520" in message.raw_text:
+                await sleep(1);
+                await message.click(1);
             if "📡Ты можешь отправиться на поиски обломков, в которых иногда можно найти ценные ресурсы." in message.raw_text:
                 await sleep(1);
                 await message.click();
