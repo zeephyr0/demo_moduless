@@ -19,7 +19,7 @@ class AutoSEMod(loader.Module):
             if "📡Ты вернулся с поиска обломков." and "К сожалению ты ничего не нашел, может повезет в следующий раз." in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '⌨️');
-            elif "📡Ты вернулся с поиска обломков." and "Ты нашел 🛢контейнер, нужно будет открыть и посмотреть что там!" in message.raw_text:
+            elif "📡Ты вернулся с поиска обломков." and "Ты нашел" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
             if "🛢Контейнеры:" in message.raw_text:
@@ -31,16 +31,16 @@ class AutoSEMod(loader.Module):
             if "⚠️Бортовой компьютер недоступен." in message.raw_text:
                 await sleep(20);
                 await message.client.send_message('@SpaceExplorerBot', '📦');
-            if "👁‍🗨Ты на корабле. ☠️Пиратская станция" and "🔋575" in message.raw_text:
+            if "👁‍🗨Ты на корабле. 📯Поле боя" and "🔋550" in message.raw_text:
                 await sleep(1);
                 await message.click(random.choice(random_buttons));
-            elif "👁‍🗨Ты на корабле. ☠️Пиратская станция" in message.raw_text:
+            elif "👁‍🗨Ты на корабле. 📯Поле боя" in message.raw_text:
                 await sleep(5);
                 await message.client.send_message('@SpaceExplorerBot', '/selling_concentrate');
-            if "👁‍🗨Ты в космосе возле ☠️Пиратская станция" and "🔋575" in message.raw_text:
+            if "👁‍🗨Ты в космосе возле 📯Поле боя" and "🔋550" in message.raw_text:
                 await sleep(3);
                 await message.click(random.choice(random_buttons));
-            elif "👁‍🗨Ты в космосе возле ☠️Пиратская станция" in message.raw_text:
+            elif "👁‍🗨Ты в космосе возле 📯Поле боя" in message.raw_text:
                 await sleep(1);
                 await message.click(1);
             if "📡Ты можешь отправиться на поиски обломков, в которых иногда можно найти ценные ресурсы." in message.raw_text:
