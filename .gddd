@@ -1,0 +1,39 @@
+import random
+from .. import loader, utils
+from asyncio import sleep
+
+@loader.tds 
+class AutoICMod(loader.Module): 
+ strings = {"name": "AutoFish"}
+
+ async def client_ready(self, client, db): 
+  self.client = client 
+  self.db = db 
+  self.myid = (await client.get_me()).id 
+
+ async def cwoncmd(self, message): 
+  """Включить автоматизацию""" 
+  status1 = self.db.get(self.name, "status", False);
+  if status1: return await message.edit('Уже включено');
+  self.db.set(self.name, "status", True);
+  await message.edit('Включено');
+
+ async def cwoffcmd(self, message): 
+  """Выключить автоматизацию, лол"""
+  self.db.set(self.name, 'status', False);
+  await message.edit('Выключено');
+ 
+ async def watcher(self, message):
+  if status is not False:
+   boo = [1, 2, 3]
+   if message.sender_id == 1219677707:
+    if "🎣 Клюёт, подсекайте!" in message.raw_text:
+     await sleep(random.choice(boo));
+     await message.click();
+    elif "🎣 Удочка:" in message.raw_text:
+     await sleep(random.choice(boo))
+     await message.click(2);
+  if message.sender_id == 1219677707:
+   if "Fish Off" in message.raw_text:
+    self.db.set(self.name, 'status', False);
+    await message.client.send_message(1219677707, '!вырубил');
