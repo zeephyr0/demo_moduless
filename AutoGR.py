@@ -11,6 +11,9 @@ class AutoGRMod(loader.Module):
             if "Вы убили босса - Гарри Поттер" in message.raw_text:
                 await sleep(1);
                 await message.client.send_message('@valyutaTG_bot', '🔮 Хогвартс');
+            if "Ви вбили боса - Гаррі Поттер" in message.raw_text:
+                await sleep(1);
+                await message.client.send_message('@valyutaTG_bot', '🔮 Хогвартс');
             if "Хогвартс" in message.raw_text:
                 await sleep(1); 
                 await message.click();
