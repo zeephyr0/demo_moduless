@@ -52,6 +52,25 @@ class AutoGRMod(loader.Module):
 
  async def watcher(self, message): 
   if message.sender_id == 5788046441:
+   if "Вы убили босса - Гарри Поттер" in message.raw_text:
+    await sleep(1);
+    await self.client.send_message(self.gram, self.strings['hog']);
+   if "Ви вбили боса - Гаррі Поттер" in message.raw_text:
+    await sleep(1);
+    await self.client.send_message(self.gram, self.strings['hog']);
+   if "Хогвартс" in message.raw_text:
+    await sleep(1); 
+    await message.click();
+   if "Выбери боса для битвы" in message.raw_text:
+    await sleep(1); 
+    await message.click();
+   if "Босс - Гарри Поттер" in message.raw_text:
+    await sleep(1); 
+    await message.click();
+   if "Вы начали бить - Гарри Поттер" in message.raw_text:
+    await sleep(1); 
+    await message.click();
+  if message.chat_id == -1001893681024 message.sender_id == 5788046441:
    if "Ваши характеристики" in message.raw_text:
     await sleep(2);
     await message.click();
