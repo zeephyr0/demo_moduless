@@ -76,7 +76,7 @@ class AutoGRMod(loader.Module):
     await message.click();
    if "Вы победили" in message.raw_text:
     await sleep(2);
-    await self.client.send_message(self.city, self.strings['duel']);  
+    await self.client.send_message(self.test_group, self.strings['duel']);  
    if "Следующая дуэль через" in message.raw_text:
     await sleep (20);
-    await self.client.send_message(self.city, self.strings['duel']);  
+    await self.client.send_message(self.test_group, self.strings['duel']);  
