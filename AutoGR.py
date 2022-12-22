@@ -20,14 +20,6 @@ class AutoGRMod(loader.Module):
   'sended': '✅ Отправлен!',
   'hog': '🔮 Хогвартс',
   'duel': 'Дуэль',
-  'patrol': '👮 Патрулируем',
-  'rob': '🏪 Грабим',
-  'report': 'war',
-  'stats': 'Статистика выполненных действий:\n\n',
-  'stat_heal_s': '✅Успешных лечек: %heal_s%\n',
-  'stat_heal_f': '❌Неудачных лечек: %heal_f%\n',
-  'stat_heal_h': '💤Тишина: %heal_h%\n\n',
-  'stat_heal_t': 'Всего лечек: %heal_t%'
  } 
 
  def __init__(self): 
@@ -47,7 +39,7 @@ class AutoGRMod(loader.Module):
   self.db.set(self.name, "status", True);
   await message.edit(self.strings['gron']);
 
- async def cwoffcmd(self, message): 
+ async def groffcmd(self, message): 
   """Выключить автоматизацию, лол"""
   self.db.set(self.name, 'status', False);
   await message.edit(self.strings['groff']);
@@ -80,9 +72,11 @@ class AutoGRMod(loader.Module):
     await message.click();
   if message.chat_id == -1001528018515 and message.sender_id == 5788046441:
    if "Ваши характеристики" in message.raw_text:
+    await sleep(2);
     await message.click();
    if "Вы победили" in message.raw_text:
+    await sleep(2);
     await self.client.send_message(self.city, self.strings['duel']);  
-if "Следующая дуэль через" in message.raw_text:
+   if "Следующая дуэль через" in message.raw_text:
     await sleep (20);
     await self.client.send_message(self.city, self.strings['duel']);  
