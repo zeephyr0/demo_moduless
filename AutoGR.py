@@ -70,7 +70,7 @@ class AutoGRMod(loader.Module):
    if "Вы начали бить - Гарри Поттер" in message.raw_text:
     await sleep(1); 
     await message.click();
-  if message.chat_id == -1001893681024 message.sender_id == 5788046441:
+  if message.chat_id == -1001893681024 and message.sender_id == 5788046441:
    if "Ваши характеристики" in message.raw_text:
     await sleep(2);
     await message.click();
