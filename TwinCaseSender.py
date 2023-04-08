@@ -44,4 +44,4 @@ class TwinCaseSenderMod(loader.Module):
 
   if message.group_id == -1001870697043 and message.sender_id == 920762514:
    if "промо" in message.raw_text:
-    await message.client.send_message(-1001870697043), message
+    await message.client.send_message(-1001870697043), message, reply_to=await message.get_reply_message() or message)
