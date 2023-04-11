@@ -76,20 +76,19 @@ class TwinCaseSenderMod(loader.Module):
     await self.client.send_message(self.mine, self.strings['cases']);
   if message.chat_id == -1001870697043 and message.sender_id == 920762514:
    if "ткейсы" in message.raw_text:
-    await sleep(random.choice(time));
-    await self.client.send_message(self.chat, self.strings['cases']);
     await sleep(2);
     await self.client.send_message(self.mine, self.strings['cases']);
    if "тнх" in message.raw_text:
     await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['thx']);
    if "промо" in message.raw_text:
-    await sleep(2);
+    await sleep(random.choice(time));
     regex = r"промо\s([A-Za-z0-9]+)"
     result = re.search(regex, message.raw_text)
-    await self.client.send_message(self.chat, f'Промо {result.group(1)}')
+    await self.client.send_message(self.chat, f'Промо {result.group(1)}');
   if message.chat_id == -1001892345917 and "Этот промокод был сгенерирован ботом" in message.raw_text:
-    await sleep(2)
+    await sleep(random.choice(time))
     regex = r"Промо\s([A-Za-z0-9]+)"
     result = re.search(regex, message.raw_text)
     await self.client.send_message(self.chat, f'Промо {result.group(1)}')
+
