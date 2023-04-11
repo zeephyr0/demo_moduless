@@ -25,8 +25,6 @@ class TwinCaseSenderMod(loader.Module):
  
  async def watcher(self, message):
   time = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-
-#отправка кейсов на основу
   if message.sender_id == 5522271758:
    if "✉ Ты нашел(ла) конверт." in message.raw_text:
     await sleep(1);
@@ -46,31 +44,6 @@ class TwinCaseSenderMod(loader.Module):
    if "💎 Ты нашел(ла) Кристальный Кейс!" in message.raw_text:
     await sleep(1);
     await self.client.send_message(self.mine, self.strings['kr']);
-
-#отправка кейсов/тнх/промо в группу твинков
-  if message.chat_id == -1001870697043 and message.sender_id == 920762514:
-   if "ткейсы" in message.raw_text:
-    await sleep(random.choice(time));
-    await self.client.send_message(self.chat, self.strings['cases']);
-    await sleep(2);
-    await self.client.send_message(self.mine, self.strings['cases']);
-   if "тнх" in message.raw_text:
-    await sleep(random.choice(time));
-    await self.client.send_message(self.chat, self.strings['thx']);
-   if "промо" in message.raw_text:
-    await sleep(2);
-    regex = r"промо\s([A-Za-z0-9]+)"
-    result = re.search(regex, message.raw_text)
-    await self.client.send_message(self.chat, f'Промо {result.group(1)}')
-
-#промо с канала
-  if message.chat_id == -1001892345917 and "Этот промокод был сгенерирован ботом" in message.raw_text:
-    await sleep(2)
-    regex = r"Промо\s([A-Za-z0-9]+)"
-    result = re.search(regex, message.raw_text)
-    await self.client.send_message(self.chat, f'Промо {result.group(1)}')
-
-#чекер кейсов в боте
    if "📦 Кейсы игрока" and "✉ |  Конверт" in message.raw_text:
     await sleep(1);
     await self.client.send_message(self.chat, self.strings['kt']);
@@ -101,4 +74,22 @@ class TwinCaseSenderMod(loader.Module):
     await self.client.send_message(self.chat, self.strings['kr']);
     await sleep(2);
     await self.client.send_message(self.mine, self.strings['cases']);
-
+  if message.chat_id == -1001870697043 and message.sender_id == 920762514:
+   if "ткейсы" in message.raw_text:
+    await sleep(random.choice(time));
+    await self.client.send_message(self.chat, self.strings['cases']);
+    await sleep(2);
+    await self.client.send_message(self.mine, self.strings['cases']);
+   if "тнх" in message.raw_text:
+    await sleep(random.choice(time));
+    await self.client.send_message(self.chat, self.strings['thx']);
+   if "промо" in message.raw_text:
+    await sleep(2);
+    regex = r"промо\s([A-Za-z0-9]+)"
+    result = re.search(regex, message.raw_text)
+    await self.client.send_message(self.chat, f'Промо {result.group(1)}')
+  if message.chat_id == -1001892345917 and "Этот промокод был сгенерирован ботом" in message.raw_text:
+    await sleep(2)
+    regex = r"Промо\s([A-Za-z0-9]+)"
+    result = re.search(regex, message.raw_text)
+    await self.client.send_message(self.chat, f'Промо {result.group(1)}')
