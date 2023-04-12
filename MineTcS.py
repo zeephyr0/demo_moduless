@@ -5,6 +5,7 @@ from asyncio import sleep
 
 @loader.tds 
 class TwinCaseSenderMod(loader.Module): 
+ """<b>Модуль для твинов</b>/n<i>Coded By EboDem</i>"""
  strings = {
   'name': 'TwinCaseSender',
   'cases': 'кейсы',
@@ -26,8 +27,10 @@ class TwinCaseSenderMod(loader.Module):
   self.chat = -1001870697043
  
  async def watcher(self, message):
+  #тайм слип
   time = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
   if message.sender_id == 5522271758:
+   #отправка кейсов на основу
    if "✉ Ты нашел(ла) конверт." in message.raw_text:
     await sleep(1);
     await self.client.send_message(self.mine, self.strings['kt']);
@@ -83,19 +86,24 @@ class TwinCaseSenderMod(loader.Module):
     await self.client.send_message(self.mine, self.strings['cases']);
    elif "📦 Кейсы игрока" and "Пусто." in message.raw_text:
     await sleep(random.choice(time));
-    await self.client.send_message(self.chat, self.strings['kr']);
+    await self.client.send_message(self.chat, self.strings['nothing']);
+
   if message.chat_id == -1001870697043 and message.sender_id == 920762514:
+   #чекер кейсов на твинах
    if "ткейсы" in message.raw_text:
     await sleep(2);
     await self.client.send_message(self.mine, self.strings['cases']);
+   #отправка "thx" в чат твинов
    if "тнх" in message.raw_text:
     await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['thx']);
+   #ручной сбор промо
    if "промо" in message.raw_text:
     await sleep(random.choice(time));
     regex = r"промо\s([A-Za-z0-9]+)"
     result = re.search(regex, message.raw_text)
     await self.client.send_message(self.chat, f'Промо {result.group(1)}');
+  #авто-сбор промо
   if message.chat_id == -1001892345917 and "Этот промокод был сгенерирован ботом" in message.raw_text:
     await sleep(random.choice(time))
     regex = r"Промо\s([A-Za-z0-9]+)"
