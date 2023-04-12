@@ -9,12 +9,14 @@ class TwinCaseSenderMod(loader.Module):
   'name': 'TwinCaseSender',
   'cases': 'кейсы',
   'thx': 'thx',
+  'nothing': '❌ На аккаунте нет кейсов',
   'kt': 'передать ZEPHYR_god кт 1',
   'rkt': 'передать ZEPHYR_god ркт 1',
   'k': 'передать ZEPHYR_god к 1',
   'rk': 'передать ZEPHYR_god рк 1',
   'mif': 'передать ZEPHYR_god миф 1',
-  'kr': 'передать ZEPHYR_god кр 1'
+  'kr': 'передать ZEPHYR_god кр 1',
+  'zv': 'передать ZEPHYR_god зв 1'
   } 
 
  async def client_ready(self, client, db): 
@@ -45,35 +47,43 @@ class TwinCaseSenderMod(loader.Module):
     await sleep(1);
     await self.client.send_message(self.mine, self.strings['kr']);
    if "📦 Кейсы игрока" and "✉ |  Конверт" in message.raw_text:
-    await sleep(1);
+    await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['kt']);
-    await sleep(2);
+    await sleep(random.choice(time));
     await self.client.send_message(self.mine, self.strings['cases']);
    elif "📦 Кейсы игрока" and "🧧 |  Редкий Конверт" in message.raw_text:
-    await sleep(1);
+    await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['rkt']);
-    await sleep(2);
+    await sleep(random.choice(time));
     await self.client.send_message(self.mine, self.strings['cases']);
    elif "📦 Кейсы игрока" and "📦 |  Кейс" in message.raw_text:
-    await sleep(1);
+    await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['k']);
-    await sleep(2);
+    await sleep(random.choice(time));
     await self.client.send_message(self.mine, self.strings['cases']);
    elif "📦 Кейсы игрока" and "🗳 |  Редкий Кейс" in message.raw_text:
-    await sleep(1);
+    await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['rk']);
-    await sleep(2);
+    await sleep(random.choice(time));
     await self.client.send_message(self.mine, self.strings['cases']);
    elif "📦 Кейсы игрока" and "🕋 |  Мифический Кейс" in message.raw_text:
-    await sleep(1);
+    await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['mif']);
-    await sleep(2);
+    await sleep(random.choice(time));
     await self.client.send_message(self.mine, self.strings['cases']);
    elif "📦 Кейсы игрока" and "💎 |  Кристальный Кейс" in message.raw_text:
-    await sleep(1);
+    await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['kr']);
-    await sleep(2);
+    await sleep(random.choice(time));
     await self.client.send_message(self.mine, self.strings['cases']);
+   elif "📦 Кейсы игрока" and "🌌 |  Звёздный Кейс" in message.raw_text:
+    await sleep(random.choice(time));
+    await self.client.send_message(self.chat, self.strings['zv']);
+    await sleep(random.choice(time));
+    await self.client.send_message(self.mine, self.strings['cases']);
+   elif "📦 Кейсы игрока" and "Пусто." in message.raw_text:
+    await sleep(random.choice(time));
+    await self.client.send_message(self.chat, self.strings['kr']);
   if message.chat_id == -1001870697043 and message.sender_id == 920762514:
    if "ткейсы" in message.raw_text:
     await sleep(2);
