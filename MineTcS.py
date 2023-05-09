@@ -98,7 +98,7 @@ class TwinCaseSenderMod(loader.Module):
     await sleep(random.choice(time));
     await self.client.send_message(self.chat, self.strings['thx']);
    #ручной сбор промо
-   if "промо" in message.raw_text:
+   if "Промо" in message.raw_text:
     await sleep(random.choice(time));
     regex = r"промо\s([A-Za-z0-9]+)"
     result = re.search(regex, message.raw_text)
