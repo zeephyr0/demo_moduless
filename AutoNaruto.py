@@ -37,6 +37,14 @@ class NarutoAdventureMod(loader.Module):
                             await asyncio.sleep(random.uniform(2, 4))
                             await self.client.send_message(message.sender_id, button_text)
 
+                if "❔ Вы хотите вернуться в деревню?" in message.raw_text:
+                # Если сообщение содержит нужный текст, проведем проверку кнопок
+                    if message.reply_markup and message.reply_markup.rows:
+                        if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                            button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки
+                            await asyncio.sleep(random.uniform(2, 4))
+                            await self.client.send_message(message.sender_id, button_text)
+
             # Обработка других сообщений
             if "❔ Выберите еду" in message.raw_text:
                 delay = random.uniform(2, 7)
