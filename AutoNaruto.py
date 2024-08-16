@@ -16,6 +16,15 @@ class NarutoAdventureMod(loader.Module):
     @loader.watcher()
     async def watcher(self, message):
         if message.sender_id == 6745912139: 
+            if "🍜 Вы голодны, поэтому не можете идти дальше" in message.raw_text:
+                if message.reply_markup:
+                    if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
+                        if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[0].buttons) > 0:  # Проверяем, что во второй строке есть минимум 2 кнопки
+                            # Получаем текст четвёртой кнопки и отправляем его
+                            button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс [1][1] для четвёртой кнопки
+                            await asyncio.sleep(random.uniform(2, 4))
+                            await self.client.send_message(message.sender_id, button_text)
+                            
             if "🗺 Уровень отдаленности от деревни:" in message.raw_text:
                 if message.reply_markup:
                     if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
