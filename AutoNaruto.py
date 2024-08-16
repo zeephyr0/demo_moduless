@@ -99,6 +99,14 @@ class NarutoAdventureMod(loader.Module):
                         button_text = message.reply_markup.rows[0].buttons[0].text
                         await asyncio.sleep(random.uniform(2, 7))
                         await self.client.send_message(message.sender_id, button_text)
+
+            if "Во время короткого отдыха в тени дерева вы замечаете в траве какой-то блеск." in message.raw_text:
+                # Проверяем наличие кнопок в первой строке
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
                         
 
                  
