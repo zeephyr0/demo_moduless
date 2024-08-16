@@ -39,16 +39,10 @@ class NarutoAdventureMod(loader.Module):
 
             # Проверка на сообщение "❔ Вы хотите вернуться в деревню?"
             if "❔ Вы хотите вернуться в деревню?" in message.raw_text:
-                # Проверяем наличие кнопок в первой и второй строках
+                # Проверяем наличие кнопок в первой строке
                 if message.reply_markup and message.reply_markup.rows:
-                    # Проверяем наличие кнопок в первой строке
-                    has_first_row_buttons = len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0
-                    # Проверяем наличие кнопок во второй строке
-                    has_second_row_buttons = len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0
-                    
-                    # Если во второй строке есть кнопки, отправим текст первой кнопки
-                    if has_second_row_buttons:
-                        button_text = message.reply_markup.rows[1].buttons[0].text  # Текст первой кнопки второй строки
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, button_text)
                         await asyncio.sleep(random.uniform(2, 4))
