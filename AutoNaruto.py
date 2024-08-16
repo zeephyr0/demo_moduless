@@ -107,6 +107,13 @@ class NarutoAdventureMod(loader.Module):
                         button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, button_text)
-                        
+
+            if "Вы находите обломок маски они, наполовину ушедший в мягкий речной ил. Белая глина потрескалась и потемнела от времени, но на внутренней стороне еще видны бурые пятна, похожие на засохшую кровь. " in message.raw_text:
+                # Проверяем наличие кнопок в первой строке
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
 
                  
