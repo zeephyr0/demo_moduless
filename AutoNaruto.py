@@ -44,6 +44,8 @@ class NarutoAdventureMod(loader.Module):
                             button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки
                             await asyncio.sleep(random.uniform(2, 4))
                             await self.client.send_message(message.sender_id, button_text)
+                            await asyncio.sleep(random.uniform(10, 40))
+                            await self.client.send_message(message.sender_id, "🍜 Квартал ресторанов")
 
             # Обработка других сообщений
             if "❔ Выберите еду" in message.raw_text:
