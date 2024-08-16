@@ -1,8 +1,8 @@
 import random
 import asyncio
+import re  # Импортируем регулярные выражения
 from .. import loader
 from hikkatl.types import Message
-from hikkatl.types import KeyboardButton
 
 @loader.tds
 class NarutoAdventureMod(loader.Module):
@@ -10,47 +10,44 @@ class NarutoAdventureMod(loader.Module):
 
     strings = {"name": "NarutoAdventure"}
 
-    def __init__(self):
-        self.is_hungry = False  # Изначально статус голода False
-
     async def client_ready(self, client, db):
         self.client = client
 
     @loader.watcher()
     async def watcher(self, message):
         if message.sender_id == 6745912139:
-            if "🍜 Вы голодны, поэтому не можете идти дальше" in message.raw_text:
-                self.is_hungry = True  # Устанавливаем статус голода
-                if message.reply_markup:
-                    if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
-                        if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[0].buttons) > 0:
-                            # Получаем текст первой кнопки во второй строке и отправляем его
-                            button_text = message.reply_markup.rows[1].buttons[0].text
+            # Проверка на сытость
+            hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
+            if hunger_match:
+                # Извлекаем значение сытости
+                hunger_value = int(hunger_match.group(1))
+                
+                if hunger_value > 8:
+                    # Если сытость больше 8, отправляем текст с первой кнопки первой строки
+                    if message.reply_markup and message.reply_markup.rows:
+                        if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                            button_text = message.reply_markup.rows[0].buttons[0].text
                             await asyncio.sleep(random.uniform(2, 4))
                             await self.client.send_message(message.sender_id, button_text)
-                            
-            if "🗺 Уровень отдаленности от деревни:" in message.raw_text:
-                if not self.is_hungry:  # Если не голоден, отправляем сообщение
-                    if message.reply_markup:
-                        if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
-                            # Получаем текст первой кнопки и отправляем его
-                            button_text = message.reply_markup.rows[0].buttons[0].text
-                            await asyncio.sleep(random.uniform(2, 7))
-                            await self.client.send_message(message.sender_id, button_text)
                 else:
-                    pass
-          
+                    # Если сытость 8 или меньше, отправляем текст с первой кнопки второй строки
+                    if message.reply_markup and message.reply_markup.rows:
+                        if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
+                            button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс кнопки во второй строке
+                            await asyncio.sleep(random.uniform(2, 4))
+                            await self.client.send_message(message.sender_id, button_text)
+
+            # Обработка других сообщений
             if "❔ Выберите еду" in message.raw_text:
-                delay = random.uniform(2, 7) 
-                await asyncio.sleep(delay) 
+                delay = random.uniform(2, 7)
+                await asyncio.sleep(delay)
                 await self.client.send_message(message.sender_id, "🍡 Данго (17 энергии, 40к рё)")
 
             if "❌ Вы уже сыты!" in message.raw_text:
-                self.is_hungry = False  # Сбрасываем статус голода
                 delay = random.uniform(2, 7) 
                 await asyncio.sleep(delay) 
                 await self.client.send_message(message.sender_id, "/raid")
-                
+
             if "🍜 Перед вылазкой, вы можете взять еду с собой. Она восстанавливает сытость и позволяет пройти дальше." in message.raw_text:
                 if message.reply_markup:
                     if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
