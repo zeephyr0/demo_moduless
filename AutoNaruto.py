@@ -43,13 +43,13 @@ class NarutoAdventureMod(loader.Module):
                         await self.client.send_message(message.sender_id, button_text)
                       
             if "🏚 Выберите на каком уровне отдаленности вы хотите начать" in message.raw_text:
-               if message.reply_markup:
-                   if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
-                       if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) >= 4:  # Проверяем, что есть минимум 4 кнопки
-                # Получаем текст четвёртой кнопки и отправляем его
-                           button_text = message.reply_markup.rows[0].buttons[3].text  # Индекс 3 для четвёртой кнопки
-                           await asyncio.sleep(random.uniform(2, 7))
-                           await self.client.send_message(message.sender_id, button_text)
+                if message.reply_markup:
+                    if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
+                        if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 1:  # Проверяем, что во второй строке есть минимум 2 кнопки
+                            # Получаем текст четвёртой кнопки и отправляем его
+                            button_text = message.reply_markup.rows[1].buttons[1].text  # Индекс [1][1] для четвёртой кнопки
+                            await asyncio.sleep(random.uniform(2, 7))
+                            await self.client.send_message(message.sender_id, button_text)
 
             if "В одном из городов, где вы остановились, вы нашли онсэн. Абонемент стоит 2 млн рё." in message.raw_text:
                 if message.reply_markup and message.reply_markup.rows:  # Проверяем наличие reply_markup и его строк
