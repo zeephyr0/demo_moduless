@@ -10,8 +10,16 @@ class NarutoAdventureMod(loader.Module):
 
     strings = {"name": "NarutoAdventure"}
 
+    def __init__(self):
+        self.limit_active = False  # Изначально статус лимита не активен
+    
     async def client_ready(self, client, db):
         self.client = client
+
+    async def limitoffcmd(self, message: Message):
+        """Команда для деактивации статуса лимита"""
+        self.limit_active = False
+        await self.client.send_message(message.sender_id, "Статус лимита отключен.")
 
     @loader.watcher()
     async def watcher(self, message):
@@ -49,11 +57,15 @@ class NarutoAdventureMod(loader.Module):
                         await self.client.send_message(message.sender_id, "🍜 Квартал ресторанов")
 
             # Обработка других сообщений
-            if "❔ Выберите еду" in message.raw_text:
-                delay = random.uniform(2, 7)
-                await asyncio.sleep(delay)
-                await self.client.send_message(message.sender_id, "🍡 Данго (17 энергии, 40к рё)")
-
+            if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
+                self.limit_active = True  # Устанавливаем статус лимита в активный
+                
+          if "❔ Выберите еду" in message.raw_text:
+                if not self.limit_active:  # Проверяем, активен ли лимит
+                    delay = random.uniform(2, 7)
+                    await asyncio.sleep(delay)
+                    await self.client.send_message(message.sender_id, "🍡 Данго (17 энергии, 40к рё)")
+    
             if "❌ Вы уже сыты!" in message.raw_text:
                 delay = random.uniform(2, 7) 
                 await asyncio.sleep(delay) 
