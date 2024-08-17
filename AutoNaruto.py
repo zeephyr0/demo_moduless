@@ -60,7 +60,7 @@ class NarutoAdventureMod(loader.Module):
             if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
                 self.limit_active = True  # Устанавливаем статус лимита в активный
                 
-          if "❔ Выберите еду" in message.raw_text:
+            if "❔ Выберите еду" in message.raw_text:
                 if not self.limit_active:  # Проверяем, активен ли лимит
                     delay = random.uniform(2, 7)
                     await asyncio.sleep(delay)
