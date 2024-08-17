@@ -116,4 +116,11 @@ class NarutoAdventureMod(loader.Module):
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, button_text)
 
+            if "По дороге вы замечаете лежащего на обочине человека. Приблизившись, вы видите, что он ранен и без сознания." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    # Проверяем наличие кнопок на третьей строке
+                    if len(message.reply_markup.rows) > 2 and len(message.reply_markup.rows[2].buttons) > 0:
+                        button_text = message.reply_markup.rows[2].buttons[0].text  # Текст первой кнопки третьей строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
                  
