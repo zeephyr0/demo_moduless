@@ -136,7 +136,7 @@ class NarutoAdventureMod(loader.Module):
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, button_text)
 
-           if "Ночной ветер доносит до вас странный аромат - сладковатый и тяжелый, он напоминает благовония, которыми жрецы окуривают мертвецов перед погребением." in message.raw_text:
+            if "Ночной ветер доносит до вас странный аромат - сладковатый и тяжелый, он напоминает благовония, которыми жрецы окуривают мертвецов перед погребением." in message.raw_text:
                 if message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
                         button_text = message.reply_markup.rows[0].buttons[0].text
