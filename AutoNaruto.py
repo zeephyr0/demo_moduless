@@ -135,4 +135,35 @@ class NarutoAdventureMod(loader.Module):
                         button_text = message.reply_markup.rows[2].buttons[0].text  # Текст первой кнопки третьей строки
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, button_text)
+
+           if "Ночной ветер доносит до вас странный аромат - сладковатый и тяжелый, он напоминает благовония, которыми жрецы окуривают мертвецов перед погребением." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            # Проверка на сообщение о дожде
+            if "Дождь безжалостно хлещет ваше лицо, тело пробивает озноб. Вы дрожите, но продолжаете идти, стараясь не обращать внимания на горячку с её кислотными видениями." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            # Проверка на сообщение о утре
+            if "Утром наступает... утро, и это довольно необычно, если смириться со своей участью. Вы в богатой комнате, пахнущей свежими татами, рисовой водой и зеленым чаем." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            # Проверка на сообщение о усилии воли
+            if "Усилием воли вы разбираете очертания и комнаты, и девушки." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
                  
