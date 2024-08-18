@@ -21,9 +21,20 @@ class NarutoAdventureMod(loader.Module):
         self.limit_active = False
         await self.client.send_message(message.sender_id, "Статус лимита отключен.")
 
+
     @loader.watcher()
     async def watcher(self, message):
         if message.sender_id == 6745912139:
+            # Проверка на уровень отдаленности от деревни
+            if "🗺 Уровень отдаленности от деревни: 16" in message.raw_text:
+                # Если уровень отдаленности 16, отправляем текст с первой кнопки второй строки
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
+                        button_text = message.reply_markup.rows[1].buttons[0].text  # Текст с первой кнопки второй строки
+                        await asyncio.sleep(random.uniform(2, 4))
+                        await self.client.send_message(message.sender_id, button_text)
+                return  # Не продолжать проверку, если выполнено условие для отдаленности
+
             # Проверка на сытость
             hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
             if hunger_match:
@@ -44,7 +55,7 @@ class NarutoAdventureMod(loader.Module):
                             button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс кнопки во второй строке
                             await asyncio.sleep(random.uniform(2, 4))
                             await self.client.send_message(message.sender_id, button_text)
-
+                            
             # Проверка на сообщение "❔ Вы хотите вернуться в деревню?"
             if "❔ Вы хотите вернуться в деревню?" in message.raw_text:
                 # Проверяем наличие кнопок в первой строке
