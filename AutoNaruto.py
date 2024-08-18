@@ -61,11 +61,13 @@ class NarutoAdventureMod(loader.Module):
                 self.limit_active = True  # Устанавливаем статус лимита в активный
                 
             if "❔ Выберите еду" in message.raw_text:
-                if not self.limit_active:  # Проверяем, активен ли лимит
-                    delay = random.uniform(2, 7)
-                    await asyncio.sleep(delay)
-                    await self.client.send_message(message.sender_id, "🍡 Данго (17 энергии, 40к рё)")
-    
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 1:
+                        button_text = message.reply_markup.rows[0].buttons[1].text  # Текст со второй кнопки первой строки
+                        delay = random.uniform(2, 7)
+                        await asyncio.sleep(delay)
+                        await self.client.send_message(message.sender_id, button_text)
+                        
             if "❌ Вы уже сыты!" in message.raw_text:
                 delay = random.uniform(2, 7) 
                 await asyncio.sleep(delay) 
