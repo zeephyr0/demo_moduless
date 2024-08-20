@@ -67,11 +67,14 @@ class NarutoAdventureMod(loader.Module):
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, "🍜 Квартал ресторанов")
 
-            # Обработка других сообщений
-            if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
-                self.limit_active = True  # Устанавливаем статус лимита в активный
+ if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
+                self.limit_active = True
                 
+            # Проверка состояния лимита перед обработкой выбора еды
             if "❔ Выберите еду" in message.raw_text:
+                if self.limit_active:
+                    return  # Не выполняем дальнейшие действия, если лимит активен
+
                 if message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 1:
                         button_text = message.reply_markup.rows[0].buttons[1].text  # Текст со второй кнопки первой строки
