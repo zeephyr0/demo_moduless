@@ -67,7 +67,7 @@ class NarutoAdventureMod(loader.Module):
                         await asyncio.sleep(random.uniform(2, 4))
                         await self.client.send_message(message.sender_id, "🍜 Квартал ресторанов")
 
- if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
+            if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
                 self.limit_active = True
                 
             # Проверка состояния лимита перед обработкой выбора еды
