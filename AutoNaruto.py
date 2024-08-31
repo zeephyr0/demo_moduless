@@ -13,6 +13,7 @@ class NarutoAdventureMod(loader.Module):
     def init(self):
         self.status_one_active = True  # Изначально первый статус активен
         self.status_two_active = False  # Изначально второй статус не активен
+        self.limit_active = False  # Изначально статус лимита не активен
 
     async def client_ready(self, client, db):
         self.client = client
@@ -22,6 +23,11 @@ class NarutoAdventureMod(loader.Module):
         self.status_one_active = True
         self.status_two_active = False
         await self.client.send_message(message.sender_id, "Первый статус активирован. Второй статус отключен.")
+
+    async def limitoffcmd(self, message: Message):
+        """Команда для деактивации статуса лимита"""
+        self.limit_active = False
+        await self.client.send_message(message.sender_id, "Статус лимита отключен.")
 
     async def statustwocmd(self, message: Message):
         """Активирует второй статус и деактивирует первый"""
