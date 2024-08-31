@@ -31,7 +31,7 @@ class NarutoAdventureMod(loader.Module):
                 if message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
                         button_text = message.reply_markup.rows[1].buttons[0].text  # Текст с первой кнопки второй строки
-                        await asyncio.sleep(random.uniform(1, 7))
+                        await asyncio.sleep(random.uniform(4, 9))
                         await self.client.send_message(message.sender_id, button_text)
                 return  # Не продолжать проверку, если выполнено условие для отдаленности
 
@@ -62,9 +62,9 @@ class NarutoAdventureMod(loader.Module):
                 if message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
                         button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
-                        await asyncio.sleep(random.uniform(1, 7))
+                        await asyncio.sleep(random.uniform(4, 9))
                         await self.client.send_message(message.sender_id, button_text)
-                        await asyncio.sleep(random.uniform(1, 7))
+                        await asyncio.sleep(random.uniform(10, 30))
                         await self.client.send_message(message.sender_id, "🍜 Квартал ресторанов")
 
             if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
