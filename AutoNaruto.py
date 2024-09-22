@@ -242,3 +242,10 @@ class NarutoAdventureMod(loader.Module):
                         button_text = message.reply_markup.rows[0].buttons[0].text
                         await asyncio.sleep(random.uniform(1, 7))
                         await self.client.send_message(message.sender_id, button_text)
+
+            if "Во время привала вы замечаете поляну с разнообразными травами." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if message.reply_markup.rows and message.reply_markup.rows[0].buttons:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
