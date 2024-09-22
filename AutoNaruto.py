@@ -199,4 +199,32 @@ class NarutoAdventureMod(loader.Module):
                         button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
                         await asyncio.sleep(random.uniform(1, 7))
                         await self.client.send_message(message.sender_id, button_text)
+
+            if "Вы проходите мимо прекрасного сада сакуры в полном цвету." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if message.reply_markup.rows and message.reply_markup.rows[0].buttons:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            if "Во время перехода через реку вы замечаете странное существо, наполовину скрытое в воде." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if message.reply_markup.rows and message.reply_markup.rows[0].buttons:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            if "Проходя через небольшую деревню, вы натыкаетесь на уличного игрока в кости." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 1 and message.reply_markup.rows[1].buttons:
+                        button_text = message.reply_markup.rows[1].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            if "Во время вашего путешествия вы натыкаетесь на скрытый горячий источник." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if message.reply_markup.rows and message.reply_markup.rows[0].buttons:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
                  
