@@ -60,34 +60,33 @@ class NarutoAdventureFoodMod(loader.Module):
                         button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс [1][0] для первой кнопки второй строки
                         await asyncio.sleep(random.uniform(1, 7))
                         await self.client.send_message(message.sender_id, button_text)
-
-            # Проверка на сытость
+                        
             hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
             if hunger_match:
-            # Извлекаем значение сытости
-            hunger_value = int(hunger_match.group(1))
+                # Извлекаем значение сытости
+                hunger_value = int(hunger_match.group(1))
 
-            # Если сытость больше 8
-            if hunger_value > 8:
-                # Отправляем текст с первой кнопки первой строки
-                if message.reply_markup and message.reply_markup.rows:
-                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
-                        button_text = message.reply_markup.rows[0].buttons[0].text
-                        await asyncio.sleep(random.uniform(1, 7))
-                        await self.client.send_message(message.sender_id, button_text)
-            else:
-                # Если сытость 8 или меньше, проверяем на наличие текста "Восстановить сытость"
-                if "Восстановить сытость" in message.raw_text:
-                    await self.client.send_message(message.sender_id, "/food1")
-                else:
-                    # Если сытость 8 или меньше и нет дополнительного текста, отправляем текст с первой кнопки второй строки
+                # Если сытость больше 8
+                if hunger_value > 8:
+                    # Отправляем текст с первой кнопки первой строки
                     if message.reply_markup and message.reply_markup.rows:
-                        if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
-                            button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс кнопки во второй строке
+                        if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                            button_text = message.reply_markup.rows[0].buttons[0].text
                             await asyncio.sleep(random.uniform(1, 7))
                             await self.client.send_message(message.sender_id, button_text)
+                else:
+                    # Если сытость 8 или меньше, проверяем на наличие текста "Восстановить сытость"
+                    if "Восстановить сытость" in message.raw_text:
+                        await self.client.send_message(message.sender_id, "/food1")
+                    else:
+                        # Если сытость 8 или меньше и нет дополнительного текста, отправляем текст с первой кнопки второй строки
+                        if message.reply_markup and message.reply_markup.rows:
+                            if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
+                                button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс кнопки во второй строке
+                                await asyncio.sleep(random.uniform(1, 7))
+                                await self.client.send_message(message.sender_id, button_text)
 
-
+            
             # Проверяем наличие текста с запросом на количество еды
             quantity_match = re.search(r"Сколько еды этого типа вы хотите взять\? \(у вас есть (\d+)\)", message.raw_text)
             
