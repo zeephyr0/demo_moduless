@@ -77,6 +77,7 @@ class NarutoAdventureFoodMod(loader.Module):
                 else:
                     # Если сытость 8 или меньше, проверяем на наличие текста "Восстановить сытость"
                     if "Восстановить сытость" in message.raw_text:
+                        await asyncio.sleep(random.uniform(1, 3))
                         await self.client.send_message(message.sender_id, "/food1")
                     else:
                         # Если сытость 8 или меньше и нет дополнительного текста, отправляем текст с первой кнопки второй строки
@@ -91,10 +92,14 @@ class NarutoAdventureFoodMod(loader.Module):
             quantity_match = re.search(r"Сколько еды этого типа вы хотите взять\? \(у вас есть (\d+)\)", message.raw_text)
             
             if quantity_match:
-                # Извлекаем количество и отправляем его
-                quantity_value = quantity_match.group(1)
+                # Извлекаем количество
+                available_quantity = int(quantity_match.group(1))
+
+                # Отправляем 10 если доступное количество больше 10, иначе отправляем доступное количество
+                quantity_to_send = min(available_quantity, 10)
+
                 await asyncio.sleep(random.uniform(1, 7))
-                await self.client.send_message(message.sender_id, quantity_value)
+                await self.client.send_message(message.sender_id, str(quantity_to_send))
                 
             # Проверка на сообщение "❔ Вы хотите вернуться в деревню?"
             if "❔ Вы хотите вернуться в деревню?" in message.raw_text:
@@ -289,5 +294,14 @@ class NarutoAdventureFoodMod(loader.Module):
                 if message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 1 and message.reply_markup.rows[1].buttons:
                         button_text = message.reply_markup.rows[1].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
+
+            # Проверяем наличие текста о фестивале Танабата
+            if "Вы прибываете в небольшую деревню как раз в день фестиваля Танабата." in message.raw_text:
+                # Отправляем текст с первой кнопки первой строки
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
                         await asyncio.sleep(random.uniform(1, 7))
                         await self.client.send_message(message.sender_id, button_text)
