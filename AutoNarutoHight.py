@@ -5,10 +5,10 @@ from .. import loader
 from hikkatl.types import Message
 
 @loader.tds
-class NarutoAdventureMod(loader.Module):
+class NarutoAdventureFoodMod(loader.Module):
     """Авто рейды нахуй"""
 
-    strings = {"name": "NarutoAdventure"}
+    strings = {"name": "NarutoAdventureFood"}
 
     def init(self):
         self.status_one_active = True  # Изначально первый статус активен
