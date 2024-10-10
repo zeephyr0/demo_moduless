@@ -52,13 +52,13 @@ class NarutoAdventureFoodMod(loader.Module):
                 if self.status_one_active and message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
                         button_text = message.reply_markup.rows[0].buttons[0].text  # Индекс [0][0] для первой кнопки первой строки
-                        await asyncio.sleep(random.uniform(1, 7))
+                        await asyncio.sleep(random.uniform(1, 3))
                         await self.client.send_message(message.sender_id, button_text)
 
                 elif self.status_two_active and message.reply_markup and message.reply_markup.rows:
                     if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
                         button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс [1][0] для первой кнопки второй строки
-                        await asyncio.sleep(random.uniform(1, 7))
+                        await asyncio.sleep(random.uniform(1, 3))
                         await self.client.send_message(message.sender_id, button_text)
                         
             hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
@@ -104,7 +104,7 @@ class NarutoAdventureFoodMod(loader.Module):
                         button_text = message.reply_markup.rows[0].buttons[0].text  # Текст первой кнопки первой строки
                         await asyncio.sleep(random.uniform(4, 9))
                         await self.client.send_message(message.sender_id, button_text)
-                        await asyncio.sleep(random.uniform(10, 30))
+                        await asyncio.sleep(random.uniform(5, 30))
                         await self.client.send_message(message.sender_id, "/raid")
 
             if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
@@ -138,7 +138,7 @@ class NarutoAdventureFoodMod(loader.Module):
                     if message.reply_markup and message.reply_markup.rows:
                         if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
                             button_text = message.reply_markup.rows[1].buttons[0].text
-                            await asyncio.sleep(random.uniform(1, 7))
+                            await asyncio.sleep(random.uniform(1, 4))
                             await self.client.send_message(message.sender_id, button_text)
                 # Если количество еды больше нуля, отправляем текст с первой кнопки первой строки
                 else:
