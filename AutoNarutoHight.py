@@ -119,14 +119,28 @@ class NarutoAdventureMod(loader.Module):
                 await asyncio.sleep(delay) 
                 await self.client.send_message(message.sender_id, "/raid")
         
-            if "🍜 Перед вылазкой, вы можете взять еду с собой. Она восстанавливает сытость и позволяет пройти дальше." in message.raw_text:
-                if message.reply_markup:
-                    if message.reply_markup.rows:  # Проверяем, есть ли строки кнопок
-                        # Получаем текст первой кнопки и отправляем его
-                        button_text = message.reply_markup.rows[0].buttons[0].text
-                        await asyncio.sleep(random.uniform(1, 7))
-                        await self.client.send_message(message.sender_id, button_text)
-                                      
+            food_match = re.search(r"🍥 Вы можете взять с собой до 10 ед. еды, вы взяли (\d+).", message.raw_text)
+            
+            if food_match:
+                # Извлекаем количество еды
+                food_value = int(food_match.group(1))
+
+                # Если количество еды равно нулю, отправляем текст с первой кнопки второй строки
+                if food_value == 0:
+                    if message.reply_markup and message.reply_markup.rows:
+                        if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
+                            button_text = message.reply_markup.rows[1].buttons[0].text
+                            await asyncio.sleep(random.uniform(1, 7))
+                            await self.client.send_message(message.sender_id, button_text)
+                # Если количество еды больше нуля, отправляем текст с первой кнопки первой строки
+                else:
+                    if message.reply_markup and message.reply_markup.rows:
+                        if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                            button_text = message.reply_markup.rows[0].buttons[0].text
+                            await asyncio.sleep(random.uniform(1, 7))
+                            await self.client.send_message(message.sender_id, button_text)
+
+            
             if "В одном из городов, где вы остановились, вы нашли онсэн. Абонемент стоит 2 млн рё." in message.raw_text:
                 if message.reply_markup and message.reply_markup.rows:  # Проверяем наличие reply_markup и его строк
         # Проверяем, что в второго строки есть минимум 1 кнопка
