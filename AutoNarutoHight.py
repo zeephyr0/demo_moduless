@@ -87,7 +87,16 @@ class NarutoAdventureMod(loader.Module):
                             await asyncio.sleep(random.uniform(1, 7))
                             await self.client.send_message(message.sender_id, button_text)
 
+
+            # Проверяем наличие текста с запросом на количество еды
+            quantity_match = re.search(r"Сколько еды этого типа вы хотите взять\? \(у вас есть (\d+)\)", message.raw_text)
             
+            if quantity_match:
+                # Извлекаем количество и отправляем его
+                quantity_value = quantity_match.group(1)
+                await asyncio.sleep(random.uniform(1, 7))
+                await self.client.send_message(message.sender_id, quantity_value)
+                
             # Проверка на сообщение "❔ Вы хотите вернуться в деревню?"
             if "❔ Вы хотите вернуться в деревню?" in message.raw_text:
                 # Проверяем наличие кнопок в первой строке
@@ -97,7 +106,7 @@ class NarutoAdventureMod(loader.Module):
                         await asyncio.sleep(random.uniform(4, 9))
                         await self.client.send_message(message.sender_id, button_text)
                         await asyncio.sleep(random.uniform(10, 30))
-                        await self.client.send_message(message.sender_id, "🍜 Квартал ресторанов")
+                        await self.client.send_message(message.sender_id, "/raid")
 
             if "❌ У ресторана закончились продукты, заходите позже!" in message.raw_text:
                 self.limit_active = True
