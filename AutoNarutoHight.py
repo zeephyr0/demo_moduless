@@ -11,8 +11,6 @@ class NarutoAdventureFoodMod(loader.Module):
     strings = {"name": "NarutoAdventureFood"}
 
     def init(self):
-
-    def init(self):
         self.status_one_active = True  # Изначально первый статус активен
         self.status_two_active = False  # Изначально второй статус не активен
         self.status_three_active = False  # Изначально третий статус не активен
