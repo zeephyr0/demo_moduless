@@ -11,18 +11,22 @@ class NarutoAdventureFoodMod(loader.Module):
     strings = {"name": "NarutoAdventureFood"}
 
     def init(self):
+
+    def init(self):
         self.status_one_active = True  # Изначально первый статус активен
         self.status_two_active = False  # Изначально второй статус не активен
+        self.status_three_active = False  # Изначально третий статус не активен
         self.limit_active = False  # Изначально статус лимита не активен
 
     async def client_ready(self, client, db):
         self.client = client
 
     async def statusonecmd(self, message: Message):
-        """Активирует первый статус и деактивирует второй"""
+        """Активирует первый статус и деактивирует второй и третий"""
         self.status_one_active = True
         self.status_two_active = False
-        await self.client.send_message(message.sender_id, "Первый статус активирован. Второй статус отключен.")
+        self.status_three_active = False
+        await self.client.send_message(message.sender_id, "Первый статус активирован. Второй и третий статус отключены.")
 
     async def limitoffcmd(self, message: Message):
         """Команда для деактивации статуса лимита"""
@@ -30,11 +34,19 @@ class NarutoAdventureFoodMod(loader.Module):
         await self.client.send_message(message.sender_id, "Статус лимита отключен.")
 
     async def statustwocmd(self, message: Message):
-        """Активирует второй статус и деактивирует первый"""
+        """Активирует второй статус и деактивирует первый и третий"""
         self.status_one_active = False
         self.status_two_active = True
-        await self.client.send_message(message.sender_id, "Второй статус активирован. Первый статус отключен.")
+        self.status_three_active = False
+        await self.client.send_message(message.sender_id, "Второй статус активирован. Первый и третий статус отключены.")
 
+    async def statusthreecmd(self, message: Message):
+        """Активирует третий статус и деактивирует первый и второй"""
+        self.status_one_active = False
+        self.status_two_active = False
+        self.status_three_active = True
+        await self.client.send_message(message.sender_id, "Третий статус активирован. Первый и второй статус отключены.")
+        
     @loader.watcher()
     async def watcher(self, message):
         if message.sender_id == 6745912139:
@@ -60,7 +72,11 @@ class NarutoAdventureFoodMod(loader.Module):
                         button_text = message.reply_markup.rows[1].buttons[0].text  # Индекс [1][0] для первой кнопки второй строки
                         await asyncio.sleep(random.uniform(1, 3))
                         await self.client.send_message(message.sender_id, button_text)
-                        
+
+                elif self.status_three_active:
+                    await asyncio.sleep(random.uniform(1, 3))  # Добавляем задержку
+                    await self.client.send_message(message.sender_id, "399")  # Отправляем "399"
+                
             hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
             if hunger_match:
                 # Извлекаем значение сытости
