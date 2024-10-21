@@ -73,7 +73,7 @@ class NarutoAdventureFoodMod(loader.Module):
 
                 elif self.status_three_active:
                     await asyncio.sleep(random.uniform(1, 3))  # Добавляем задержку
-                    await self.client.send_message(message.sender_id, "399")  # Отправляем "399"
+                    await self.client.send_message(message.sender_id, "499")  # Отправляем "499"
                 
             hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
             if hunger_match:
