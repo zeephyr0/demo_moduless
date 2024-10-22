@@ -1,4 +1,5 @@
 import random
+import random
 import asyncio
 import re  # Импортируем регулярные выражения
 from .. import loader
@@ -24,26 +25,30 @@ class NarutoAdventureFoodMod(loader.Module):
         self.status_one_active = True
         self.status_two_active = False
         self.status_three_active = False
+        self.limit_active = False  # Деактивируем статус лимита
         await self.client.send_message(message.sender_id, "Первый статус активирован. Второй и третий статус отключены.")
-
-    async def limitoffcmd(self, message: Message):
-        """Команда для деактивации статуса лимита"""
-        self.limit_active = False
-        await self.client.send_message(message.sender_id, "Статус лимита отключен.")
+        await asyncio.sleep(random.uniform(1, 5))  # Случайная задержка от 1 до 5 секунд
+        await self.client.send_message("@KirinGameBot", "/raid")  # Отправляем команду
 
     async def statustwocmd(self, message: Message):
         """Активирует второй статус и деактивирует первый и третий"""
         self.status_one_active = False
         self.status_two_active = True
         self.status_three_active = False
+        self.limit_active = False  # Деактивируем статус лимита
         await self.client.send_message(message.sender_id, "Второй статус активирован. Первый и третий статус отключены.")
+        await asyncio.sleep(random.uniform(1, 5))  # Случайная задержка от 1 до 5 секунд
+        await self.client.send_message("@KirinGameBot", "/raid")  # Отправляем команду
 
     async def statusthreecmd(self, message: Message):
         """Активирует третий статус и деактивирует первый и второй"""
         self.status_one_active = False
         self.status_two_active = False
         self.status_three_active = True
+        self.limit_active = False  # Деактивируем статус лимита
         await self.client.send_message(message.sender_id, "Третий статус активирован. Первый и второй статус отключены.")
+        await asyncio.sleep(random.uniform(1, 5))  # Случайная задержка от 1 до 5 секунд
+        await self.client.send_message("@KirinGameBot", "/raid")  # Отправляем команду
         
     @loader.watcher()
     async def watcher(self, message):
