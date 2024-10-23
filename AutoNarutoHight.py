@@ -53,15 +53,20 @@ class NarutoAdventureFoodMod(loader.Module):
     @loader.watcher()
     async def watcher(self, message):
         if message.sender_id == 6745912139:
-            # Проверка на уровень отдаленности от деревни
-            if "🗺 Уровень отдаленности от деревни: 16" in message.raw_text:
-                # Этот блок без изменений, обработка остается прежней
-                if message.reply_markup and message.reply_markup.rows:
-                    if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
-                        button_text = message.reply_markup.rows[1].buttons[0].text  # Текст с первой кнопки второй строки
-                        await asyncio.sleep(random.uniform(4, 9))
-                        await self.client.send_message(message.sender_id, button_text)
-                return  # Не продолжать проверку, если выполнено условие для отдаленности
+            # Проверяем уровень отдаленности
+            if "🗺 Уровень отдаленности от деревни:" in message.raw_text:
+                level_match = re.search(r"🗺 Уровень отдаленности от деревни: (\d+)", message.raw_text)
+                if level_match:
+                    distance_level = int(level_match.group(1))
+
+                    # Если уровень отдаленности равен 16 или 466
+                    if distance_level in {16, 466}:
+                        if message.reply_markup and message.reply_markup.rows:
+                            if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
+                                button_text = message.reply_markup.rows[1].buttons[0].text
+                                await asyncio.sleep(random.uniform(4, 9))
+                                await self.client.send_message(message.sender_id, button_text)
+                        return  # Не продолжать проверку, если выполнено условие для отдаленности
 
             if "🏚 Выберите на каком уровне отдаленности вы хотите начать" in message.raw_text:
                 if self.status_one_active and message.reply_markup and message.reply_markup.rows:
@@ -324,3 +329,30 @@ class NarutoAdventureFoodMod(loader.Module):
                         button_text = message.reply_markup.rows[0].buttons[0].text
                         await asyncio.sleep(random.uniform(1, 7))
                         await self.client.send_message(message.sender_id, button_text)
+
+            # Проверяем текст "На привале в лесу вы встречаете загадочную незнакомку в маске, которая называет себя Юи."
+            if "На привале в лесу вы встречаете загадочную незнакомку в маске, которая называет себя Юи." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
+                return  # Не продолжать, если выполнено условие для Юи
+
+            # Проверяем сообщение "Вы решаете принять предложение Юки и сыграть в кости, положившись на удачу."
+            if "Вы решаете принять предложение Юки и сыграть в кости, положившись на удачу." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 0 and len(message.reply_markup.rows[0].buttons) > 0:
+                        button_text = message.reply_markup.rows[0].buttons[0].text
+                        await asyncio.sleep(random.uniform(1, 7))
+                        await self.client.send_message(message.sender_id, button_text)
+                return  # Не продолжать, если выполнено условие для Юки
+
+            # Проверяем сообщение "👣 Вы нашли переход на следующую локацию."
+            if "👣 Вы нашли переход на следующую локацию." in message.raw_text:
+                if message.reply_markup and message.reply_markup.rows:
+                    if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
+                        button_text = message.reply_markup.rows[1].buttons[0].text
+                        await asyncio.sleep(random.uniform(4, 9))
+                        await self.client.send_message(message.sender_id, button_text)
+                return  # Не продолжать, если выполнено условие для перехода на следующую локацию
