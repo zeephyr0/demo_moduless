@@ -60,7 +60,7 @@ class NarutoAdventureFoodMod(loader.Module):
                     distance_level = int(level_match.group(1))
 
                     # Если уровень отдаленности равен 16 или 466
-                    if distance_level in {16, 466}:
+                    if distance_level in {16, 566}:
                         if message.reply_markup and message.reply_markup.rows:
                             if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
                                 button_text = message.reply_markup.rows[1].buttons[0].text
