@@ -60,7 +60,7 @@ class NarutoAdventureFoodMod(loader.Module):
                     distance_level = int(level_match.group(1))
 
                     # Если уровень отдаленности равен 16 или 466
-                    if distance_level in {16, 566}:
+                    if distance_level in {16, 833}:
                         if message.reply_markup and message.reply_markup.rows:
                             if len(message.reply_markup.rows) > 1 and len(message.reply_markup.rows[1].buttons) > 0:
                                 button_text = message.reply_markup.rows[1].buttons[0].text
@@ -83,7 +83,7 @@ class NarutoAdventureFoodMod(loader.Module):
 
                 elif self.status_three_active:
                     await asyncio.sleep(random.uniform(1, 3))  # Добавляем задержку
-                    await self.client.send_message(message.sender_id, "499")  # Отправляем "499"
+                    await self.client.send_message(message.sender_id, "733")  # Отправляем "499"
                 
             hunger_match = re.search(r"🍜 Ваша сытость: (\d+)", message.raw_text)
             if hunger_match:
