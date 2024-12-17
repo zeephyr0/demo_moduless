@@ -1,4 +1,3 @@
-python
 from .. import loader
 from asyncio import sleep
 import random
