@@ -14,12 +14,6 @@ class AutoWWMod(loader.Module):
     async def watcher(self, message):
         #да хули тебе тут надо?!
         if message.sender_id == 430930191:
-            if "Как оказалось, даже в канализации ты умудрился найти что-то полезное." in message.raw_text:
-                await sleep(2);
-                await message.forward_to(963853904);
-            elif "Стоп... Это что, конец? Всё? Вот она, ебучая вершина горы?" in message.raw_text:
-                await sleep(2);
-                await message.forward_to(963853904);
             if "Враги в канализации? Сомнительно, братан. Но воняет неприятно." in message.raw_text:
                 await sleep(2);
                 await message.client.send_message('@WastelandWarsBot', 'Двигаться дальше');
